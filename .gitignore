@@ -1,0 +1,10 @@
+.env
+# Keep the saved announcer clips (they cost money to regenerate); ignore the usage counter.
+cache/usage.json
+cache/*.tmp
+__pycache__/
+.DS_Store
+# Songs stay out of Git (large; back them up separately). Each style's style.txt is kept.
+music/**/*.mp3
+music/**/*.m4a
+music/**/*.wav

@@ -1,0 +1,278 @@
+# The Midnight Jazz Room
+
+## Dynamic AI Radio Announcer — Developer Handoff
+
+**Project:** The Midnight Jazz Room\
+**Feature:** Interactive AI-powered jazz radio announcer\
+**Status:** Voice selected and successfully tested in ElevenLabs; application integration not yet implemented.
+
+### 1. Project Objective
+
+We are building a personal-use, home-based jazz radio application featuring authentic 1940s–1950s small-combo jazz.
+
+The application should recreate the experience of listening to an intimate late-night jazz radio station, complete with a sophisticated, conversational radio host.
+
+Unlike a conventional music player, the application will periodically interact with the listener, accept requests, select appropriate recordings, and introduce the music using a natural-sounding AI-generated voice.
+
+**The goal is a dynamic radio personality, not simply prerecorded announcements between tracks.**
+
+### 2. Current Voice Implementation
+
+We have selected **ElevenLabs** as our text-to-speech (TTS) provider.
+
+The following work is complete:
+
+- Created an ElevenLabs account.
+- Used ElevenLabs Voice Design to generate custom announcer voices.
+- Selected a preferred voice from the generated candidates.
+- Saved the custom voice as **Midnight Jazz Host**.
+- Tested the voice using ElevenLabs Text to Speech.
+- Used **ElevenLabs v4**, which was the default model presented in the interface.
+- Confirmed that the generated voice sounds excellent and meets the desired quality standard.
+
+The voice is intended to have these characteristics:
+
+- Mature American male, approximately 50–60 years old in vocal character.
+- Deep, warm, velvety baritone.
+- Relaxed, conversational delivery.
+- Intimate 1950s late-night jazz radio personality.
+- Natural pauses and subtle emotional expression.
+- Understated charm without theatrical or commercial-announcer delivery.
+- Clean, high-fidelity studio audio.
+
+**Important:** Earlier experiments with basic synthetic speech were completely unacceptable. The final application must maintain the quality achieved with ElevenLabs.
+
+### 3. Music Library
+
+Music is being generated separately using **Mureka V9.5**, which has produced satisfactory results.
+
+The library is organized into ten jazz categories:
+
+| Category         | Musical Style                        |
+| ---------------- | ------------------------------------ |
+| Sax_Ballads      | Slow tenor saxophone jazz            |
+| Muted_Trumpet    | Muted trumpet and piano              |
+| Piano_Trio       | Acoustic piano trio                  |
+| Classic_Swing    | Traditional small-combo swing        |
+| Romantic_Ballads | Slow romantic jazz                   |
+| Jazz_Blues       | Blues-influenced jazz                |
+| Jazz_Noir        | Atmospheric late-night jazz          |
+| Jazz_Waltz       | Jazz in 3/4 time                     |
+| Bebop_Swing      | Medium-up bebop-influenced swing     |
+| Cool_Jazz        | Cool jazz with guitar and vibraphone |
+
+The initial plan is approximately 60 recordings, with six songs generated from each musical style.
+
+Music files will be stored locally and indexed for playback.
+
+The music itself does not need to be generated dynamically during listening sessions.
+
+### 4. Desired Announcer Behavior
+
+The announcer should operate like a real late-night radio host.
+
+**Station opening**
+
+At the beginning of a listening session, the announcer welcomes the listener to The Midnight Jazz Room.
+
+**Music introductions**
+
+The announcer introduces selected recordings, mentioning relevant instruments, moods, or musical characteristics.
+
+The application should not invent facts about artists, recording dates, or historical performances. The music is AI-generated, so commentary should reflect known metadata rather than fabricated history.
+
+**Periodic listener interaction**
+
+The proposed default is to play six recordings before initiating a listener interaction.
+
+For example:
+
+"Well, we've had some beautiful music tonight. Tell me, are you in the mood for something a little more upbeat, or should we keep things nice and mellow?"
+
+The listener can respond by speaking or typing.
+
+Example listener request:
+
+"Let's hear something with more trumpet, maybe a little faster."
+
+The application interprets the request, selects appropriate recordings from the local library, and generates a conversational response.
+
+Example:
+
+"Now that sounds like a fine idea. Let's pick up the tempo a little. I've got a lovely trumpet number coming your way, with just enough swing to keep the evening moving."
+
+Playback then resumes with the newly selected music.
+
+**No listener response**
+
+If the listener does not respond within a configurable timeout, the station automatically continues playing music.
+
+The application must never become stuck waiting for user input.
+
+### 5. Proposed Technical Architecture
+
+The planned application architecture is Python-based, with a local backend and browser-accessible frontend.
+
+Recommended components:
+
+| Component            | Responsibility                                           |
+| -------------------- | -------------------------------------------------------- |
+| Python / FastAPI     | Application backend and orchestration                    |
+| SQLite               | Music metadata, preferences, and announcement cache      |
+| Local MP3/WAV files  | Music storage                                            |
+| Browser audio player | Music and announcement playback                          |
+| ElevenLabs API       | Dynamic text-to-speech                                   |
+| LLM                  | Generate conversational scripts and interpret requests   |
+| Speech-to-text       | Transcribe spoken listener requests                      |
+| Playlist engine      | Select music based on preferences and available metadata |
+
+The LLM, speech recognition provider, and detailed implementation are not yet finalized.
+
+**Important architectural separation:**
+
+The LLM generates the words. ElevenLabs generates the spoken audio. The playlist engine independently decides which songs to play.
+
+This avoids allowing unconstrained AI-generated text to directly control playback or invent nonexistent recordings.
+
+### 6. Dynamic Announcement Workflow
+
+1. The playback engine identifies the next song or group of songs.
+2. The backend retrieves metadata for the selected music.
+3. The backend constructs a structured prompt containing the station personality, conversational context, and verified song metadata.
+4. An LLM generates a short announcer script.
+5. The script is submitted to ElevenLabs using the saved Midnight Jazz Host voice.
+6. ElevenLabs returns synthesized speech audio.
+7. The application plays the announcement and transitions into the selected music.
+8. The generated audio can be cached for future reuse.
+
+For listener interaction:
+
+1. Pause or appropriately transition the music.
+2. Ask the listener what they would like to hear.
+3. Capture spoken or typed input.
+4. Transcribe speech if necessary.
+5. Interpret the requested mood, instruments, tempo, or category.
+6. Query the local music library for matching tracks.
+7. Generate a natural response grounded in the selected recordings.
+8. Synthesize the response through ElevenLabs.
+9. Play the announcement and resume the station.
+
+The application should support asynchronous operations so speech generation does not block the UI or audio playback unnecessarily.
+
+### 7. ElevenLabs Integration Requirements
+
+The developer will need to:
+
+- Obtain an ElevenLabs API key from the account.
+- Retrieve the saved custom voice's `voice_id`.
+- Verify that the account and API support the selected v4 model.
+- Confirm the correct API `model_id` from current ElevenLabs documentation.
+- Implement server-side authenticated TTS requests.
+- Support audio streaming or generated-file playback as appropriate.
+- Handle API errors, timeouts, and service interruptions.
+- Track TTS usage to control costs.
+- Cache generated speech when practical.
+
+API credentials must remain on the backend and must not be exposed to browser JavaScript.
+
+**Important:** The ElevenLabs web-interface test was successful, but API access to the saved voice using v4 has not yet been independently tested.
+
+The developer should verify this before proceeding with the full announcer implementation.
+
+### 8. Voice Personality and Script Generation
+
+The announcer should consistently maintain the following persona:
+
+**Station:** The Midnight Jazz Room
+
+**Personality:** A warm, sophisticated, slightly nostalgic late-night jazz host from the early 1950s.
+
+**Delivery:** Unhurried, intimate, conversational, welcoming.
+
+**Vocabulary:** Natural period-inspired phrasing without exaggerated slang or caricature.
+
+**Behavior:**
+
+- Keep announcements concise.
+- Avoid repeating the same opening phrases.
+- Reference actual musical characteristics when known.
+- Occasionally acknowledge the late-night atmosphere.
+- Respond naturally to listener requests.
+- Avoid exaggerated enthusiasm or modern promotional language.
+- Never claim that AI-generated recordings are authentic historical performances.
+
+ElevenLabs supports expressive delivery controls in some models. The exact cue syntax and behavior should be validated against the selected v4 model.
+
+### 9. Reliability and Offline Behavior
+
+The music library should remain playable even if ElevenLabs or the LLM becomes unavailable.
+
+Recommended fallback behavior:
+
+- Use cached introductions when available.
+- Maintain a small library of prerecorded station announcements.
+- Skip an announcement if speech generation fails.
+- Continue playing music without requiring internet access.
+- Do not interrupt an active song because an API request fails.
+
+The application should prioritize uninterrupted music playback over announcer functionality.
+
+### 10. Recommended Implementation Sequence
+
+**Phase 1 — ElevenLabs API Proof of Concept**
+
+Implement a Python function that accepts text and returns playable speech using the saved Midnight Jazz Host voice and the selected model.
+
+Verify that the API output matches the quality of the successful ElevenLabs web-interface test.
+
+**Phase 2 — Playback Integration**
+
+Insert an ElevenLabs-generated introduction before a locally stored music track.
+
+Verify audio transitions, volume consistency, and error handling.
+
+**Phase 3 — Dynamic Script Generation**
+
+Connect an LLM to produce varied introductions based on verified music metadata.
+
+**Phase 4 — Listener Requests**
+
+Add text-based requests first, followed by microphone input and speech recognition.
+
+**Phase 5 — Full Radio Experience**
+
+Implement six-song listening blocks, periodic interaction, automatic continuation, announcement caching, and listener preferences.
+
+### 11. Current Status Summary
+
+| Area                         | Status                         |
+| ---------------------------- | ------------------------------ |
+| Music generation provider    | Selected: Mureka V9.5          |
+| Music categories             | Defined: 10 styles             |
+| Announcer voice provider     | Selected: ElevenLabs           |
+| Custom announcer voice       | Created and saved              |
+| Voice quality                | Tested and approved            |
+| Text-to-speech model         | v4 in ElevenLabs web interface |
+| ElevenLabs API integration   | Not yet implemented            |
+| LLM script generation        | Planned                        |
+| Speech recognition           | Planned                        |
+| Dynamic playlist interaction | Planned                        |
+| Offline fallback             | Planned                        |
+
+### 12. Immediate Next Step
+
+**Implement a minimal ElevenLabs API integration that generates a short announcement using the saved Midnight Jazz Host voice.**
+
+Do not begin with the full conversational system.
+
+First, prove that Python can generate speech with the same voice and audio quality already achieved in the ElevenLabs web interface.
+
+Once that is working, integrate speech playback into the existing radio application.
+
+---
+
+**Design principle:** The Midnight Jazz Room should feel like a continuous, professionally produced late-night jazz radio station. AI should make the announcer more natural and responsive without introducing awkward delays, repetitive dialogue, unreliable music selection, or interruptions to playback.
+
+The key point I'd emphasize to your developer is that we've already solved the subjective voice-selection problem. You have an ElevenLabs voice that you like, running with v4 in the web interface.
+
+The next milestone is reproducing that quality through the API. Once that's established, dynamic announcements become an application-orchestration problem rather than an audio-production problem.
