@@ -81,6 +81,21 @@ REMARKS = [
     "Nothing but easy listening from here.",
 ]
 
+# Backup lines with no style, song or title in them, so they are true whatever is playing.
+# `python3 fallback.py prepare` voices them once; they stand in when the voice is unavailable.
+GENERIC = {
+    "chosen": [
+        "You've got it. Coming right up.",
+        "Now that sounds like a fine idea. Here we go.",
+        "Good choice. Let's go.",
+    ],
+    "auto": [
+        "Well, I'll choose for us. Here we go.",
+        "Not a word? That's all right. I have just the thing.",
+        "I'll pick one for you. Let's see how this sounds.",
+    ],
+}
+
 PACE = {"slow": "slow and easy", "medium": "medium-tempo", "fast": "up-tempo"}
 
 # Stock phrases that must not be heard twice close together, even in different kinds

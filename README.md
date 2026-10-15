@@ -51,3 +51,17 @@ key, or use the phone remote and the controls and caption appear for a few secon
   songs' covers (blurred) as the background.
 - **Timings** are constants at the top of `public/stage.js` (`IMAGE_SECONDS`,
   `CAPTION_SECONDS`, `FEATURE_SECONDS`; set `FEATURE_SECONDS = 0` to turn the big cover off).
+
+## When the announcer can't speak
+
+If ElevenLabs is unavailable (credits used up, no internet, a bad key), the music keeps playing
+and the host falls back to a saved clip that is still true for the moment (a welcome, a "what's
+next?", the right style's "coming right up", or that song's earlier introduction). If there is
+none, that announcement is skipped, and a short note explains why, once. The technical detail
+goes to the server's terminal, not the screen, and the app stops asking ElevenLabs for 30 minutes
+after a credits or key problem (a few seconds after a network blip).
+
+- `python3 fallback.py status` shows what is saved, by kind.
+- `python3 fallback.py prepare` voices a few generic backup lines ("You've got it. Coming right
+  up.") once, so a style with no saved clip still gets a reply. Run it when credits are available.
+- `python3 tts.py usage` also shows your real ElevenLabs balance and reset date, if the key may see it.

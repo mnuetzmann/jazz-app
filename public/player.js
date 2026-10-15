@@ -29,7 +29,7 @@ function publish() {
   post({
     type: 'state', phase, category: current && current.id,
     track: phase === 'playing' ? $('now').textContent : '',
-    categories: categories.map((c) => ({ id: c.id, label: c.label })),
+    categories: categories.map((c) => ({ id: c.id, label: c.label, thumb: c.thumb })),
   });
 }
 
@@ -68,7 +68,7 @@ async function fetchAnnouncement(body) {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...body, voice: voiceName }), signal: ctl.signal,
     });
-    if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || `HTTP ${res.status}`);
+    if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || 'The announcer is unavailable right now.');
     return URL.createObjectURL(await res.blob());
   } finally {
     clearTimeout(timer);
@@ -85,7 +85,21 @@ function say(body, prefetched) {
     voice.onended = voice.onerror = done;
     voice.src = url;
     voice.play().catch(done);
-  })).catch((err) => { $('heard').textContent = `Announcer unavailable (${err.message}) — music continues.`; });
+  })).catch((err) => notice(err.name === 'AbortError' ? 'The announcer is taking too long.' : err.message));
+}
+
+// A short, quiet note when the announcer cannot speak. The reason shows once, not on every song;
+// the technical detail is in the server's log. Music carries on regardless.
+const noticed = new Map();
+function notice(text) {
+  const last = noticed.get(text) || 0;
+  if (Date.now() - last < 10 * 60 * 1000) return;
+  noticed.set(text, Date.now());
+  const el = $('notice');
+  el.textContent = `${text} The music continues.`;
+  el.classList.add('on');
+  clearTimeout(notice.timer);
+  notice.timer = setTimeout(() => el.classList.remove('on'), 9000);
 }
 
 function stopVoice() {
@@ -118,7 +132,7 @@ function listen(onText) {
   r.interimResults = true; // show words as they are heard, to see where it fails
   r.maxAlternatives = 3;
   r.onstart = () => { $('heard').textContent = '🎤 Starting…'; };
-  r.onaudiostart = () => { $('heard').textContent = '🎤 Mic is on. Say a style, or tap one.'; };
+  r.onaudiostart = () => { $('heard').textContent = ''; }; // the mic is on: clear "Starting…", say nothing more
   r.onsoundstart = () => { $('heard').textContent = '🎤 Hearing sound…'; };
   r.onspeechstart = () => { $('heard').textContent = '🎤 Hearing speech…'; };
   r.onnomatch = () => { $('heard').textContent = "Heard something but couldn't make out words. Try again."; };
@@ -205,6 +219,7 @@ function startSet(next) {
   queue = next.queue;
   playedInSet = 0;
   $('choices').innerHTML = '';
+  $('prompt').textContent = '';
   $('speak').hidden = true;
   $('heard').textContent = '';
   nextTrack();
@@ -274,12 +289,28 @@ async function askNext() {
 function showChoices() {
   const box = $('choices');
   box.innerHTML = '';
+  box.style.setProperty('--n', categories.length); // so the stack of buttons shares the screen height
+  $('prompt').textContent = 'What would you like to hear next?';
   for (const c of categories) {
     const b = document.createElement('button');
-    b.textContent = c.label;
+    if (c.thumb) {
+      b.className = 'tile' + (current && c.id === current.id ? ' current' : '');
+      b.style.backgroundImage = `url("${c.thumb}")`;
+      const name = document.createElement('span');
+      name.className = 'name';
+      name.textContent = c.label;
+      b.append(name);
+    } else {
+      b.textContent = c.label; // a style without a picture stays a plain button
+    }
+    b.setAttribute('aria-label', c.label);
     b.onclick = () => choose(c);
+    b.style.setProperty('--i', box.children.length); // its place in the stack, for the stagger
     box.appendChild(b);
   }
+  const panel = $('panel');
+  panel.classList.remove('reveal'); void panel.offsetWidth; // so the slide plays again every time they appear
+  panel.classList.add('reveal');
 }
 
 async function choose(cat, auto = false) {
@@ -330,6 +361,7 @@ $('skip').onclick = () => { if (phase === 'playing') nextTrack(); };
 
 // Ask what to play next right now, without waiting for the set to finish.
 function changeStyle() {
+  setSettings(false);
   if (phase !== 'playing') return;
   trackSeq++; // cancel a pending introduction
   stopVoice();
@@ -371,3 +403,43 @@ events.onmessage = (e) => {
   else if (m.type === 'say' && phase === 'asking' && m.text) handleReply(String(m.text).toLowerCase());
   else if (m.type === 'hello') publish();
 };
+
+// ---- settings (upper left): Change style and the announcer voice -----------------
+const gear = $('gear'), settings = $('settings');
+const settingsOpen = () => document.body.classList.contains('settings-open');
+// The pie in the voice control: how much of the ElevenLabs credit is used (a full circle = all used).
+async function refreshCredits() {
+  const pie = $('creditPie'), pick = document.querySelector('#settings .voice-pick');
+  let c;
+  try { c = await fetch('/api/credits').then((r) => r.json()); } catch { c = { ok: false }; }
+  if (!c.ok) {
+    pie.dataset.state = 'unknown'; pie.className = 'credit-pie';
+    pick.title = c.reason === 'permission' ? "Credits: unknown (the ElevenLabs key needs 'User' access)"
+      : c.error ? 'Credits: unknown (restart the server to enable this)' // an older server that does not know the request
+      : 'Credits: unknown';
+    return;
+  }
+  const used = c.limit ? Math.min(100, Math.round(1000 * c.used / c.limit) / 10) : 0; // percent used
+  pie.dataset.state = 'known';
+  pie.style.setProperty('--used', used);
+  pie.className = 'credit-pie' + (used > 90 ? ' critical' : used > 75 ? ' low' : ''); // warm colours as it runs out
+  pick.title = `${c.used.toLocaleString()} of ${c.limit.toLocaleString()} credits used (${c.left.toLocaleString()} left)` + (c.reset ? ` · resets ${c.reset}` : '');
+}
+
+function setSettings(open) {
+  if (open) refreshCredits();
+  gear.setAttribute('aria-expanded', String(open));
+  settings.inert = !open; // not reachable (or focusable) while faded out
+  document.body.classList.toggle('settings-open', open);
+}
+setSettings(false);
+gear.onclick = (e) => { e.stopPropagation(); setSettings(!settingsOpen()); };
+document.addEventListener('click', (e) => { if (settingsOpen() && !settings.contains(e.target)) setSettings(false); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setSettings(false); });
+// The panel goes when the other controls do: at the same idle moment, with the same fade.
+document.addEventListener('controlsfaded', () => {
+  if (!settingsOpen()) return;
+  const el = document.activeElement;
+  if (el && settings.contains(el) && el.tagName === 'SELECT') return stage.wake(); // a voice menu is open: not idle
+  setSettings(false);
+});

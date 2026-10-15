@@ -5,13 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jazz Remote</title>
   <link rel="stylesheet" href="/style.css">
+  <style>
+    /* picture buttons: the picture fills the button, the name sits on a see-through band */
+    #choices { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+    #choices button.tile {
+      position: relative; overflow: hidden; padding: 0; height: 84px; border-radius: 16px;
+      background-color: #1a120a; background-size: cover; background-position: center;
+      border: 1.5px solid rgba(255, 255, 255, .28);
+    }
+    .tile .name { position: absolute; left: 0; right: 0; bottom: 0; padding: 5px 6px; background: rgba(0, 0, 0, .52); font-size: .9rem; line-height: 1.15; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  </style>
 </head>
 <body>
   <main>
     <h1>Remote</h1>
     <p id="status">Waiting for the player…</p>
     <p id="now"></p>
-    <div id="choices"></div>
     <form id="say" style="display:flex;gap:8px;margin:16px 0">
       <input id="text" placeholder="Type or dictate a style…" autocomplete="off"
         style="flex:1;font:inherit;font-size:1.1rem;padding:12px 16px;border-radius:999px;border:1px solid #8a6a3c;background:#2a1f15;color:#f1e4cf">
@@ -22,6 +31,7 @@
       <button id="skip">Skip</button>
       <button id="change">Change style</button>
     </div>
+    <div id="choices"></div>
   </main>
   <script>
     const $ = (id) => document.getElementById(id);
@@ -41,7 +51,16 @@
       box.innerHTML = '';
       for (const c of m.categories) {
         const b = document.createElement('button');
-        b.textContent = c.label;
+        if (c.thumb) {
+          b.className = 'tile';
+          b.style.backgroundImage = `url("${c.thumb}")`;
+          const name = document.createElement('span');
+          name.className = 'name';
+          name.textContent = c.label;
+          b.append(name);
+        } else {
+          b.textContent = c.label;
+        }
         b.onclick = () => send({ type: 'choose', category: c.id });
         box.appendChild(b);
       }

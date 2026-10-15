@@ -7,6 +7,7 @@ import os
 import queue
 import re
 import socket
+import subprocess
 import sys
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -14,6 +15,7 @@ from pathlib import Path
 from urllib.parse import quote, unquote, urlparse
 
 import announcer
+import fallback
 import tracks
 import tts
 
@@ -117,6 +119,48 @@ def read_cover(file):
     return found
 
 
+THUMBS = ROOT / "cache" / "thumbs"
+STYLE_PICTURES = ("style.jpeg", "style.jpg", "style.png", "style.webp")
+
+
+def style_picture(folder):
+    """The picture that represents a style: music/<style>/style.jpeg (or .jpg/.png/.webp)."""
+    return next((folder / n for n in STYLE_PICTURES if (folder / n).is_file()), None)
+
+
+def make_thumb(src):
+    """A small copy of a style picture (made once, kept in cache/thumbs). Falls back to the
+    original if the macOS image tool (sips) is not available."""
+    st = src.stat()
+    out = THUMBS / f"{src.parent.name}-{int(st.st_mtime)}-{st.st_size}.jpg"
+    if out.is_file():
+        return out
+    tmp = out.with_suffix(".tmp.jpg")
+    try:
+        THUMBS.mkdir(parents=True, exist_ok=True)
+        subprocess.run(
+            ["sips", "-Z", "480", "-s", "format", "jpeg", "-s", "formatOptions", "80", str(src), "--out", str(tmp)],
+            capture_output=True, timeout=30, check=True,
+        )
+        tmp.replace(out)
+        for old in THUMBS.glob(f"{src.parent.name}-*.jpg"):  # drop thumbnails of earlier versions
+            if old != out:
+                old.unlink(missing_ok=True)
+        return out
+    except (OSError, subprocess.SubprocessError):
+        tmp.unlink(missing_ok=True)
+        return src
+
+
+def warm_thumbs():
+    """Make every style's thumbnail at startup, so the first screen never waits for one."""
+    if MUSIC.is_dir():
+        for folder in sorted(p for p in MUSIC.iterdir() if p.is_dir()):
+            pic = style_picture(folder)
+            if pic:
+                make_thumb(pic)
+
+
 def track_info(folder, f, details):
     """One song: title from tracks.csv, else embedded tag, else cleaned filename."""
     name_title, take = tracks.split_name(f.stem)
@@ -151,6 +195,7 @@ def scan_library():
                     {
                         "id": folder.name,
                         "label": folder.name.replace("-", " ").replace("_", " "),
+                        "thumb": f"/thumb/{quote(folder.name)}" if style_picture(folder) else "",
                         "tracks": tracks_,
                     }
                 )
@@ -201,10 +246,18 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json({"voices": list(tts.voices())})
             except tts.TTSError:
                 return self.send_json({"voices": []})
+        if path == "/api/credits":
+            return self.send_json(tts.credits_snapshot())
         if path == "/api/images":
             return self.send_json(scan_images())
         if path == "/events":
             return self.serve_events()
+        if path.startswith("/thumb/"):
+            folder = safe_join(MUSIC, path[len("/thumb/"):])
+            pic = folder and folder.parent == MUSIC and folder.is_dir() and style_picture(folder)
+            if not pic:
+                return self.send_json({"error": "not found"}, 404)
+            return self.serve_file(make_thumb(pic))
         if path.startswith("/cover/"):
             file = safe_join(MUSIC, path[len("/cover/"):])
             cover = file and file.suffix.lower() == ".mp3" and file.is_file() and read_cover(file)
@@ -242,17 +295,28 @@ class Handler(BaseHTTPRequestHandler):
         if route == "/api/send":
             broadcast(body)
             return self.send_json({"ok": True})
-        text = announcer.build_text(body, scan_library())
+        categories = scan_library()
+        text = announcer.build_text(body, categories)
         if not text:
             return self.send_json({"error": "unknown announcement"}, 400)
+        meta = {"kind": body.get("kind"), "category": body.get("category"), "url": body.get("url")}
+        used = None
         try:
-            audio = tts.speak(text, body.get("voice")).read_bytes()
+            clip = tts.speak(text, body.get("voice"), meta)
         except tts.TTSError as e:
-            return self.send_json({"error": str(e)}, 503)
+            # The voice is unavailable (credits, network, key). Play a saved clip that is still true
+            # for this moment; if there is none, the player skips the announcement and the music goes on.
+            clip = fallback.pick(body.get("kind"), body, body.get("voice"), categories)
+            if not clip:
+                return self.send_json({"error": e.friendly, "code": e.code}, 503)
+            used = e.code
+        audio = clip.read_bytes()
         self.send_response(200)
         self.send_header("Content-Type", "audio/mpeg")
         self.send_header("Content-Length", str(len(audio)))
         self.send_header("Cache-Control", "no-store")
+        if used:
+            self.send_header("X-Announcer-Fallback", used)
         self.end_headers()
         self.wfile.write(audio)
 
@@ -332,6 +396,14 @@ class QuietServer(ThreadingHTTPServer):
         super().handle_error(request, client_address)
 
 
+def label_clips():
+    """Work out what any unlabelled saved clips say, so they can stand in later (quietly, in the background)."""
+    try:
+        fallback.reindex(scan_library())
+    except Exception as e:  # voices not configured yet, etc.: not worth stopping for
+        print(f"[announcer] could not label saved clips: {e}", file=sys.stderr, flush=True)
+
+
 def lan_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
@@ -344,6 +416,8 @@ def lan_ip():
 
 
 if __name__ == "__main__":
+    threading.Thread(target=warm_thumbs, daemon=True).start()
+    threading.Thread(target=label_clips, daemon=True).start()
     server = QuietServer(("0.0.0.0", PORT), Handler)
     print(f"Player (open on this Mac, cast this tab): http://localhost:{PORT}")
     print(f"Phone remote (same Wi-Fi):               http://{lan_ip()}:{PORT}/remote")

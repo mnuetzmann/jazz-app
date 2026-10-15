@@ -89,6 +89,17 @@ const stage = (() => {
     }
   }
 
+  // Move the caption to another corner without a jump: if it is showing, it fades out, moves while
+  // invisible, then fades back in. (If it is hidden anyway, it just moves.)
+  function placeCaption(corner) {
+    if (hud.classList.contains(corner) && !hud.classList.contains('relocating')) return;
+    const apply = () => { hud.className = corner; document.body.dataset.hudSide = corner.startsWith('pos-b') ? 'bottom' : 'top'; };
+    clearTimeout(placeCaption.timer);
+    if (Number(getComputedStyle(hud).opacity) < 0.05) return apply();
+    hud.classList.add('relocating');
+    placeCaption.timer = setTimeout(apply, 600); // apply() replaces the classes, which also ends "relocating"
+  }
+
   async function advance(attempts = 0) {
     clearTimeout(rotateTimer);
     const item = nextItem();
@@ -102,13 +113,15 @@ const stage = (() => {
       next.style.setProperty('--dx', `${(Math.random() * 3 - 1.5).toFixed(2)}%`);
       next.style.setProperty('--dy', `${(Math.random() * 3 - 1.5).toFixed(2)}%`);
       next.style.setProperty('--seconds', `${IMAGE_SECONDS + 8}s`);
-      next.classList.remove('on'); void next.offsetWidth; // restart the slow drift
-      next.classList.add('on');
-      prev.classList.remove('on');
+      clearTimeout(next.settle);
+      next.classList.remove('on', 'live'); void next.offsetWidth; // start its slow drift from the beginning
+      next.classList.add('live', 'on');                           // fades in, and starts drifting
+      prev.classList.remove('on');                                // fades out, but keeps drifting: no snap back
+      clearTimeout(prev.settle);
+      prev.settle = setTimeout(() => prev.classList.remove('live'), 3500); // once it is fully faded
       top = 1 - top;
       showing = item.url;
-      hud.className = calmestCorner(img);
-      document.body.dataset.hudSide = hud.className.startsWith('pos-b') ? 'bottom' : 'top';
+      placeCaption(calmestCorner(img));
     } catch {
       if (attempts < 5) return advance(attempts + 1); // skip an unreadable picture
     }
@@ -202,10 +215,13 @@ const stage = (() => {
   function wake() {
     document.body.classList.add('awake');
     clearTimeout(awakeTimer);
-    awakeTimer = setTimeout(() => document.body.classList.remove('awake'), AWAKE_SECONDS * 1000);
+    awakeTimer = setTimeout(() => {
+      document.body.classList.remove('awake');
+      document.dispatchEvent(new Event('controlsfaded')); // so anything else that is open can fade away with them
+    }, AWAKE_SECONDS * 1000);
   }
 
   for (const ev of ['mousemove', 'mousedown', 'touchstart', 'keydown']) window.addEventListener(ev, wake, { passive: true });
   init();
-  return { setCategory, songStarted, songEnded, feature, wake, next: () => advance() };
+  return { setCategory, songStarted, songEnded, feature, wake, placeCaption, next: () => advance() };
 })();

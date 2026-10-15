@@ -4,6 +4,8 @@
   --amber: #e8b86a;
   --ink: #14100c;
   --fade: 1.2s;
+  --ctl-font: clamp(.95rem, 2.2vmin, 1.5rem); /* one size for every control... */
+  --ctl-h: max(5.4vmin, 42px);               /* ...and one height */
 }
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -27,12 +29,15 @@ body:not(.awake) { cursor: none; }
   transition: opacity 3s ease;
 }
 .slide.soft { inset: -8%; filter: blur(34px) brightness(.72) saturate(1.1); } /* a cover used as background */
-.slide.on { opacity: 1; animation: drift var(--seconds, 40s) ease-in-out forwards; }
+.slide.on { opacity: 1; }
+/* The slow drift belongs to "live", which outlasts "on": a picture keeps drifting while it fades out,
+   so it never snaps back to its starting size at the moment the next one begins to appear. */
+.slide.live { animation: drift var(--seconds, 40s) ease-in-out forwards; }
 @keyframes drift {
   from { transform: scale(1.02) translate(0, 0); }
   to   { transform: scale(1.12) translate(var(--dx, 1%), var(--dy, 1%)); }
 }
-@media (prefers-reduced-motion: reduce) { .slide.on { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .slide.live { animation: none; } }
 
 /* ---- start screen ----------------------------------------------------- */
 #splash {
@@ -41,7 +46,6 @@ body:not(.awake) { cursor: none; }
 }
 #splash:has(#start:not([hidden])) { display: grid; }
 #splash h1 { margin: 0; font-weight: 400; letter-spacing: .06em; font-size: clamp(2rem, 6vw, 4.5rem); text-shadow: 0 2px 24px #000; }
-.hint { max-width: 36rem; opacity: .7; font-size: .95rem; }
 
 /* ---- now playing, in the calmest corner -------------------------------- */
 #hud {
@@ -58,6 +62,9 @@ body:not(.awake) { cursor: none; }
 #art.art-hidden { visibility: hidden; } /* while the big cover is on its way here */
 .pos-br, .pos-tr { flex-direction: row-reverse; }
 .pos-tl, .pos-tr { align-items: flex-start; }
+/* (#hud.pos-… so these beat the base #hud padding) */
+#hud.pos-tl { padding-top: 13vmin; } /* leave room for the settings gear */
+#hud.pos-bl, #hud.pos-br { padding-bottom: 14vmin; } /* sit above the Pause/Skip bar, never on it */
 #status { font-size: clamp(.9rem, 1.8vmin, 1.4rem); letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
 #now { font-size: clamp(1.5rem, 4.2vmin, 3.4rem); font-style: italic; color: var(--amber); margin: .15em 0; line-height: 1.15; }
 #set { font-size: clamp(.85rem, 1.8vmin, 1.3rem); opacity: .7; }
@@ -65,22 +72,30 @@ body:not(.awake) { cursor: none; }
 .pos-br { right: 0; bottom: 0; text-align: right; background: radial-gradient(ellipse at 100% 100%, rgba(0,0,0,.7), transparent 72%); }
 .pos-tl { left: 0; top: 0; text-align: left;  background: radial-gradient(ellipse at 0 0, rgba(0,0,0,.7), transparent 72%); }
 .pos-tr { right: 0; top: 0; text-align: right; background: radial-gradient(ellipse at 100% 0, rgba(0,0,0,.7), transparent 72%); }
-body.hud-on #hud, body.awake #hud, body[data-phase="asking"] #hud { opacity: 1; }
+body.hud-on #hud, body.awake #hud { opacity: 1; }
+/* when the caption must move to another corner it fades out, moves unseen, and fades back in */
+#hud.relocating { opacity: 0 !important; transition-duration: .5s; }
+body[data-phase="asking"] #hud { opacity: 0; }
 
-/* ---- choices and messages --------------------------------------------- */
+/* ---- choices and messages: a vertical stack down the left side ---------------------- */
 #panel {
-  position: fixed; left: 50%; bottom: 14vmin; transform: translateX(-50%); width: min(92vw, 1000px);
-  display: flex; flex-direction: column; align-items: center; gap: 1.2vmin; text-align: center;
+  position: fixed; left: 3vmin; top: 11vmin; max-height: calc(100vh - 14vmin);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 1.2vmin; text-align: left;
   opacity: 0; transition: opacity var(--fade) ease; pointer-events: none;
 }
 body.awake #panel, body[data-phase="asking"] #panel, body:has(#heard:not(:empty)) #panel { opacity: 1; pointer-events: auto; }
-#heard { margin: 0; font-size: clamp(.9rem, 2vmin, 1.4rem); padding: .4em 1em; border-radius: 999px; background: rgba(0,0,0,.55); }
-#heard:empty { display: none; }
-#choices { display: flex; flex-wrap: wrap; gap: 1.2vmin; justify-content: center; }
+#prompt {
+  margin: 0; font-size: clamp(.8rem, 1.8vmin, 1.3rem); letter-spacing: .12em; text-transform: uppercase;
+  text-shadow: 0 1px 12px #000, 0 0 3px #000;
+}
+#prompt:empty, #heard:empty { display: none; }
+#heard { margin: 0; max-width: 30vmin; font-size: clamp(.8rem, 1.7vmin, 1.2rem); padding: .4em 1em; border-radius: 1.4vmin; background: rgba(0,0,0,.55); }
+/* one column when it fits; wraps to a second column only if there are many styles */
+#choices { display: flex; flex-direction: column; flex-wrap: wrap; align-content: flex-start; gap: 1.1vmin; }
 
 /* ---- controls: out of the way until needed ----------------------------- */
 #controls {
-  position: fixed; left: 50%; bottom: 3.5vmin; transform: translateX(-50%);
+  position: fixed; left: 50%; bottom: 3vmin; transform: translateX(-50%);
   display: flex; gap: 1.4vmin; opacity: 0; pointer-events: none; transition: opacity var(--fade) ease;
 }
 body.awake #controls, body[data-phase="asking"] #controls { opacity: 1; pointer-events: auto; }
@@ -92,10 +107,7 @@ button {
 button:hover, button:focus-visible { background: rgba(74, 53, 32, .9); outline: none; }
 button.big { background: var(--amber); color: #1a120a; border: 0; font-size: clamp(1.3rem, 3vmin, 2rem); padding: .6em 2em; }
 
-/* When the caption sits at the bottom, lift the choices above it so they never overlap. */
-body[data-hud-side="bottom"] #panel { bottom: 30vmin; }
-
-@media (max-width: 700px) { #hud { max-width: 100%; } #panel { bottom: 18vmin; } body[data-hud-side="bottom"] #panel { bottom: 34vmin; } }
+@media (max-width: 700px) { #hud { max-width: 100%; } }
 
 /* ---- the big "now playing" cover ------------------------------------------- */
 #feature {
@@ -118,8 +130,100 @@ body[data-hud-side="bottom"] #panel { bottom: 30vmin; }
 /* With your own pictures the title is already in the picture: just a Start button, low on the screen. */
 body.has-pictures #splash { background: none; place-content: end center; padding-bottom: 9vh; }
 body.has-pictures #splash h1 { display: none; }
-body.has-pictures #splash .hint { text-shadow: 0 1px 12px #000; }
-body.has-pictures #splash .hint { background: rgba(0, 0, 0, .6); padding: .5em 1.1em; border-radius: 999px; text-shadow: none; opacity: .9; }
 
-.voice-pick { font: inherit; color: inherit; background: rgba(40, 28, 18, .8); border: 1px solid rgba(255, 255, 255, .25); border-radius: 999px; padding: .5em 1em; }
+
+/* ---- style buttons: the picture is the whole button, the name sits on a see-through band ---- */
+#choices {
+  /* the buttons share the height of the screen, so ten fit one column; never taller than --max */
+  --h: min(11vmin, calc((100vh - 22vmin) / var(--n, 10) - 1.1vmin));
+}
+#choices button.tile {
+  position: relative; overflow: hidden; padding: 0; text-transform: capitalize;
+  width: calc(var(--h) * 2.3); height: var(--h); border-radius: 1.8vmin;
+  background-color: #1a120a; background-size: cover; background-position: center;
+  border: 1.5px solid rgba(255, 255, 255, .28); box-shadow: 0 4px 18px rgba(0, 0, 0, .55);
+  transition: transform .2s ease, border-color .2s ease;
+}
+#choices button.tile .name {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: .35em .6em;
+  background: rgba(0, 0, 0, .52);  /* see-through, so the picture still shows behind the text */
+  font-size: clamp(.7rem, calc(var(--h) * .2), 1.15rem); line-height: 1.15; text-align: center; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+#choices button.tile:hover, #choices button.tile:focus-visible { border-color: var(--amber); transform: scale(1.04); background-color: #1a120a; }
+#choices button.tile.current { border-color: var(--amber); box-shadow: 0 0 0 2px rgba(232, 184, 106, .45), 0 4px 18px rgba(0, 0, 0, .55); }
+
+/* ---- a quiet note when the announcer cannot speak ----------------------------------------- */
+#notice {
+  position: fixed; z-index: 4; left: 50%; bottom: 11vmin; transform: translateX(-50%);
+  margin: 0; max-width: 80vw; padding: .5em 1.2em; border-radius: 999px; text-align: center;
+  font-size: clamp(.8rem, 1.8vmin, 1.2rem); background: rgba(0, 0, 0, .62); border: 1px solid rgba(232, 184, 106, .4);
+  opacity: 0; pointer-events: none; transition: opacity .8s ease;
+}
+#notice.on { opacity: 1; }
+
+/* The start screen has its own voice picker; the control strip (and its picker) waits until you press Start. */
+body:has(#start:not([hidden])) #controls { display: none; }
+
+/* ---- settings: a gear in the upper left that opens Change style and the announcer voice ---- */
+#gear {
+  position: fixed; z-index: 6; top: 2vmin; left: 2vmin; width: max(4.8vmin, 36px); height: max(4.8vmin, 36px);
+  padding: 0; display: grid; place-items: center; border-radius: 50%;
+  opacity: 0; pointer-events: none; transition: opacity var(--fade) ease;
+}
+#gear svg { width: 58%; height: 58%; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+body.awake #gear, body.settings-open #gear { opacity: 1; pointer-events: auto; }
+#settings {
+  /* no box behind the buttons: they sit straight on the picture, left edge in line with the gear */
+  position: fixed; z-index: 6; top: calc(2vmin + max(4.8vmin, 36px) + 1.4vmin); left: 2vmin;
+  display: flex; flex-direction: column; gap: 1.2vmin; padding: 0; background: none; border: 0; box-shadow: none;
+}
+.setting { display: flex; flex-direction: column; gap: .7vmin; font-size: clamp(.8rem, 1.7vmin, 1.1rem); opacity: .95; }
+.setting:has(.voice-pick[hidden]) { display: none; } /* only one voice: nothing to pick */
+body:has(#start:not([hidden])) #gear, body:has(#start:not([hidden])) #settings { display: none; }
+
+/* ---- consistent controls: Pause, Skip, Speak, Change Style and the voice pickers all match ---- */
+#controls button, #settings button, #settings select, #splash select.voice-pick {
+  box-sizing: border-box; height: var(--ctl-h); margin: 0; padding: 0 1.5em;
+  font: inherit; font-size: var(--ctl-font); line-height: 1; text-transform: none;
+  color: var(--cream); background: rgba(20, 14, 8, .72); border: 1px solid rgba(232, 184, 106, .55); border-radius: 999px;
+  text-align: center; text-align-last: center; cursor: pointer; backdrop-filter: blur(6px);
+}
+#controls button, #settings button { display: inline-flex; align-items: center; justify-content: center; text-transform: capitalize; }
+#settings select, #splash select.voice-pick { display: block; }
+#settings select:hover, #settings select:focus-visible, #splash select.voice-pick:focus-visible { background: rgba(74, 53, 32, .9); outline: none; }
+#settings { width: max-content; } /* as wide as the longest voice name, and no wider */
+/* The panel fades with the rest of the controls (same fade), instead of vanishing. */
+#settings { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--fade) ease, visibility 0s linear var(--fade); }
+body.settings-open #settings { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity var(--fade) ease, visibility 0s; }
+#settings button, #settings select {
+  width: 100%; padding: 0 1.2em; /* both buttons the width of the panel, text starting at the same left edge */
+  text-align: left; text-align-last: left; justify-content: flex-start;
+}
 .voice-pick[hidden] { display: none; }
+
+/* ---- the style buttons slide down into place, one after another ----------------------------- */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-4vmin); }
+  to   { opacity: 1; transform: none; }
+}
+/* "backwards" only holds the starting pose during the delay; afterwards the buttons are ordinary again,
+   so hovering and the outline on the current style keep working. */
+#panel.reveal #prompt, #panel.reveal #heard { animation: slideDown .55s cubic-bezier(.2, .8, .2, 1) backwards; }
+#panel.reveal #choices > * { animation: slideDown .6s cubic-bezier(.2, .8, .2, 1) backwards; animation-delay: calc(.08s + var(--i, 0) * 55ms); }
+body[data-phase="asking"] #panel { transition-duration: .35s; } /* the panel itself appears quickly; the slide is the show */
+@media (prefers-reduced-motion: reduce) { #panel.reveal #prompt, #panel.reveal #heard, #panel.reveal #choices > * { animation: none; } }
+
+/* ---- a small pie in the voice control: how much of the ElevenLabs credit is used (full = all used) ---- */
+.voice-wrap { position: relative; font-size: var(--ctl-font); }
+#settings .voice-wrap select { padding-right: 4.2em; } /* room for the pie and the dropdown arrow (#settings: to outrank the shared control rule) */
+.credit-pie {
+  --pie: var(--amber); --used: 0;
+  position: absolute; right: 2.5em; top: 50%; width: 1.1em; height: 1.1em; transform: translateY(-50%);
+  border-radius: 50%; pointer-events: none;
+  background: conic-gradient(var(--pie) calc(var(--used) * 1%), rgba(255, 255, 255, .2) 0);
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .45);
+}
+.credit-pie.low { --pie: #e8924a; }
+.credit-pie.critical { --pie: #e0584a; }
+.credit-pie[data-state="unknown"] { background: none; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .35); } /* no balance to show */

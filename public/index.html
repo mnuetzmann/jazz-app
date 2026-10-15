@@ -23,7 +23,6 @@
     <h1>The Midnight Jazz Room</h1>
     <select class="voice-pick" aria-label="Announcer voice" hidden></select>
     <button id="start" class="big">Start</button>
-    <p class="hint">Casting? In Chrome: ⋮ → Cast, Save and Share → Cast… → choose "Cast tab" and enable audio.</p>
   </section>
 
   <!-- What is playing. Fades away; moves to the calmest corner of each picture. -->
@@ -38,17 +37,32 @@
 
   <!-- The "what's next?" choices and any messages. -->
   <div id="panel">
+    <p id="prompt"></p>
     <p id="heard"></p>
     <div id="choices"></div>
   </div>
+
+  <p id="notice" role="status"></p>
 
   <!-- Hidden until the mouse moves, a key is pressed, or the phone remote is used. -->
   <div id="controls">
     <button id="speak" hidden>🎤 Speak</button>
     <button id="pause" hidden>Pause</button>
     <button id="skip" hidden>Skip</button>
+  </div>
+
+  <!-- Upper left: a gear that opens the settings (change style, announcer voice). -->
+  <button id="gear" aria-label="Settings" aria-expanded="false" aria-controls="settings">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+  </button>
+  <div id="settings" role="dialog" aria-label="Settings">
     <button id="change" hidden>Change style</button>
-    <select class="voice-pick" aria-label="Announcer voice" hidden></select>
+    <div class="setting">
+      <div class="voice-wrap">
+        <select class="voice-pick" aria-label="Announcer voice" hidden></select>
+        <span class="credit-pie" id="creditPie" data-state="unknown" aria-hidden="true"></span>
+      </div>
+    </div>
   </div>
 
   <script src="/stage.js"></script>
