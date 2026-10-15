@@ -1,0 +1,122 @@
+:root {
+  color-scheme: dark;
+  --cream: #f6ead6;
+  --amber: #e8b86a;
+  --ink: #14100c;
+  --fade: 1.2s;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; overflow: hidden; background: var(--ink); color: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+}
+body:not(.awake) { cursor: none; }
+[hidden] { display: none !important; }
+
+/* ---- the picture ------------------------------------------------------ */
+#stage { position: fixed; inset: 0; background: radial-gradient(circle at 30% 20%, #3a2a1c, var(--ink) 70%); }
+#stage.fallback { animation: glow 40s ease-in-out infinite alternate; }
+@keyframes glow {
+  from { background: radial-gradient(circle at 25% 20%, #3a2a1c, var(--ink) 70%); }
+  to   { background: radial-gradient(circle at 75% 80%, #2a2236, var(--ink) 70%); }
+}
+.slide {
+  position: absolute; inset: 0; opacity: 0; will-change: opacity, transform;
+  background-size: cover; background-position: center;
+  transition: opacity 3s ease;
+}
+.slide.soft { inset: -8%; filter: blur(34px) brightness(.72) saturate(1.1); } /* a cover used as background */
+.slide.on { opacity: 1; animation: drift var(--seconds, 40s) ease-in-out forwards; }
+@keyframes drift {
+  from { transform: scale(1.02) translate(0, 0); }
+  to   { transform: scale(1.12) translate(var(--dx, 1%), var(--dy, 1%)); }
+}
+@media (prefers-reduced-motion: reduce) { .slide.on { animation: none; } }
+
+/* ---- start screen ----------------------------------------------------- */
+#splash {
+  position: fixed; inset: 0; display: none; place-content: center; justify-items: center; gap: 1.2rem;
+  text-align: center; padding: 2rem; background: rgba(10, 7, 4, .55);
+}
+#splash:has(#start:not([hidden])) { display: grid; }
+#splash h1 { margin: 0; font-weight: 400; letter-spacing: .06em; font-size: clamp(2rem, 6vw, 4.5rem); text-shadow: 0 2px 24px #000; }
+.hint { max-width: 36rem; opacity: .7; font-size: .95rem; }
+
+/* ---- now playing, in the calmest corner -------------------------------- */
+#hud {
+  position: fixed; z-index: 3; display: flex; align-items: flex-end; gap: 2.4vmin;
+  max-width: min(62vw, 960px); padding: 6vmin 5vmin; opacity: 0;
+  transition: opacity var(--fade) ease; pointer-events: none;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, .85);
+}
+#hud p { margin: 0; }
+#art {
+  flex: none; width: clamp(110px, 22vmin, 300px); aspect-ratio: 1; object-fit: cover; border-radius: 3%;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, .6);
+}
+#art.art-hidden { visibility: hidden; } /* while the big cover is on its way here */
+.pos-br, .pos-tr { flex-direction: row-reverse; }
+.pos-tl, .pos-tr { align-items: flex-start; }
+#status { font-size: clamp(.9rem, 1.8vmin, 1.4rem); letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+#now { font-size: clamp(1.5rem, 4.2vmin, 3.4rem); font-style: italic; color: var(--amber); margin: .15em 0; line-height: 1.15; }
+#set { font-size: clamp(.85rem, 1.8vmin, 1.3rem); opacity: .7; }
+.pos-bl { left: 0; bottom: 0; text-align: left;  background: radial-gradient(ellipse at 0 100%, rgba(0,0,0,.7), transparent 72%); }
+.pos-br { right: 0; bottom: 0; text-align: right; background: radial-gradient(ellipse at 100% 100%, rgba(0,0,0,.7), transparent 72%); }
+.pos-tl { left: 0; top: 0; text-align: left;  background: radial-gradient(ellipse at 0 0, rgba(0,0,0,.7), transparent 72%); }
+.pos-tr { right: 0; top: 0; text-align: right; background: radial-gradient(ellipse at 100% 0, rgba(0,0,0,.7), transparent 72%); }
+body.hud-on #hud, body.awake #hud, body[data-phase="asking"] #hud { opacity: 1; }
+
+/* ---- choices and messages --------------------------------------------- */
+#panel {
+  position: fixed; left: 50%; bottom: 14vmin; transform: translateX(-50%); width: min(92vw, 1000px);
+  display: flex; flex-direction: column; align-items: center; gap: 1.2vmin; text-align: center;
+  opacity: 0; transition: opacity var(--fade) ease; pointer-events: none;
+}
+body.awake #panel, body[data-phase="asking"] #panel, body:has(#heard:not(:empty)) #panel { opacity: 1; pointer-events: auto; }
+#heard { margin: 0; font-size: clamp(.9rem, 2vmin, 1.4rem); padding: .4em 1em; border-radius: 999px; background: rgba(0,0,0,.55); }
+#heard:empty { display: none; }
+#choices { display: flex; flex-wrap: wrap; gap: 1.2vmin; justify-content: center; }
+
+/* ---- controls: out of the way until needed ----------------------------- */
+#controls {
+  position: fixed; left: 50%; bottom: 3.5vmin; transform: translateX(-50%);
+  display: flex; gap: 1.4vmin; opacity: 0; pointer-events: none; transition: opacity var(--fade) ease;
+}
+body.awake #controls, body[data-phase="asking"] #controls { opacity: 1; pointer-events: auto; }
+button {
+  font: inherit; font-size: clamp(.95rem, 2.2vmin, 1.5rem); text-transform: capitalize; cursor: pointer;
+  background: rgba(20, 14, 8, .72); color: var(--cream); border: 1px solid rgba(232, 184, 106, .55);
+  border-radius: 999px; padding: .55em 1.4em; backdrop-filter: blur(6px);
+}
+button:hover, button:focus-visible { background: rgba(74, 53, 32, .9); outline: none; }
+button.big { background: var(--amber); color: #1a120a; border: 0; font-size: clamp(1.3rem, 3vmin, 2rem); padding: .6em 2em; }
+
+/* When the caption sits at the bottom, lift the choices above it so they never overlap. */
+body[data-hud-side="bottom"] #panel { bottom: 30vmin; }
+
+@media (max-width: 700px) { #hud { max-width: 100%; } #panel { bottom: 18vmin; } body[data-hud-side="bottom"] #panel { bottom: 34vmin; } }
+
+/* ---- the big "now playing" cover ------------------------------------------- */
+#feature {
+  position: fixed; inset: 0; z-index: 2; display: grid; place-items: center;
+  opacity: 0; pointer-events: none; transition: opacity .9s ease; overflow: hidden;
+}
+#feature.on { opacity: 1; }
+#featureBg {
+  position: absolute; inset: -8%; background-size: cover; background-position: center;
+  filter: blur(40px) brightness(.42); transition: opacity 1.3s ease;
+}
+#feature.leaving #featureBg { opacity: 0; }
+#featureArt {
+  position: relative; width: min(64vmin, 640px); aspect-ratio: 1; object-fit: cover; border-radius: 3%;
+  box-shadow: 0 12px 60px rgba(0, 0, 0, .7);
+}
+#panel, #controls { z-index: 4; }
+#splash { z-index: 5; }
+
+/* With your own pictures the title is already in the picture: just a Start button, low on the screen. */
+body.has-pictures #splash { background: none; place-content: end center; padding-bottom: 9vh; }
+body.has-pictures #splash h1 { display: none; }
+body.has-pictures #splash .hint { text-shadow: 0 1px 12px #000; }
+body.has-pictures #splash .hint { background: rgba(0, 0, 0, .6); padding: .5em 1.1em; border-radius: 999px; text-shadow: none; opacity: .9; }

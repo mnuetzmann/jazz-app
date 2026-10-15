@@ -11,7 +11,7 @@ import sys
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import quote, unquote, urlparse
 
 import announcer
 import tracks
@@ -20,8 +20,10 @@ import tts
 ROOT = Path(__file__).parent.resolve()
 PUBLIC = ROOT / "public"
 MUSIC = Path(os.environ.get("MUSIC_DIR", ROOT / "music")).resolve()
-PORT = int(os.environ.get("PORT", 3000))
+IMAGES = Path(os.environ.get("IMAGES_DIR", ROOT / "images")).resolve()
+PORT = int(os.environ.get("PORT", 8080))  # 3000 was unreachable from the phone on this network
 AUDIO_EXT = {".mp3": "audio/mpeg", ".m4a": "audio/mp4", ".wav": "audio/wav"}
+IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif"}
 
 listeners = []
 listeners_lock = threading.Lock()
@@ -68,6 +70,53 @@ def read_title(file):
     return None
 
 
+_covers = {}  # (path, mtime) -> (mime, bytes) or None; a few MB for a whole library
+
+
+def _synchsafe(raw):
+    return ((raw[0] & 0x7F) << 21) | ((raw[1] & 0x7F) << 14) | ((raw[2] & 0x7F) << 7) | (raw[3] & 0x7F)
+
+
+def read_cover(file):
+    """The cover picture embedded in an MP3 (ID3v2 APIC frame): (mime, bytes) or None."""
+    try:
+        key = (str(file), file.stat().st_mtime)
+    except OSError:
+        return None
+    if key in _covers:
+        return _covers[key]
+    found = None
+    try:
+        with open(file, "rb") as f:
+            head = f.read(10)
+            if head[:3] == b"ID3" and head[3] in (3, 4):
+                tag = f.read(_synchsafe(head[6:10]))
+                pos = 0
+                while pos + 10 <= len(tag) and tag[pos] != 0:
+                    fid, raw = tag[pos:pos + 4], tag[pos + 4:pos + 8]
+                    size = _synchsafe(raw) if head[3] == 4 else int.from_bytes(raw, "big")
+                    if fid == b"APIC":
+                        body = tag[pos + 10:pos + 10 + size]
+                        enc = body[0]
+                        i = body.index(b"\x00", 1) + 2  # end of mime, then the picture-type byte
+                        if enc in (1, 2):  # UTF-16 description ends with an aligned double null
+                            while i + 1 < len(body) and body[i:i + 2] != b"\x00\x00":
+                                i += 2
+                            i += 2
+                        else:
+                            i = body.index(b"\x00", i) + 1
+                        data = body[i:]
+                        mime = "image/png" if data[:4] == b"\x89PNG" else "image/jpeg" if data[:2] == b"\xff\xd8" else None
+                        if mime and len(data) > 100:
+                            found = (mime, data)
+                        break
+                    pos += 10 + size
+    except (OSError, ValueError, IndexError):
+        found = None
+    _covers[key] = found
+    return found
+
+
 def track_info(folder, f, details):
     """One song: title from tracks.csv, else embedded tag, else cleaned filename."""
     name_title, take = tracks.split_name(f.stem)
@@ -83,6 +132,7 @@ def track_info(folder, f, details):
         "instruments": row.get("instruments", ""),
         "notes": row.get("notes", ""),
         "url": f"/music/{folder.name}/{f.name}".replace(" ", "%20"),
+        "cover": f"/cover/{quote(folder.name)}/{quote(f.name)}" if f.suffix.lower() == ".mp3" and read_cover(f) else "",
     }
 
 
@@ -105,6 +155,22 @@ def scan_library():
                     }
                 )
     return categories
+
+
+def scan_images():
+    """Pictures for the background. images/*.jpg is the general pool; images/<style>/*.jpg
+    is used only while that style plays."""
+    def urls(folder, prefix):
+        return [f"{prefix}{quote(f.name)}" for f in sorted(folder.iterdir())
+                if f.is_file() and f.suffix.lower() in IMAGE_EXT and not f.name.startswith(".")]
+    result = {"all": [], "byStyle": {}}
+    if IMAGES.is_dir():
+        result["all"] = urls(IMAGES, "/images/")
+        for folder in sorted(p for p in IMAGES.iterdir() if p.is_dir()):
+            found = urls(folder, f"/images/{quote(folder.name)}/")
+            if found:
+                result["byStyle"][folder.name] = found
+    return result
 
 
 def safe_join(base, rel):
@@ -130,8 +196,27 @@ class Handler(BaseHTTPRequestHandler):
         path = unquote(urlparse(self.path).path)
         if path == "/api/library":
             return self.send_json({"categories": scan_library()})
+        if path == "/api/images":
+            return self.send_json(scan_images())
         if path == "/events":
             return self.serve_events()
+        if path.startswith("/cover/"):
+            file = safe_join(MUSIC, path[len("/cover/"):])
+            cover = file and file.suffix.lower() == ".mp3" and file.is_file() and read_cover(file)
+            if not cover:
+                return self.send_json({"error": "not found"}, 404)
+            self.send_response(200)
+            self.send_header("Content-Type", cover[0])
+            self.send_header("Content-Length", str(len(cover[1])))
+            self.send_header("Cache-Control", "max-age=86400")
+            self.end_headers()
+            self.wfile.write(cover[1])
+            return
+        if path.startswith("/images/"):
+            file = safe_join(IMAGES, path[len("/images/"):])
+            if not file or file.suffix.lower() not in IMAGE_EXT:
+                return self.send_json({"error": "not found"}, 404)
+            return self.serve_file(file)
         if path.startswith("/music/"):
             return self.serve_file(safe_join(MUSIC, path[len("/music/"):]), audio_only=True)
         if path == "/":

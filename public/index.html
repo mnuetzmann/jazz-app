@@ -3,26 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soft Jazz Radio</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>The Midnight Jazz Room</title>
+  <link rel="stylesheet" href="/player.css">
 </head>
 <body>
-  <main>
-    <h1>Soft Jazz Radio</h1>
-    <p id="status">Press start to begin.</p>
-    <p id="now"></p>
-    <p id="set"></p>
+  <div id="stage" aria-hidden="true">
+    <div class="slide" id="slideA"></div>
+    <div class="slide" id="slideB"></div>
+  </div>
+
+  <!-- The big "now playing" moment at the start of each song (cover over a blurred copy). -->
+  <div id="feature" aria-hidden="true">
+    <div id="featureBg"></div>
+    <img id="featureArt" alt="">
+  </div>
+
+  <!-- Shown until you press Start (and again if playback stops). -->
+  <section id="splash">
+    <h1>The Midnight Jazz Room</h1>
+    <button id="start" class="big">Start</button>
+    <p class="hint">Casting? In Chrome: ⋮ → Cast, Save and Share → Cast… → choose "Cast tab" and enable audio.</p>
+  </section>
+
+  <!-- What is playing. Fades away; moves to the calmest corner of each picture. -->
+  <div id="hud" class="pos-bl">
+    <img id="art" alt="" hidden>
+    <div id="hudtext">
+      <p id="status"></p>
+      <p id="now"></p>
+      <p id="set"></p>
+    </div>
+  </div>
+
+  <!-- The "what's next?" choices and any messages. -->
+  <div id="panel">
     <p id="heard"></p>
     <div id="choices"></div>
-    <div class="controls">
-      <button id="speak" hidden>🎤 Speak</button>
-      <button id="start" class="big">Start</button>
-      <button id="pause" hidden>Pause</button>
-      <button id="skip" hidden>Skip</button>
-      <button id="change" hidden>Change style</button>
-    </div>
-    <p class="hint">Casting? Cast this tab from Chrome (⋮ → Cast, Save and Share → Cast…). Choose "Cast tab" and enable audio.</p>
-  </main>
+  </div>
+
+  <!-- Hidden until the mouse moves, a key is pressed, or the phone remote is used. -->
+  <div id="controls">
+    <button id="speak" hidden>🎤 Speak</button>
+    <button id="pause" hidden>Pause</button>
+    <button id="skip" hidden>Skip</button>
+    <button id="change" hidden>Change style</button>
+  </div>
+
+  <script src="/stage.js"></script>
   <script src="/player.js"></script>
 </body>
 </html>

@@ -25,6 +25,7 @@ function post(msg) {
 }
 
 function publish() {
+  document.body.dataset.phase = phase;
   post({
     type: 'state', phase, category: current && current.id,
     track: phase === 'playing' ? $('now').textContent : '',
@@ -179,6 +180,7 @@ function startSet(next) {
   clearTimeout(askTimer);
   plan = next;
   current = next.cat;
+  stage.setCategory(next.cat.id, next.cat.tracks.map((t) => t.cover));
   queue = next.queue;
   playedInSet = 0;
   $('choices').innerHTML = '';
@@ -201,6 +203,7 @@ async function nextTrack() {
   $('now').textContent = t.title;
   $('set').textContent = `Song ${playedInSet} of ${queue.length}`;
   $('pause').hidden = $('skip').hidden = $('change').hidden = false;
+  stage.songStarted(t);
   publish();
 
   const intro = introFor(plan, i);
@@ -214,6 +217,7 @@ async function nextTrack() {
   recentTitles.push(t.url);
   recentTitles = recentTitles.slice(-60);
   audio.src = t.url;
+  stage.feature();
   audio.play().catch((e) => {
     if (e.name === 'AbortError') return; // a newer track replaced this one
     $('heard').textContent = e.name === 'NotAllowedError'
@@ -230,6 +234,7 @@ async function askNext() {
   $('now').textContent = '';
   $('set').textContent = '';
   $('pause').hidden = $('skip').hidden = $('change').hidden = true;
+  stage.songEnded();
   setStatus('What would you like to hear next?');
   showChoices();
   $('speak').hidden = false;
@@ -285,6 +290,7 @@ audio.addEventListener('error', () => {
 // Stop instead of skipping through the whole library when songs will not play.
 function giveUp(reason) {
   phase = 'idle';
+  stage.songEnded();
   trackSeq++;
   audio.pause();
   $('pause').hidden = $('skip').hidden = $('change').hidden = true;
@@ -335,6 +341,7 @@ $('start').onclick = async () => {
 const events = new EventSource('/events');
 events.onmessage = (e) => {
   const m = JSON.parse(e.data);
+  if (m.type !== 'state' && m.type !== 'hello') stage.wake();
   if (m.type === 'choose' && phase === 'asking') choose(categories.find((c) => c.id === m.category) || current);
   else if (m.type === 'choose' && phase === 'playing') { const c = categories.find((x) => x.id === m.category); if (c) startSet(prepareSet(c)); }
   else if (m.type === 'skip' && phase === 'playing') nextTrack();
