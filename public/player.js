@@ -39,13 +39,34 @@ function setStatus(text) { $('status').textContent = text; }
 const voice = new Audio();
 let voiceToken = 0;
 
+let voiceName = '';
+try { voiceName = localStorage.getItem('voice') || ''; } catch { /* storage blocked: default voice */ }
+
+async function setupVoices() {
+  const { voices } = await fetch('/api/voices').then((r) => r.json()).catch(() => ({ voices: [] }));
+  if (!voices.includes(voiceName)) voiceName = voices[0] || '';
+  const pickers = document.querySelectorAll('.voice-pick');
+  pickers.forEach((sel) => {
+    sel.hidden = voices.length < 2;
+    sel.innerHTML = '';
+    voices.forEach((v) => sel.add(new Option(v, v)));
+    sel.value = voiceName;
+    sel.onchange = () => {
+      voiceName = sel.value;
+      pickers.forEach((o) => { o.value = voiceName; });
+      try { localStorage.setItem('voice', voiceName); } catch { /* not saved */ }
+    };
+  });
+}
+setupVoices();
+
 async function fetchAnnouncement(body) {
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), 12000);
   try {
     const res = await fetch('/api/announce', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body), signal: ctl.signal,
+      body: JSON.stringify({ ...body, voice: voiceName }), signal: ctl.signal,
     });
     if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || `HTTP ${res.status}`);
     return URL.createObjectURL(await res.blob());

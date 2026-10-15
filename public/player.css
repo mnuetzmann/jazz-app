@@ -120,3 +120,6 @@ body.has-pictures #splash { background: none; place-content: end center; padding
 body.has-pictures #splash h1 { display: none; }
 body.has-pictures #splash .hint { text-shadow: 0 1px 12px #000; }
 body.has-pictures #splash .hint { background: rgba(0, 0, 0, .6); padding: .5em 1.1em; border-radius: 999px; text-shadow: none; opacity: .9; }
+
+.voice-pick { font: inherit; color: inherit; background: rgba(40, 28, 18, .8); border: 1px solid rgba(255, 255, 255, .25); border-radius: 999px; padding: .5em 1em; }
+.voice-pick[hidden] { display: none; }

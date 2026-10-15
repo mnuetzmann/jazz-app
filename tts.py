@@ -49,6 +49,23 @@ def _setting(name, default=None):
     return value
 
 
+def voices():
+    """Configured announcer voices as {name: voice_id}, first one is the default.
+
+    ELEVENLABS_VOICES="Midnight Jazz Host:id1, Late Night:id2"; a lone
+    ELEVENLABS_VOICE_ID still works as a single voice.
+    """
+    load_env()
+    out = {}
+    for item in os.environ.get("ELEVENLABS_VOICES", "").split(","):
+        name, sep, vid = item.partition(":")
+        if sep and name.strip() and vid.strip():
+            out[name.strip()] = vid.strip()
+    if not out:
+        out["Announcer"] = _setting("ELEVENLABS_VOICE_ID")
+    return out
+
+
 def _request(method, path, body=None, accept="application/json"):
     req = urllib.request.Request(
         API + path,
@@ -108,12 +125,13 @@ def show_usage():
     print(f"Saved clips (free to replay): {len(list(CACHE.glob('*.mp3'))) if CACHE.is_dir() else 0}")
 
 
-def speak(text):
-    """Return the path of an MP3 of `text` in the announcer voice (cached)."""
+def speak(text, voice=None):
+    """Return the path of an MP3 of `text` in the named voice (cached); unknown or missing = default."""
     text = text.strip()
     if not text:
         raise TTSError("Nothing to say.")
-    voice_id = _setting("ELEVENLABS_VOICE_ID")
+    available = voices()
+    voice_id = available.get(voice) or next(iter(available.values()))
     model_id = _setting("ELEVENLABS_MODEL_ID", "eleven_multilingual_v2")
     key = hashlib.sha256(f"{voice_id}|{model_id}|{text}".encode()).hexdigest()[:24]
     out = CACHE / f"{key}.mp3"

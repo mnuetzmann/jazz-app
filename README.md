@@ -17,6 +17,13 @@ Each folder in `music/` is a style the app will offer. Folder name = what you sa
 (`music/bossa-nova/` → "bossa nova"). Drop `.mp3`, `.m4a` or `.wav` files in; the
 filename becomes the song title. Add or rename folders any time and reload.
 
+## Announcer voices
+
+List several in `.env` as `ELEVENLABS_VOICES=Name:voice_id, Name:voice_id` (find ids with
+`python3 tts.py voices`). The first is the default. With two or more, a voice picker appears
+on the start screen and in the controls; the choice is remembered in the browser and applies
+from the next announcement.
+
 ## Casting to the TV
 
 Chromecast can't hear you, so the mic stays on the device running the player.

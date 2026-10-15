@@ -196,6 +196,11 @@ class Handler(BaseHTTPRequestHandler):
         path = unquote(urlparse(self.path).path)
         if path == "/api/library":
             return self.send_json({"categories": scan_library()})
+        if path == "/api/voices":
+            try:
+                return self.send_json({"voices": list(tts.voices())})
+            except tts.TTSError:
+                return self.send_json({"voices": []})
         if path == "/api/images":
             return self.send_json(scan_images())
         if path == "/events":
@@ -241,7 +246,7 @@ class Handler(BaseHTTPRequestHandler):
         if not text:
             return self.send_json({"error": "unknown announcement"}, 400)
         try:
-            audio = tts.speak(text).read_bytes()
+            audio = tts.speak(text, body.get("voice")).read_bytes()
         except tts.TTSError as e:
             return self.send_json({"error": str(e)}, 503)
         self.send_response(200)
