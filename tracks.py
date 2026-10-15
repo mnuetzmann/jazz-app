@@ -20,7 +20,7 @@ MUSIC = Path(os.environ.get("MUSIC_DIR", ROOT / "music")).resolve()
 AUDIO_EXT = {".mp3", ".m4a", ".wav"}
 FIELDS = ["category", "file", "title", "take", "tempo", "bpm", "mood", "instruments", "notes"]
 
-# Defaults are read from each style's prompt (music/<style>/style.txt). Mureka may
+# Defaults are read from each style's prompt (the style.txt in its folder). Mureka may
 # not follow a prompt exactly, so the host should speak of them as "a ..." not as facts
 # about specific moments in a recording.
 STYLE_DEFAULTS = {
@@ -57,6 +57,25 @@ STYLE_DEFAULTS = {
 }
 
 
+def style_folders():
+    """[(collection, folder)] for every style folder. music/<Collection>/<style>/ is a style inside a named
+    collection (the usual layout); music/<style>/ holding songs directly also works (collection "")."""
+    out = []
+    if not MUSIC.is_dir():
+        return out
+    for top in sorted(p for p in MUSIC.iterdir() if p.is_dir() and not p.name.startswith(".")):
+        if any(f.suffix.lower() in AUDIO_EXT for f in top.iterdir() if f.is_file()):
+            out.append(("", top))
+        else:
+            out += [(top.name, sub) for sub in sorted(p for p in top.iterdir() if p.is_dir() and not p.name.startswith("."))]
+    return out
+
+
+def style_id(folder):
+    """A style's id: its path under music/ ('jazz-noir' or 'Champagne_Ballroom/Easy_Foxtrot')."""
+    return folder.relative_to(MUSIC).as_posix()
+
+
 def split_name(stem):
     """'Fifty_Second Street Express (1)' -> ('Fifty Second Street Express', 2)."""
     m = re.search(r"\s\((\d+)\)$", stem)
@@ -73,21 +92,45 @@ def load():
         return {(r["category"], r["file"]): r for r in csv.DictReader(f)}
 
 
+def follow_moves(rows, folders):
+    """A style folder that moved (jazz-noir -> Jazz/jazz-noir) keeps its rows, edits and all: a row whose
+    style no longer exists goes to the one style folder with the same name that holds its song."""
+    by_name = {}
+    for _, folder in folders:
+        by_name.setdefault(folder.name, []).append(folder)
+    current = {style_id(f) for _, f in folders}
+    moved = 0
+    for (cat, name), row in list(rows.items()):
+        if cat in current:
+            continue
+        homes = [f for f in by_name.get(cat.split("/")[-1], []) if (f / name).is_file()]
+        if len(homes) == 1:  # only when it is unambiguous
+            new = style_id(homes[0])
+            if (new, name) not in rows:
+                del rows[(cat, name)]
+                row["category"] = new
+                rows[(new, name)] = row
+                moved += 1
+    return moved
+
+
 def sync(prune=False):
     rows = load()
+    moved = follow_moves(rows, style_folders())
     added = 0
     present = set()
-    for folder in sorted(p for p in MUSIC.iterdir() if p.is_dir()):
+    for _, folder in style_folders():
+        cat = style_id(folder)
         for f in sorted(folder.iterdir()):
             if f.suffix.lower() not in AUDIO_EXT:
                 continue
-            key = (folder.name, f.name)
+            key = (cat, f.name)
             present.add(key)
             if key not in rows:
                 title, take = split_name(f.stem)
                 row = {k: "" for k in FIELDS}
-                row.update(STYLE_DEFAULTS.get(folder.name, {}))
-                row.update(category=folder.name, file=f.name, title=title, take=take)
+                row.update(STYLE_DEFAULTS.get(cat) or STYLE_DEFAULTS.get(folder.name, {}))
+                row.update(category=cat, file=f.name, title=title, take=take)
                 rows[key] = row
                 added += 1
     missing = [k for k in rows if k not in present]
@@ -99,7 +142,7 @@ def sync(prune=False):
         w.writeheader()
         for key in sorted(rows, key=lambda k: (k[0], rows[k]["title"].lower(), k[1])):
             w.writerow(rows[key])
-    print(f"{CSV_PATH.name}: {len(rows)} rows ({added} added{f', {len(missing)} removed' if prune else ''}).")
+    print(f"{CSV_PATH.name}: {len(rows)} rows ({added} added{f', {len(missing)} removed' if prune else ''}{f', {moved} followed a moved folder' if moved else ''}).")
     if not prune:
         for cat, name in missing:
             print(f"  no longer in music/: {cat}/{name} (run `python3 tracks.py --prune` to remove)")

@@ -124,7 +124,7 @@ STYLE_PICTURES = ("style.jpeg", "style.jpg", "style.png", "style.webp")
 
 
 def style_picture(folder):
-    """The picture that represents a style: music/<style>/style.jpeg (or .jpg/.png/.webp)."""
+    """The picture that represents a style: style.jpeg (or .jpg/.png/.webp) in its folder."""
     return next((folder / n for n in STYLE_PICTURES if (folder / n).is_file()), None)
 
 
@@ -132,7 +132,8 @@ def make_thumb(src):
     """A small copy of a style picture (made once, kept in cache/thumbs). Falls back to the
     original if the macOS image tool (sips) is not available."""
     st = src.stat()
-    out = THUMBS / f"{src.parent.name}-{int(st.st_mtime)}-{st.st_size}.jpg"
+    name = tracks.style_id(src.parent).replace("/", "__")  # 'Champagne_Ballroom__Easy_Foxtrot'
+    out = THUMBS / f"{name}-{int(st.st_mtime)}-{st.st_size}.jpg"
     if out.is_file():
         return out
     tmp = out.with_suffix(".tmp.jpg")
@@ -143,7 +144,7 @@ def make_thumb(src):
             capture_output=True, timeout=30, check=True,
         )
         tmp.replace(out)
-        for old in THUMBS.glob(f"{src.parent.name}-*.jpg"):  # drop thumbnails of earlier versions
+        for old in THUMBS.glob(f"{name}-*.jpg"):  # drop thumbnails of earlier versions
             if old != out:
                 old.unlink(missing_ok=True)
         return out
@@ -153,53 +154,70 @@ def make_thumb(src):
 
 
 def warm_thumbs():
-    """Make every style's thumbnail at startup, so the first screen never waits for one."""
-    if MUSIC.is_dir():
-        for folder in sorted(p for p in MUSIC.iterdir() if p.is_dir()):
-            pic = style_picture(folder)
-            if pic:
-                make_thumb(pic)
+    """Make every style's thumbnail at startup, so the first screen never waits for one, and
+    drop thumbnails of styles that no longer exist (e.g. after a folder moved)."""
+    keep = set()
+    for _, folder in tracks.style_folders():
+        pic = style_picture(folder)
+        if pic:
+            keep.add(make_thumb(pic))
+    if THUMBS.is_dir():
+        for old in THUMBS.glob("*.jpg"):
+            if old not in keep:
+                old.unlink(missing_ok=True)
+
+
+DEFAULT_COLLECTION = "Midnight Jazz Room"  # the label for styles that sit directly in music/
+MAIN_COLLECTION = os.environ.get("MAIN_COLLECTION", "Jazz")  # the collection offered first (if it has songs)
 
 
 def track_info(folder, f, details):
     """One song: title from tracks.csv, else embedded tag, else cleaned filename."""
+    sid = tracks.style_id(folder)
     name_title, take = tracks.split_name(f.stem)
-    row = details.get((folder.name, f.name), {})
+    row = details.get((sid, f.name), {})
     title = row.get("title") or (read_title(f) if f.suffix.lower() == ".mp3" else None) or name_title
     return {
         "title": title,
-        "group": f"{folder.name}/{title.lower()}",  # takes of one song share a group
+        "group": f"{sid}/{title.lower()}",  # takes of one song share a group
         "take": int(row.get("take") or take),
         "tempo": row.get("tempo", ""),
         "bpm": row.get("bpm", ""),
         "mood": row.get("mood", ""),
         "instruments": row.get("instruments", ""),
         "notes": row.get("notes", ""),
-        "url": f"/music/{folder.name}/{f.name}".replace(" ", "%20"),
-        "cover": f"/cover/{quote(folder.name)}/{quote(f.name)}" if f.suffix.lower() == ".mp3" and read_cover(f) else "",
+        "url": f"/music/{sid}/{f.name}".replace(" ", "%20"),
+        "cover": f"/cover/{quote(sid)}/{quote(f.name)}" if f.suffix.lower() == ".mp3" and read_cover(f) else "",
     }
 
 
+def pretty(name):
+    return name.replace("-", " ").replace("_", " ")
+
+
 def scan_library():
+    """Every style that has songs, each tagged with the collection it belongs to."""
     categories = []
     details = tracks.load()
-    if MUSIC.is_dir():
-        for folder in sorted(p for p in MUSIC.iterdir() if p.is_dir()):
-            tracks_ = [
-                track_info(folder, f, details)
-                for f in sorted(folder.iterdir())
-                if f.suffix.lower() in AUDIO_EXT
-            ]
-            if tracks_:
-                categories.append(
-                    {
-                        "id": folder.name,
-                        "label": folder.name.replace("-", " ").replace("_", " "),
-                        "thumb": f"/thumb/{quote(folder.name)}" if style_picture(folder) else "",
-                        "tracks": tracks_,
-                    }
-                )
+    for collection, folder in tracks.style_folders():
+        tracks_ = [track_info(folder, f, details) for f in sorted(folder.iterdir()) if f.suffix.lower() in AUDIO_EXT]
+        if tracks_:
+            sid = tracks.style_id(folder)
+            categories.append({
+                "id": sid,
+                "label": pretty(folder.name),
+                "collection": collection,
+                "thumb": f"/thumb/{quote(sid)}" if style_picture(folder) else "",
+                "tracks": tracks_,
+            })
     return categories
+
+
+def collections_of(categories):
+    """The collections that have songs: the main one (MAIN_COLLECTION) first, then the rest A to Z."""
+    names = sorted({c["collection"] for c in categories})
+    names.sort(key=lambda n: (n != MAIN_COLLECTION, n != "", n))
+    return [{"id": n, "label": pretty(n) if n else DEFAULT_COLLECTION} for n in names]
 
 
 def scan_images():
@@ -240,7 +258,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = unquote(urlparse(self.path).path)
         if path == "/api/library":
-            return self.send_json({"categories": scan_library()})
+            categories = scan_library()
+            return self.send_json({"categories": categories, "collections": collections_of(categories)})
         if path == "/api/voices":
             try:
                 return self.send_json({"voices": list(tts.voices())})
@@ -254,7 +273,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.serve_events()
         if path.startswith("/thumb/"):
             folder = safe_join(MUSIC, path[len("/thumb/"):])
-            pic = folder and folder.parent == MUSIC and folder.is_dir() and style_picture(folder)
+            ok = folder and folder.is_dir() and 1 <= len(folder.relative_to(MUSIC).parts) <= 2
+            pic = ok and style_picture(folder)
             if not pic:
                 return self.send_json({"error": "not found"}, 404)
             return self.serve_file(make_thumb(pic))
@@ -399,7 +419,9 @@ class QuietServer(ThreadingHTTPServer):
 def label_clips():
     """Work out what any unlabelled saved clips say, so they can stand in later (quietly, in the background)."""
     try:
-        fallback.reindex(scan_library())
+        categories = scan_library()
+        fallback.relabel_moved(categories)  # a style folder that moved keeps its clips' labels
+        fallback.reindex(categories)
     except Exception as e:  # voices not configured yet, etc.: not worth stopping for
         print(f"[announcer] could not label saved clips: {e}", file=sys.stderr, flush=True)
 

@@ -13,9 +13,23 @@ python3 server.py
 
 ## Add songs
 
-Each folder in `music/` is a style the app will offer. Folder name = what you say
-(`music/bossa-nova/` → "bossa nova"). Drop `.mp3`, `.m4a` or `.wav` files in; the
-filename becomes the song title. Add or rename folders any time and reload.
+Songs live in **collections** of **styles**: `music/<Collection>/<style>/`.
+
+```
+music/Jazz/jazz-noir/Some Song.mp3
+music/Jazz/jazz-noir/style.jpeg      <- the picture on that style's button
+music/Jazz/jazz-noir/style.txt       <- the prompt you used, if you like to keep it
+music/Champagne_Ballroom/Easy_Foxtrot/...
+```
+
+- The style folder name is what you can say ("jazz noir"); underscores and hyphens become spaces.
+  A style appears once it has at least one `.mp3`, `.m4a` or `.wav`; the filename becomes the song title.
+- With two or more collections that have songs, the settings gear shows a **Collection** choice and the
+  style buttons switch to that collection's styles. `Jazz` is offered first; change it with
+  `MAIN_COLLECTION=Name python3 server.py`.
+- A style folder placed directly in `music/` (no collection) also works.
+- After adding or moving songs, run `python3 tracks.py` (it adds rows for new songs, and rows follow a style
+  folder that moved, edits intact) and restart the server. Saved announcer clips follow a moved folder on their own.
 
 ## Announcer voices
 
@@ -43,7 +57,7 @@ The player is full-screen artwork with the controls out of the way. Move the mou
 key, or use the phone remote and the controls and caption appear for a few seconds.
 
 - **Station pictures:** put 1920x1080 JPG/PNG/WebP files in `images/` (any style) or in
-  `images/<style>/` (only while that style plays). They rotate every 25 seconds, and the
+  `images/<style>/` (only while that style plays; use the style's folder name, e.g. `images/jazz-noir/`). They rotate every 25 seconds, and the
   caption moves to the calmest corner of each picture. Reload the page after adding some.
 - **Album covers:** each Mureka MP3 already contains its own cover. The current song's cover
   shows beside the caption. For the first few seconds of each song it fills the screen over

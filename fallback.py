@@ -43,12 +43,13 @@ def candidates(categories):
                 yield t.format(label=c["label"]), {"kind": kind, "category": c["id"]}
         for t in announcer.GENERIC[kind]:
             yield t, {"kind": kind, "generic": True}
-    ids = [c["id"] for c in categories]
-    for current in ids + [None]:
-        others = [c["label"] for c in categories if c["id"] != current]
-        for picks in itertools.permutations(others, min(3, len(others))):
-            for t in announcer.ASK:
-                yield t.format(options=announcer._join(list(picks))), {"kind": "ask"}
+    for coll in sorted({c.get("collection", "") for c in categories}):  # the question lists one collection's styles
+        pool = [c for c in categories if c.get("collection", "") == coll]
+        for current in [c["id"] for c in pool] + [None]:
+            others = [c["label"] for c in pool if c["id"] != current]
+            for picks in itertools.permutations(others, min(3, len(others))):
+                for t in announcer.ASK:
+                    yield t.format(options=announcer._join(list(picks))), {"kind": "ask"}
     for c in categories:
         titles = sorted({t["title"] for t in c["tracks"]})
         for track in c["tracks"]:
@@ -96,6 +97,42 @@ def reindex(categories):
         index.update(found)
         tts.save_index(index)
     return len(found)
+
+
+def relabel_moved(categories):
+    """Saved clips are labelled with a style id and song addresses. If a style folder has moved
+    (jazz-noir -> Jazz/jazz-noir) the labels follow it, so stand-ins keep matching. Returns how many changed."""
+    current = {c["id"] for c in categories}
+    by_name = {}
+    for c in categories:
+        by_name.setdefault(c["id"].split("/")[-1], []).append(c["id"])
+
+    def new_id(old_id):
+        if old_id in current:
+            return old_id
+        homes = by_name.get(old_id.split("/")[-1], [])
+        return homes[0] if len(homes) == 1 else old_id  # only when it is unambiguous
+
+    def fix_url(url):
+        head, sep, rest = url.partition("/music/")
+        style, slash, name = rest.rpartition("/")
+        return f"{head}/music/{new_id(style)}/{name}" if sep and slash else url
+
+    changed = 0
+    with tts._index_lock:
+        index = tts.load_index()
+        for entry in index.values():
+            before = (entry.get("category"), tuple(entry.get("urls") or []), entry.get("url"))
+            if entry.get("category"):
+                entry["category"] = new_id(entry["category"])
+            if entry.get("urls"):
+                entry["urls"] = [fix_url(u) for u in entry["urls"]]
+            if entry.get("url"):
+                entry["url"] = fix_url(entry["url"])
+            changed += before != (entry.get("category"), tuple(entry.get("urls") or []), entry.get("url"))
+        if changed:
+            tts.save_index(index)
+    return changed
 
 
 def pick(kind, body, voice, categories):
@@ -149,7 +186,8 @@ if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     try:
         if cmd == "reindex":
-            print(f"labelled {reindex(server.scan_library())} clip(s)")
+            cats = server.scan_library()
+            print(f"labelled {reindex(cats)} clip(s); {relabel_moved(cats)} label(s) followed a moved folder")
             status()
         elif cmd == "prepare":
             print(f"voiced {prepare()} backup line(s) (lines already saved cost nothing)")

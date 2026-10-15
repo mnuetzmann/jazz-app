@@ -30,7 +30,7 @@ const stage = (() => {
   // What to show behind the music, best first: pictures for this style, your general
   // pictures, then this style's own covers (blurred, so a small cover never looks coarse).
   function pool() {
-    const own = library.byStyle[category];
+    const own = library.byStyle[category] || library.byStyle[String(category).split('/').pop()]; // images/<style>/ matches by the style's folder name
     if (own && own.length) return plain(own);
     if (library.all.length) return plain(library.all);
     if (covers.length) return covers.map((url) => ({ url, soft: true }));

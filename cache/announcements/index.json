@@ -40,91 +40,91 @@
 "model": "eleven_v4",
 "text": "Ah, bebop swing. Good choice. Here we go.",
 "kind": "chosen",
-"category": "bebop-swing"
+"category": "Jazz/bebop-swing"
 },
 "34c451827b4c551372d9a8b7": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "You've got it. Some bebop swing, and not a moment too soon.",
 "kind": "chosen",
-"category": "bebop-swing"
+"category": "Jazz/bebop-swing"
 },
 "16266859cea01359724178e6": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "Now that sounds like a fine idea. classic swing, coming your way.",
 "kind": "chosen",
-"category": "classic-swing"
+"category": "Jazz/classic-swing"
 },
 "2125627e36d2c07a23fa5fdf": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "You've got it. Some cool jazz, and not a moment too soon.",
 "kind": "chosen",
-"category": "cool-jazz"
+"category": "Jazz/cool-jazz"
 },
 "3684ffeb1b4fd9da7f5ce188": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "You've got it. Some jazz waltz, and not a moment too soon.",
 "kind": "chosen",
-"category": "jazz-waltz"
+"category": "Jazz/jazz-waltz"
 },
 "ba67cc313ac7b4496a5eaec8": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "romantic ballads. Coming right up.",
 "kind": "chosen",
-"category": "romantic-ballads"
+"category": "Jazz/romantic-ballads"
 },
 "d8da660b0d38b906ac5415e9": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "sax ballads. Coming right up.",
 "kind": "chosen",
-"category": "sax-ballads"
+"category": "Jazz/sax-ballads"
 },
 "6849479ef4e12e5b7fb743ab": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "Well, I'll choose for us. Here's some bebop swing.",
 "kind": "auto",
-"category": "bebop-swing"
+"category": "Jazz/bebop-swing"
 },
 "12d1a29c24fe5ff26a5a294a": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "I'll surprise you with a little classic swing. I think it suits the hour.",
 "kind": "auto",
-"category": "classic-swing"
+"category": "Jazz/classic-swing"
 },
 "300f16ca56e7c4c349c2f288": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "I'll surprise you with a little jazz blues. I think it suits the hour.",
 "kind": "auto",
-"category": "jazz-blues"
+"category": "Jazz/jazz-blues"
 },
 "c89d60671ff9b0b9817c9c9e": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "Quiet night? Then let me take the wheel. Some muted trumpet, coming up.",
 "kind": "auto",
-"category": "muted-trumpet"
+"category": "Jazz/muted-trumpet"
 },
 "31e61a06ea9817087732c752": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "Quiet night? Then let me take the wheel. Some piano trio, coming up.",
 "kind": "auto",
-"category": "piano-trio"
+"category": "Jazz/piano-trio"
 },
 "c4966ce7431902968712bf3d": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "Well, I'll choose for us. Here's some romantic ballads.",
 "kind": "auto",
-"category": "romantic-ballads"
+"category": "Jazz/romantic-ballads"
 },
 "9751d09af398aec3fa7c0767": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
@@ -203,10 +203,10 @@
 "model": "eleven_v4",
 "text": "Let's keep the evening going with A Fast Walk to Harlem. Up-tempo bebop swing, featuring tenor saxophone and trumpet. Let the day slip away.",
 "kind": "intro",
-"category": "bebop-swing",
+"category": "Jazz/bebop-swing",
 "urls": [
-"/music/bebop-swing/A%20Fast%20Walk%20to%20Harlem%20(1).mp3",
-"/music/bebop-swing/A%20Fast%20Walk%20to%20Harlem.mp3"
+"/music/Jazz/bebop-swing/A%20Fast%20Walk%20to%20Harlem%20(1).mp3",
+"/music/Jazz/bebop-swing/A%20Fast%20Walk%20to%20Harlem.mp3"
 ]
 },
 "6f13d335bc77988fcf971078": {
@@ -214,10 +214,10 @@
 "model": "eleven_v4",
 "text": "A Fast Walk to Harlem, coming your way. Up-tempo bebop swing, with tenor saxophone and trumpet. Take your time. The night is ours.",
 "kind": "intro",
-"category": "bebop-swing",
+"category": "Jazz/bebop-swing",
 "urls": [
-"/music/bebop-swing/A%20Fast%20Walk%20to%20Harlem%20(1).mp3",
-"/music/bebop-swing/A%20Fast%20Walk%20to%20Harlem.mp3"
+"/music/Jazz/bebop-swing/A%20Fast%20Walk%20to%20Harlem%20(1).mp3",
+"/music/Jazz/bebop-swing/A%20Fast%20Walk%20to%20Harlem.mp3"
 ]
 },
 "85b6491150ca214af05805e7": {
@@ -225,10 +225,10 @@
 "model": "eleven_v4",
 "text": "Here's one called Jumping at the Bluebird. Tenor saxophone and trumpet out front, with an energetic feel.",
 "kind": "intro",
-"category": "bebop-swing",
+"category": "Jazz/bebop-swing",
 "urls": [
-"/music/bebop-swing/Jumping%20at%20the%20Bluebird%20(1).mp3",
-"/music/bebop-swing/Jumping%20at%20the%20Bluebird.mp3"
+"/music/Jazz/bebop-swing/Jumping%20at%20the%20Bluebird%20(1).mp3",
+"/music/Jazz/bebop-swing/Jumping%20at%20the%20Bluebird.mp3"
 ]
 },
 "691e4bf550de8065f8d8e830": {
@@ -236,10 +236,10 @@
 "model": "eleven_v4",
 "text": "Now, Six Blocks to Sunrise. Tenor saxophone and trumpet, and an energetic feel to carry us along. Let the day slip away.",
 "kind": "intro",
-"category": "bebop-swing",
+"category": "Jazz/bebop-swing",
 "urls": [
-"/music/bebop-swing/Six%20Blocks%20to%20Sunrise%20(1).mp3",
-"/music/bebop-swing/Six%20Blocks%20to%20Sunrise.mp3"
+"/music/Jazz/bebop-swing/Six%20Blocks%20to%20Sunrise%20(1).mp3",
+"/music/Jazz/bebop-swing/Six%20Blocks%20to%20Sunrise.mp3"
 ]
 },
 "e511a8a765a18f484e89fd98": {
@@ -247,10 +247,10 @@
 "model": "eleven_v4",
 "text": "That was Six Blocks to Sunrise. Here's The Midnight Platform, with tenor saxophone and trumpet taking the lead.",
 "kind": "intro",
-"category": "bebop-swing",
+"category": "Jazz/bebop-swing",
 "urls": [
-"/music/bebop-swing/The%20Midnight%20Platform%20(1).mp3",
-"/music/bebop-swing/The%20Midnight%20Platform.mp3"
+"/music/Jazz/bebop-swing/The%20Midnight%20Platform%20(1).mp3",
+"/music/Jazz/bebop-swing/The%20Midnight%20Platform.mp3"
 ]
 },
 "f40901d8d7f536dbbcb783c0": {
@@ -258,10 +258,10 @@
 "model": "eleven_v4",
 "text": "Now, A Little Trouble in Paradise. Trombone and tenor saxophone, and a lively feel to carry us along.",
 "kind": "intro",
-"category": "classic-swing",
+"category": "Jazz/classic-swing",
 "urls": [
-"/music/classic-swing/A%20Little%20Trouble%20in%20Paradise%20(1).mp3",
-"/music/classic-swing/A%20Little%20Trouble%20in%20Paradise.mp3"
+"/music/Jazz/classic-swing/A%20Little%20Trouble%20in%20Paradise%20(1).mp3",
+"/music/Jazz/classic-swing/A%20Little%20Trouble%20in%20Paradise.mp3"
 ]
 },
 "efbe534446310d5c04f1c8a0": {
@@ -269,10 +269,10 @@
 "model": "eleven_v4",
 "text": "Here comes Saturday Night on Seventh, a lively piece featuring trombone and tenor saxophone. Nothing but easy listening from here.",
 "kind": "intro",
-"category": "classic-swing",
+"category": "Jazz/classic-swing",
 "urls": [
-"/music/classic-swing/Saturday%20Night%20on%20Seventh%20(1).mp3",
-"/music/classic-swing/Saturday%20Night%20on%20Seventh.mp3"
+"/music/Jazz/classic-swing/Saturday%20Night%20on%20Seventh%20(1).mp3",
+"/music/Jazz/classic-swing/Saturday%20Night%20on%20Seventh.mp3"
 ]
 },
 "d899f332abea2d8591d106cd": {
@@ -280,10 +280,10 @@
 "model": "eleven_v4",
 "text": "Swinging Down Lexington, coming your way. Medium-tempo classic swing, with trombone and tenor saxophone.",
 "kind": "intro",
-"category": "classic-swing",
+"category": "Jazz/classic-swing",
 "urls": [
-"/music/classic-swing/Swinging%20Down%20Lexington%20(1).mp3",
-"/music/classic-swing/Swinging%20Down%20Lexington.mp3"
+"/music/Jazz/classic-swing/Swinging%20Down%20Lexington%20(1).mp3",
+"/music/Jazz/classic-swing/Swinging%20Down%20Lexington.mp3"
 ]
 },
 "37d461b43e35874002641212": {
@@ -291,10 +291,10 @@
 "model": "eleven_v4",
 "text": "Up next, The Blue Hour Shuffle. Medium-tempo classic swing, with trombone and tenor saxophone in the spotlight.",
 "kind": "intro",
-"category": "classic-swing",
+"category": "Jazz/classic-swing",
 "urls": [
-"/music/classic-swing/The%20Blue%20Hour%20Shuffle%20(1).mp3",
-"/music/classic-swing/The%20Blue%20Hour%20Shuffle.mp3"
+"/music/Jazz/classic-swing/The%20Blue%20Hour%20Shuffle%20(1).mp3",
+"/music/Jazz/classic-swing/The%20Blue%20Hour%20Shuffle.mp3"
 ]
 },
 "e4a1c6514ba489fb6572e99b": {
@@ -302,10 +302,10 @@
 "model": "eleven_v4",
 "text": "Let's slip into The Blue Hour Shuffle, a lively one for the late hours, featuring trombone and tenor saxophone.",
 "kind": "intro",
-"category": "classic-swing",
+"category": "Jazz/classic-swing",
 "urls": [
-"/music/classic-swing/The%20Blue%20Hour%20Shuffle%20(1).mp3",
-"/music/classic-swing/The%20Blue%20Hour%20Shuffle.mp3"
+"/music/Jazz/classic-swing/The%20Blue%20Hour%20Shuffle%20(1).mp3",
+"/music/Jazz/classic-swing/The%20Blue%20Hour%20Shuffle.mp3"
 ]
 },
 "51f6494b2c8c010a28aa04b7": {
@@ -313,10 +313,10 @@
 "model": "eleven_v4",
 "text": "Let's keep the evening going with Two Horns After Midnight. Medium-tempo classic swing, featuring trombone and tenor saxophone.",
 "kind": "intro",
-"category": "classic-swing",
+"category": "Jazz/classic-swing",
 "urls": [
-"/music/classic-swing/Two%20Horns%20After%20Midnight%20(1).mp3",
-"/music/classic-swing/Two%20Horns%20After%20Midnight.mp3"
+"/music/Jazz/classic-swing/Two%20Horns%20After%20Midnight%20(1).mp3",
+"/music/Jazz/classic-swing/Two%20Horns%20After%20Midnight.mp3"
 ]
 },
 "103e92b067941f3dd033c853": {
@@ -324,10 +324,10 @@
 "model": "eleven_v4",
 "text": "Next on the program, Silver Notes in September. Jazz guitar and vibraphone at the front of the band.",
 "kind": "intro",
-"category": "cool-jazz",
+"category": "Jazz/cool-jazz",
 "urls": [
-"/music/cool-jazz/Silver%20Notes%20in%20September%20(1).mp3",
-"/music/cool-jazz/Silver%20Notes%20in%20September.mp3"
+"/music/Jazz/cool-jazz/Silver%20Notes%20in%20September%20(1).mp3",
+"/music/Jazz/cool-jazz/Silver%20Notes%20in%20September.mp3"
 ]
 },
 "eb851acbd978f77f54c5c851": {
@@ -335,10 +335,10 @@
 "model": "eleven_v4",
 "text": "Next on the program, The Guitarist s Secret. Jazz guitar and vibraphone at the front of the band.",
 "kind": "intro",
-"category": "cool-jazz",
+"category": "Jazz/cool-jazz",
 "urls": [
-"/music/cool-jazz/The%20Guitarist_s%20Secret%20(1).mp3",
-"/music/cool-jazz/The%20Guitarist_s%20Secret.mp3"
+"/music/Jazz/cool-jazz/The%20Guitarist_s%20Secret%20(1).mp3",
+"/music/Jazz/cool-jazz/The%20Guitarist_s%20Secret.mp3"
 ]
 },
 "46599fb7490695cd452868b1": {
@@ -346,10 +346,10 @@
 "model": "eleven_v4",
 "text": "Here's A Trumpet for Yesterday, with trombone and piano taking the lead.",
 "kind": "intro",
-"category": "jazz-blues",
+"category": "Jazz/jazz-blues",
 "urls": [
-"/music/jazz-blues/A%20Trumpet%20for%20Yesterday%20(1).mp3",
-"/music/jazz-blues/A%20Trumpet%20for%20Yesterday.mp3"
+"/music/Jazz/jazz-blues/A%20Trumpet%20for%20Yesterday%20(1).mp3",
+"/music/Jazz/jazz-blues/A%20Trumpet%20for%20Yesterday.mp3"
 ]
 },
 "59ec77d0009541996a6fd62c": {
@@ -357,10 +357,10 @@
 "model": "eleven_v4",
 "text": "Up next, Brass Beneath the Moon. Medium-tempo jazz blues, with trombone and piano in the spotlight.",
 "kind": "intro",
-"category": "jazz-blues",
+"category": "Jazz/jazz-blues",
 "urls": [
-"/music/jazz-blues/Brass%20Beneath%20the%20Moon%20(1).mp3",
-"/music/jazz-blues/Brass%20Beneath%20the%20Moon.mp3"
+"/music/Jazz/jazz-blues/Brass%20Beneath%20the%20Moon%20(1).mp3",
+"/music/Jazz/jazz-blues/Brass%20Beneath%20the%20Moon.mp3"
 ]
 },
 "6cee2da24bc76ecc792e472d": {
@@ -368,10 +368,10 @@
 "model": "eleven_v4",
 "text": "Brass Beneath the Moon. Settle back for some jazz blues, with trombone and piano.",
 "kind": "intro",
-"category": "jazz-blues",
+"category": "Jazz/jazz-blues",
 "urls": [
-"/music/jazz-blues/Brass%20Beneath%20the%20Moon%20(1).mp3",
-"/music/jazz-blues/Brass%20Beneath%20the%20Moon.mp3"
+"/music/Jazz/jazz-blues/Brass%20Beneath%20the%20Moon%20(1).mp3",
+"/music/Jazz/jazz-blues/Brass%20Beneath%20the%20Moon.mp3"
 ]
 },
 "9bac6c911d866dd5e103de46": {
@@ -379,10 +379,10 @@
 "model": "eleven_v4",
 "text": "Coming up, The Night Wore Blue. Some medium-tempo jazz blues, with trombone and piano to carry us along. Pour yourself something nice.",
 "kind": "intro",
-"category": "jazz-blues",
+"category": "Jazz/jazz-blues",
 "urls": [
-"/music/jazz-blues/The%20Night%20Wore%20Blue%20(1).mp3",
-"/music/jazz-blues/The%20Night%20Wore%20Blue.mp3"
+"/music/Jazz/jazz-blues/The%20Night%20Wore%20Blue%20(1).mp3",
+"/music/Jazz/jazz-blues/The%20Night%20Wore%20Blue.mp3"
 ]
 },
 "89f3da986b7dcf330721020a": {
@@ -390,10 +390,10 @@
 "model": "eleven_v4",
 "text": "I think you'll enjoy this next one. It's called The Velvet Hour, with trombone and piano and a bluesy feel.",
 "kind": "intro",
-"category": "jazz-blues",
+"category": "Jazz/jazz-blues",
 "urls": [
-"/music/jazz-blues/The%20Velvet%20Hour%20(1).mp3",
-"/music/jazz-blues/The%20Velvet%20Hour.mp3"
+"/music/Jazz/jazz-blues/The%20Velvet%20Hour%20(1).mp3",
+"/music/Jazz/jazz-blues/The%20Velvet%20Hour.mp3"
 ]
 },
 "3624b988b54524359dda7313": {
@@ -401,10 +401,10 @@
 "model": "eleven_v4",
 "text": "This is Whispers on Fifty Second Street, a bluesy number with trombone and piano leading the way.",
 "kind": "intro",
-"category": "jazz-blues",
+"category": "Jazz/jazz-blues",
 "urls": [
-"/music/jazz-blues/Whispers%20on%20Fifty_Second%20Street%20(1).mp3",
-"/music/jazz-blues/Whispers%20on%20Fifty_Second%20Street.mp3"
+"/music/Jazz/jazz-blues/Whispers%20on%20Fifty_Second%20Street%20(1).mp3",
+"/music/Jazz/jazz-blues/Whispers%20on%20Fifty_Second%20Street.mp3"
 ]
 },
 "afec7325fa2bfcf766084d42": {
@@ -412,10 +412,10 @@
 "model": "eleven_v4",
 "text": "Let's keep the evening going with Smoke Rings at Two. Slow and easy jazz noir, featuring muted trumpet and piano.",
 "kind": "intro",
-"category": "jazz-noir",
+"category": "Jazz/jazz-noir",
 "urls": [
-"/music/jazz-noir/Smoke%20Rings%20at%20Two%20(1).mp3",
-"/music/jazz-noir/Smoke%20Rings%20at%20Two.mp3"
+"/music/Jazz/jazz-noir/Smoke%20Rings%20at%20Two%20(1).mp3",
+"/music/Jazz/jazz-noir/Smoke%20Rings%20at%20Two.mp3"
 ]
 },
 "61cedafe3ec1b2cb8d7c6847": {
@@ -423,10 +423,10 @@
 "model": "eleven_v4",
 "text": "This is The Last Match Burns Out, a moody number with muted trumpet and piano leading the way.",
 "kind": "intro",
-"category": "jazz-noir",
+"category": "Jazz/jazz-noir",
 "urls": [
-"/music/jazz-noir/The%20Last%20Match%20Burns%20Out%20(1).mp3",
-"/music/jazz-noir/The%20Last%20Match%20Burns%20Out.mp3"
+"/music/Jazz/jazz-noir/The%20Last%20Match%20Burns%20Out%20(1).mp3",
+"/music/Jazz/jazz-noir/The%20Last%20Match%20Burns%20Out.mp3"
 ]
 },
 "6a6925f8d71d61d5564c7b64": {
@@ -434,10 +434,10 @@
 "model": "eleven_v4",
 "text": "This one's called The Man in the Corner Booth. Some jazz noir for you, with muted trumpet and piano up front.",
 "kind": "intro",
-"category": "jazz-noir",
+"category": "Jazz/jazz-noir",
 "urls": [
-"/music/jazz-noir/The%20Man%20in%20the%20Corner%20Booth%20(1).mp3",
-"/music/jazz-noir/The%20Man%20in%20the%20Corner%20Booth.mp3"
+"/music/Jazz/jazz-noir/The%20Man%20in%20the%20Corner%20Booth%20(1).mp3",
+"/music/Jazz/jazz-noir/The%20Man%20in%20the%20Corner%20Booth.mp3"
 ]
 },
 "814d3ddcbfebe650e120daeb": {
@@ -445,10 +445,10 @@
 "model": "eleven_v4",
 "text": "Here's one called A Thousand Little Tomorrows. Piano and clarinet out front, with a gentle feel.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/A%20Thousand%20Little%20Tomorrows%20(1).mp3",
-"/music/jazz-waltz/A%20Thousand%20Little%20Tomorrows.mp3"
+"/music/Jazz/jazz-waltz/A%20Thousand%20Little%20Tomorrows%20(1).mp3",
+"/music/Jazz/jazz-waltz/A%20Thousand%20Little%20Tomorrows.mp3"
 ]
 },
 "5ee8a9ce54bdbadcffe43133": {
@@ -456,10 +456,10 @@
 "model": "eleven_v4",
 "text": "Here's one called A Waltz for Eleanor. Piano and clarinet out front, with a gentle feel. Nothing but easy listening from here.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/A%20Waltz%20for%20Eleanor%20(1).mp3",
-"/music/jazz-waltz/A%20Waltz%20for%20Eleanor.mp3"
+"/music/Jazz/jazz-waltz/A%20Waltz%20for%20Eleanor%20(1).mp3",
+"/music/Jazz/jazz-waltz/A%20Waltz%20for%20Eleanor.mp3"
 ]
 },
 "aa26d958631c6ad0dfe6c577": {
@@ -467,10 +467,10 @@
 "model": "eleven_v4",
 "text": "Let's slip into A Waltz for Eleanor, a gentle one for the late hours, featuring piano and clarinet. Let the day slip away.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/A%20Waltz%20for%20Eleanor%20(1).mp3",
-"/music/jazz-waltz/A%20Waltz%20for%20Eleanor.mp3"
+"/music/Jazz/jazz-waltz/A%20Waltz%20for%20Eleanor%20(1).mp3",
+"/music/Jazz/jazz-waltz/A%20Waltz%20for%20Eleanor.mp3"
 ]
 },
 "1aa2cdf9c80b3ed12fba5966": {
@@ -478,10 +478,10 @@
 "model": "eleven_v4",
 "text": "I think you'll enjoy this next one. It's called A Waltz for Eleanor, with piano and clarinet and a gentle feel.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/A%20Waltz%20for%20Eleanor%20(1).mp3",
-"/music/jazz-waltz/A%20Waltz%20for%20Eleanor.mp3"
+"/music/Jazz/jazz-waltz/A%20Waltz%20for%20Eleanor%20(1).mp3",
+"/music/Jazz/jazz-waltz/A%20Waltz%20for%20Eleanor.mp3"
 ]
 },
 "4f0c3d4310d3741720316bea": {
@@ -489,10 +489,10 @@
 "model": "eleven_v4",
 "text": "That was One Last Turn Around the Room. Here's one called Dancing Beneath the Chandeliers. Piano and clarinet out front, with a gentle feel.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers%20(1).mp3",
-"/music/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers.mp3"
+"/music/Jazz/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers%20(1).mp3",
+"/music/Jazz/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers.mp3"
 ]
 },
 "57c55b7ffe0e0eb4b0b0a430": {
@@ -500,10 +500,10 @@
 "model": "eleven_v4",
 "text": "Let's slip into Dancing Beneath the Chandeliers, a gentle one for the late hours, featuring piano and clarinet.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers%20(1).mp3",
-"/music/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers.mp3"
+"/music/Jazz/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers%20(1).mp3",
+"/music/Jazz/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers.mp3"
 ]
 },
 "d7c5c895e4372af92c0e81b2": {
@@ -511,10 +511,10 @@
 "model": "eleven_v4",
 "text": "Next on the program, Dancing Beneath the Chandeliers. Piano and clarinet at the front of the band.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers%20(1).mp3",
-"/music/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers.mp3"
+"/music/Jazz/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers%20(1).mp3",
+"/music/Jazz/jazz-waltz/Dancing%20Beneath%20the%20Chandeliers.mp3"
 ]
 },
 "db0c680647c0e1ba395c80d0": {
@@ -522,10 +522,10 @@
 "model": "eleven_v4",
 "text": "Now, The Evening We Almost Met. Piano and clarinet, and a gentle feel to carry us along.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/The%20Evening%20We%20Almost%20Met%20(1).mp3",
-"/music/jazz-waltz/The%20Evening%20We%20Almost%20Met.mp3"
+"/music/Jazz/jazz-waltz/The%20Evening%20We%20Almost%20Met%20(1).mp3",
+"/music/Jazz/jazz-waltz/The%20Evening%20We%20Almost%20Met.mp3"
 ]
 },
 "9a108fec4509700578094296": {
@@ -533,10 +533,10 @@
 "model": "eleven_v4",
 "text": "This is Three Steps to Yesterday, a gentle number with piano and clarinet leading the way.",
 "kind": "intro",
-"category": "jazz-waltz",
+"category": "Jazz/jazz-waltz",
 "urls": [
-"/music/jazz-waltz/Three%20Steps%20to%20Yesterday%20(1).mp3",
-"/music/jazz-waltz/Three%20Steps%20to%20Yesterday.mp3"
+"/music/Jazz/jazz-waltz/Three%20Steps%20to%20Yesterday%20(1).mp3",
+"/music/Jazz/jazz-waltz/Three%20Steps%20to%20Yesterday.mp3"
 ]
 },
 "27f7fa5427ddb72cfb53b8eb": {
@@ -544,10 +544,10 @@
 "model": "eleven_v4",
 "text": "Here's The Velvet Hour, with muted trumpet and piano taking the lead.",
 "kind": "intro",
-"category": "muted-trumpet",
+"category": "Jazz/muted-trumpet",
 "urls": [
-"/music/muted-trumpet/The%20Velvet%20Hour%20(1).mp3",
-"/music/muted-trumpet/The%20Velvet%20Hour.mp3"
+"/music/Jazz/muted-trumpet/The%20Velvet%20Hour%20(1).mp3",
+"/music/Jazz/muted-trumpet/The%20Velvet%20Hour.mp3"
 ]
 },
 "a6d2702072e22340afea5c5c": {
@@ -555,10 +555,10 @@
 "model": "eleven_v4",
 "text": "This is A Table by the Window, a laid-back number with piano and upright bass leading the way.",
 "kind": "intro",
-"category": "piano-trio",
+"category": "Jazz/piano-trio",
 "urls": [
-"/music/piano-trio/A%20Table%20by%20the%20Window%20(1).mp3",
-"/music/piano-trio/A%20Table%20by%20the%20Window.mp3"
+"/music/Jazz/piano-trio/A%20Table%20by%20the%20Window%20(1).mp3",
+"/music/Jazz/piano-trio/A%20Table%20by%20the%20Window.mp3"
 ]
 },
 "5b4b0983f30467bebda85d88": {
@@ -566,10 +566,10 @@
 "model": "eleven_v4",
 "text": "Next on the program, A Rose in the Ashtray. Tenor saxophone and piano at the front of the band.",
 "kind": "intro",
-"category": "romantic-ballads",
+"category": "Jazz/romantic-ballads",
 "urls": [
-"/music/romantic-ballads/A%20Rose%20in%20the%20Ashtray%20(1).mp3",
-"/music/romantic-ballads/A%20Rose%20in%20the%20Ashtray.mp3"
+"/music/Jazz/romantic-ballads/A%20Rose%20in%20the%20Ashtray%20(1).mp3",
+"/music/Jazz/romantic-ballads/A%20Rose%20in%20the%20Ashtray.mp3"
 ]
 },
 "2d22d017b8a558b4c4cd0e70": {
@@ -577,10 +577,10 @@
 "model": "eleven_v4",
 "text": "Here comes A Rose in the Ashtray, a romantic piece featuring tenor saxophone and piano.",
 "kind": "intro",
-"category": "romantic-ballads",
+"category": "Jazz/romantic-ballads",
 "urls": [
-"/music/romantic-ballads/A%20Rose%20in%20the%20Ashtray%20(1).mp3",
-"/music/romantic-ballads/A%20Rose%20in%20the%20Ashtray.mp3"
+"/music/Jazz/romantic-ballads/A%20Rose%20in%20the%20Ashtray%20(1).mp3",
+"/music/Jazz/romantic-ballads/A%20Rose%20in%20the%20Ashtray.mp3"
 ]
 },
 "e0bb77477d78b3a6d896c571": {
@@ -588,10 +588,10 @@
 "model": "eleven_v4",
 "text": "Here comes The Last Light in Your Window, a mellow piece featuring tenor saxophone and piano.",
 "kind": "intro",
-"category": "sax-ballads",
+"category": "Jazz/sax-ballads",
 "urls": [
-"/music/sax-ballads/The%20Last%20Light%20in%20Your%20Window%20(1).mp3",
-"/music/sax-ballads/The%20Last%20Light%20in%20Your%20Window.mp3"
+"/music/Jazz/sax-ballads/The%20Last%20Light%20in%20Your%20Window%20(1).mp3",
+"/music/Jazz/sax-ballads/The%20Last%20Light%20in%20Your%20Window.mp3"
 ]
 },
 "3617428085212249b87a28d3": {
@@ -683,10 +683,10 @@
 "model": "eleven_v4",
 "text": "A Lonely Light on Canal Street, coming your way. Slow and easy jazz noir, with muted trumpet and piano.",
 "kind": "intro",
-"category": "jazz-noir",
+"category": "Jazz/jazz-noir",
 "urls": [
-"/music/jazz-noir/A%20Lonely%20Light%20on%20Canal%20Street%20(1).mp3",
-"/music/jazz-noir/A%20Lonely%20Light%20on%20Canal%20Street.mp3"
+"/music/Jazz/jazz-noir/A%20Lonely%20Light%20on%20Canal%20Street%20(1).mp3",
+"/music/Jazz/jazz-noir/A%20Lonely%20Light%20on%20Canal%20Street.mp3"
 ]
 },
 "dd18f5b276b5359ad6ea0d58": {
@@ -694,8 +694,8 @@
 "model": "eleven_v4",
 "text": "Here comes One More Night in Manhattan, a mellow piece featuring tenor saxophone and piano.",
 "kind": "intro",
-"category": "sax-ballads",
-"url": "/music/sax-ballads/One%20More%20Night%20in%20Manhattan.mp3"
+"category": "Jazz/sax-ballads",
+"url": "/music/Jazz/sax-ballads/One%20More%20Night%20in%20Manhattan.mp3"
 },
 "46a805c597aff528012c92fc": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -708,8 +708,8 @@
 "model": "eleven_v4",
 "text": "Here's When the City Falls Asleep, with tenor saxophone and piano taking the lead.",
 "kind": "intro",
-"category": "sax-ballads",
-"url": "/music/sax-ballads/When%20the%20City%20Falls%20Asleep.mp3"
+"category": "Jazz/sax-ballads",
+"url": "/music/Jazz/sax-ballads/When%20the%20City%20Falls%20Asleep.mp3"
 },
 "7ce04786bccad837e92d5807": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -722,8 +722,8 @@
 "model": "eleven_v4",
 "text": "This is The Midnight Platform, an energetic number with tenor saxophone and trumpet leading the way. Take your time. The night is ours.",
 "kind": "intro",
-"category": "bebop-swing",
-"url": "/music/bebop-swing/The%20Midnight%20Platform.mp3"
+"category": "Jazz/bebop-swing",
+"url": "/music/Jazz/bebop-swing/The%20Midnight%20Platform.mp3"
 },
 "608a39f0e263efc9924e3b57": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -736,8 +736,8 @@
 "model": "eleven_v4",
 "text": "Now, The Color of Goodbye. Tenor saxophone and piano, and a romantic feel to carry us along.",
 "kind": "intro",
-"category": "romantic-ballads",
-"url": "/music/romantic-ballads/The%20Color%20of%20Goodbye.mp3"
+"category": "Jazz/romantic-ballads",
+"url": "/music/Jazz/romantic-ballads/The%20Color%20of%20Goodbye.mp3"
 },
 "089d148e44841be9af30aac4": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -750,15 +750,15 @@
 "model": "eleven_v4",
 "text": "Well, I'll choose for us. Here's some classic swing.",
 "kind": "auto",
-"category": "classic-swing"
+"category": "Jazz/classic-swing"
 },
 "d298b50f385d76d627ee7f00": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
 "model": "eleven_v4",
 "text": "Saturday Night on Seventh. Settle back for some classic swing, with trombone and tenor saxophone.",
 "kind": "intro",
-"category": "classic-swing",
-"url": "/music/classic-swing/Saturday%20Night%20on%20Seventh.mp3"
+"category": "Jazz/classic-swing",
+"url": "/music/Jazz/classic-swing/Saturday%20Night%20on%20Seventh.mp3"
 },
 "5804182101545d8a0d26057a": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -771,8 +771,8 @@
 "model": "eleven_v4",
 "text": "Let's slip into Velvet Rain on Fifth Avenue, a romantic one for the late hours, featuring tenor saxophone and piano.",
 "kind": "intro",
-"category": "romantic-ballads",
-"url": "/music/romantic-ballads/Velvet%20Rain%20on%20Fifth%20Avenue.mp3"
+"category": "Jazz/romantic-ballads",
+"url": "/music/Jazz/romantic-ballads/Velvet%20Rain%20on%20Fifth%20Avenue.mp3"
 },
 "f56ca2200dbbf6a280d03ab1": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -785,16 +785,16 @@
 "model": "eleven_v4",
 "text": "Up next, Fifty Second Street Express. Up-tempo bebop swing, with tenor saxophone and trumpet in the spotlight. Pour yourself something nice.",
 "kind": "intro",
-"category": "bebop-swing",
-"url": "/music/bebop-swing/Fifty_Second%20Street%20Express%20(1).mp3"
+"category": "Jazz/bebop-swing",
+"url": "/music/Jazz/bebop-swing/Fifty_Second%20Street%20Express%20(1).mp3"
 },
 "8a71f75b33000a01fe88198f": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
 "model": "eleven_v4",
 "text": "Let's slip into Midnight on Mercer Street, a relaxed one for the late hours, featuring muted trumpet and piano.",
 "kind": "intro",
-"category": "muted-trumpet",
-"url": "/music/muted-trumpet/Midnight%20on%20Mercer%20Street%20(1).mp3"
+"category": "Jazz/muted-trumpet",
+"url": "/music/Jazz/muted-trumpet/Midnight%20on%20Mercer%20Street%20(1).mp3"
 },
 "4a142dc1ee2772a1c73208d2": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -807,31 +807,31 @@
 "model": "eleven_v4",
 "text": "cool jazz it is. Let's go.",
 "kind": "chosen",
-"category": "cool-jazz"
+"category": "Jazz/cool-jazz"
 },
 "115835051dfc771a48af13cf": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
 "model": "eleven_v4",
 "text": "Here's Silver Notes in September, with jazz guitar and vibraphone taking the lead.",
 "kind": "intro",
-"category": "cool-jazz",
-"url": "/music/cool-jazz/Silver%20Notes%20in%20September%20(1).mp3"
+"category": "Jazz/cool-jazz",
+"url": "/music/Jazz/cool-jazz/Silver%20Notes%20in%20September%20(1).mp3"
 },
 "dd369ca638d9e929dd3fd931": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
 "model": "eleven_v4",
 "text": "This is Starlight on the Marquee, a relaxed number with jazz guitar and vibraphone leading the way. Take your time. The night is ours.",
 "kind": "intro",
-"category": "cool-jazz",
-"url": "/music/cool-jazz/Starlight%20on%20the%20Marquee%20(1).mp3"
+"category": "Jazz/cool-jazz",
+"url": "/music/Jazz/cool-jazz/Starlight%20on%20the%20Marquee%20(1).mp3"
 },
 "692442943ff5f638331b6af8": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
 "model": "eleven_v4",
 "text": "Let's keep the evening going with The Last Train Uptown. Up-tempo bebop swing, featuring tenor saxophone and trumpet.",
 "kind": "intro",
-"category": "bebop-swing",
-"url": "/music/bebop-swing/The%20Last%20Train%20Uptown.mp3"
+"category": "Jazz/bebop-swing",
+"url": "/music/Jazz/bebop-swing/The%20Last%20Train%20Uptown.mp3"
 },
 "953bb40aa6a9fbd6485937df": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -844,8 +844,8 @@
 "model": "eleven_v4",
 "text": "This is The Quiet Side of Broadway, a laid-back number with piano and upright bass leading the way.",
 "kind": "intro",
-"category": "piano-trio",
-"url": "/music/piano-trio/The%20Quiet%20Side%20of%20Broadway%20(1).mp3"
+"category": "Jazz/piano-trio",
+"url": "/music/Jazz/piano-trio/The%20Quiet%20Side%20of%20Broadway%20(1).mp3"
 },
 "09a1816d9286c31f4ce90039": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
@@ -858,23 +858,23 @@
 "model": "eleven_v4",
 "text": "Not a word? That's all right. I have just the thing, some classic swing.",
 "kind": "auto",
-"category": "classic-swing"
+"category": "Jazz/classic-swing"
 },
 "073e8be40baa4c637ffccd66": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "I think you'll enjoy this next one. It's called The Blue Hour Shuffle, with trombone and tenor saxophone and a lively feel.",
 "kind": "intro",
-"category": "classic-swing",
-"url": "/music/classic-swing/The%20Blue%20Hour%20Shuffle%20(1).mp3"
+"category": "Jazz/classic-swing",
+"url": "/music/Jazz/classic-swing/The%20Blue%20Hour%20Shuffle%20(1).mp3"
 },
 "5a48a1fe81fe71b585e6d705": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "Here's one called A Waltz for Eleanor. Piano and clarinet out front, with a gentle feel.",
 "kind": "intro",
-"category": "jazz-waltz",
-"url": "/music/jazz-waltz/A%20Waltz%20for%20Eleanor%20(1).mp3"
+"category": "Jazz/jazz-waltz",
+"url": "/music/Jazz/jazz-waltz/A%20Waltz%20for%20Eleanor%20(1).mp3"
 },
 "bf5145699c49e48f3952cdef": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
@@ -887,39 +887,163 @@
 "model": "eleven_v4",
 "text": "Now, The Way the Moon Remembers. Tenor saxophone and piano, and a mellow feel to carry us along.",
 "kind": "intro",
-"category": "sax-ballads",
-"url": "/music/sax-ballads/The%20Way%20the%20Moon%20Remembers.mp3"
+"category": "Jazz/sax-ballads",
+"url": "/music/Jazz/sax-ballads/The%20Way%20the%20Moon%20Remembers.mp3"
 },
 "6999b8ccd909dfd66a1aa070": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "This one's called Blue Silk Memories. Some sax ballads for you, with tenor saxophone and piano up front. Let the day slip away.",
 "kind": "intro",
-"category": "sax-ballads",
-"url": "/music/sax-ballads/Blue%20Silk%20Memories%20(1).mp3"
+"category": "Jazz/sax-ballads",
+"url": "/music/Jazz/sax-ballads/Blue%20Silk%20Memories%20(1).mp3"
 },
 "771afff1a6cd9ef21ed243ed": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "If Only the Stars Could Stay. Settle back for some romantic ballads, with tenor saxophone and piano.",
 "kind": "intro",
-"category": "romantic-ballads",
-"url": "/music/romantic-ballads/If%20Only%20the%20Stars%20Could%20Stay.mp3"
+"category": "Jazz/romantic-ballads",
+"url": "/music/Jazz/romantic-ballads/If%20Only%20the%20Stars%20Could%20Stay.mp3"
 },
 "381ba02a29c9528bc3eb36e1": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "Next on the program, One More Night in Manhattan. Tenor saxophone and piano at the front of the band.",
 "kind": "intro",
-"category": "sax-ballads",
-"url": "/music/sax-ballads/One%20More%20Night%20in%20Manhattan%20(1).mp3"
+"category": "Jazz/sax-ballads",
+"url": "/music/Jazz/sax-ballads/One%20More%20Night%20in%20Manhattan%20(1).mp3"
 },
 "d05c119b2fcbefd4f0781cdc": {
 "voice": "KNujgOxpr0Y4KhrYpOe1",
 "model": "eleven_v4",
 "text": "This is A Thousand Little Tomorrows, a gentle number with piano and clarinet leading the way.",
 "kind": "intro",
-"category": "jazz-waltz",
-"url": "/music/jazz-waltz/A%20Thousand%20Little%20Tomorrows%20(1).mp3"
+"category": "Jazz/jazz-waltz",
+"url": "/music/Jazz/jazz-waltz/A%20Thousand%20Little%20Tomorrows%20(1).mp3"
+},
+"8814f90e61908c5bdade7c64": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Three Steps to Yesterday. Settle back for some jazz waltz, with piano and clarinet.",
+"kind": "intro",
+"category": "Jazz/jazz-waltz",
+"url": "/music/Jazz/jazz-waltz/Three%20Steps%20to%20Yesterday.mp3"
+},
+"9dcd62844bae79f87e53e238": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Tell me, what would you like to hear next? I could do romantic ballads, bebop swing, or classic swing. Your choice, friend.",
+"kind": "ask"
+},
+"71323a51dc41ac5336e6ecef": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "piano trio. Coming right up.",
+"kind": "chosen",
+"category": "Jazz/piano-trio"
+},
+"b49aaec76184dc08441707b2": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "I think you'll enjoy this next one. It's called Ivory Keys at Midnight, with piano and upright bass and a laid-back feel.",
+"kind": "intro",
+"category": "Jazz/piano-trio",
+"url": "/music/Jazz/piano-trio/Ivory%20Keys%20at%20Midnight.mp3"
+},
+"37acc40f91eb989638c7267b": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Let's keep the evening going with Last Call for a Dream. Slow and easy jazz, featuring piano and upright bass.",
+"kind": "intro",
+"category": "Jazz/piano-trio",
+"url": "/music/Jazz/piano-trio/Last%20Call%20for%20a%20Dream%20(1).mp3"
+},
+"9409c59c3ff2a61c12f84a03": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "So, where to next? I have sax ballads, jazz noir, or jazz blues, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
+},
+"2b714f693bef2b973b69fd82": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "cool jazz, friend. Let me set that up for you.",
+"kind": "chosen",
+"category": "Jazz/cool-jazz"
+},
+"7f26823a55c4a3d4542a9d89": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "This is The Evening s Gentle Echo, a relaxed number with jazz guitar and vibraphone leading the way.",
+"kind": "intro",
+"category": "Jazz/cool-jazz",
+"url": "/music/Jazz/cool-jazz/The%20Evening_s%20Gentle%20Echo.mp3"
+},
+"cef534ddfa6da252d7e42bb6": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "bebop swing. Coming right up.",
+"kind": "chosen",
+"category": "Jazz/bebop-swing"
+},
+"7b5d7970fc958ef9f8cd4893": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? sax ballads, classic swing, or piano trio, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
+},
+"09239bff831ab1d00b189359": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "A Fast Walk to Harlem. Settle back for some bebop swing, with tenor saxophone and trumpet.",
+"kind": "intro",
+"category": "Jazz/bebop-swing",
+"url": "/music/Jazz/bebop-swing/A%20Fast%20Walk%20to%20Harlem.mp3"
+},
+"e3829689cd28cddabcab8c9b": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Now, A Table by the Window. Piano and upright bass, and a laid-back feel to carry us along.",
+"kind": "intro",
+"category": "Jazz/piano-trio",
+"url": "/music/Jazz/piano-trio/A%20Table%20by%20the%20Window%20(1).mp3"
+},
+"02f51aa1774b4a3ff326c741": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? muted trumpet, sax ballads, or classic swing, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"3ad22bc418c5a4da2835b899": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Ah, sax ballads. Good choice. Here we go.",
+"kind": "chosen",
+"category": "Jazz/sax-ballads"
+},
+"1a11e111f6e71179a877337d": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Coming up, The Last Light in Your Window. Some slow and easy sax ballads, with tenor saxophone and piano to carry us along. No hurry at all this evening.",
+"kind": "intro",
+"category": "Jazz/sax-ballads",
+"url": "/music/Jazz/sax-ballads/The%20Last%20Light%20in%20Your%20Window.mp3"
+},
+"5850a142f46d4fa53fc7564c": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "This one's called When the City Falls Asleep. Some sax ballads for you, with tenor saxophone and piano up front.",
+"kind": "intro",
+"category": "Jazz/sax-ballads",
+"url": "/music/Jazz/sax-ballads/When%20the%20City%20Falls%20Asleep.mp3"
+},
+"79bc8eeadcbde2bab093d79d": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's one called The Way the Moon Remembers. Tenor saxophone and piano out front, with a mellow feel.",
+"kind": "intro",
+"category": "Jazz/sax-ballads",
+"url": "/music/Jazz/sax-ballads/The%20Way%20the%20Moon%20Remembers.mp3"
 }
 }

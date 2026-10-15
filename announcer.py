@@ -181,7 +181,9 @@ def build_text(body, categories):
     if kind == "welcome":
         return _pick("welcome", WELCOME)
     if kind == "ask":
-        others = [l for i, l in labels.items() if i != body.get("current")]
+        # only the styles on screen: the current collection's (when the player says which one it is showing)
+        pool = [c for c in categories if c.get("collection") == body["collection"]] if "collection" in body else categories
+        others = [c["label"] for c in pool if c["id"] != body.get("current")]
         if not others:
             return None
         picks = random.sample(others, min(3, len(others)))

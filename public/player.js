@@ -4,7 +4,11 @@ const INTRO_EVERY = 2; // host introduces songs 1, 3, 5 of each set (1 = every s
 
 const $ = (id) => document.getElementById(id);
 const audio = new Audio();
-let categories = [];
+let categories = [];   // the styles of the current collection (what the screen offers)
+let library = [];      // every style with songs, whatever its collection
+let collections = [];  // [{ id, label }]; id '' is the main one (styles directly in music/)
+let collection = '';
+try { collection = localStorage.getItem('collection') || ''; } catch { /* storage blocked: the main collection */ }
 let current = null;
 let queue = [];
 let playedInSet = 0;
@@ -262,7 +266,7 @@ async function nextTrack() {
     if (e.name === 'NotAllowedError') giveUp('Chrome blocked audio.');
   });
   introFor(plan, i + 1); // fetch the next introduction while this song plays
-  if (playedInSet === queue.length) { askPrefetch = fetchAnnouncement({ kind: 'ask', current: current.id }); askPrefetch.catch(() => {}); }
+  if (playedInSet === queue.length) { askPrefetch = fetchAnnouncement({ kind: 'ask', current: current.id, collection }); askPrefetch.catch(() => {}); }
 }
 
 async function askNext() {
@@ -278,7 +282,7 @@ async function askNext() {
   const prefetched = askPrefetch;
   askPrefetch = null;
   if (prefetched) prefetched.catch(() => {});
-  await say({ kind: 'ask', current: current.id }, prefetched);
+  await say({ kind: 'ask', current: current.id, collection }, prefetched);
   if (phase !== 'asking') return;
   listen(handleReply);
   askTimer = setTimeout(() => {
@@ -372,6 +376,27 @@ $('change').onclick = changeStyle;
 
 $('speak').onclick = () => { if (phase === 'asking') listen(handleReply); };
 
+// ---- collections: groups of styles (a folder inside music/ whose sub-folders are the styles) ----
+function applyCollection() {
+  if (!collections.some((c) => c.id === collection)) collection = collections[0] ? collections[0].id : '';
+  categories = library.filter((c) => c.collection === collection);
+}
+
+function setupCollections() {
+  const sel = document.querySelector('.collection-pick');
+  sel.hidden = collections.length < 2; // one collection: nothing to choose
+  sel.innerHTML = '';
+  collections.forEach((c) => sel.add(new Option(c.label, c.id)));
+  sel.value = collection;
+  sel.onchange = () => {
+    collection = sel.value;
+    try { localStorage.setItem('collection', collection); } catch { /* not saved */ }
+    applyCollection();
+    publish(); // the phone remote shows the new styles too
+    if (phase === 'asking') showChoices();
+  };
+}
+
 $('start').onclick = async () => {
   $('start').hidden = true;
   if (window.isSecureContext && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -380,9 +405,12 @@ $('start').onclick = async () => {
       .catch((err) => { $('heard').textContent = `Microphone not available (${err.name}). You can still tap your choices.`; });
   }
   const res = await fetch('/api/library').then((r) => r.json());
-  categories = res.categories;
+  library = res.categories;
+  collections = res.collections || [];
+  applyCollection();
+  setupCollections();
   if (!categories.length) {
-    setStatus('No songs found. Put MP3 files in music/<style>/ folders and reload.');
+    setStatus('No songs found. Put MP3 files in music/<Collection>/<style>/ folders and reload.');
     $('start').hidden = false;
     return;
   }

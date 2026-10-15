@@ -179,7 +179,7 @@ body.awake #gear, body.settings-open #gear { opacity: 1; pointer-events: auto; }
   display: flex; flex-direction: column; gap: 1.2vmin; padding: 0; background: none; border: 0; box-shadow: none;
 }
 .setting { display: flex; flex-direction: column; gap: .7vmin; font-size: clamp(.8rem, 1.7vmin, 1.1rem); opacity: .95; }
-.setting:has(.voice-pick[hidden]) { display: none; } /* only one voice: nothing to pick */
+.setting:has(.voice-pick[hidden]), .setting:has(.collection-pick[hidden]) { display: none; } /* nothing to pick */ /* only one voice: nothing to pick */
 body:has(#start:not([hidden])) #gear, body:has(#start:not([hidden])) #settings { display: none; }
 
 /* ---- consistent controls: Pause, Skip, Speak, Change Style and the voice pickers all match ---- */
@@ -200,7 +200,7 @@ body.settings-open #settings { opacity: 1; visibility: visible; pointer-events: 
   width: 100%; padding: 0 1.2em; /* both buttons the width of the panel, text starting at the same left edge */
   text-align: left; text-align-last: left; justify-content: flex-start;
 }
-.voice-pick[hidden] { display: none; }
+.voice-pick[hidden], .collection-pick[hidden] { display: none; }
 
 /* ---- the style buttons slide down into place, one after another ----------------------------- */
 @keyframes slideDown {
