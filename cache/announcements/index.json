@@ -2052,5 +2052,56 @@
 "kind": "intro",
 "category": "WWII_Big_Band/Glenn_Miller_Inspired",
 "url": "/music/WWII_Big_Band/Glenn_Miller_Inspired/We%20Can%20Live%20on%20Love.mp3"
+},
+"cce5a64cb1935f712e6869a6": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "We've had some beautiful music tonight. What are you in the mood for next? Perhaps Moonlight Orchestra, Kansas City Swing, or Benny Goodman Inspired. Or just tell me what you see on the screen.",
+"kind": "ask"
+},
+"ac61a9ebdd5c40abbe282251": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's A Little Riff on Main.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/A%20Little%20Riff%20on%20Main.mp3"
+},
+"cb1efc3b66c7d37ff0d00bcd": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Savoy Swing, Glenn Miller Inspired, or Moonlight Orchestra, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"071170ab259629dcb69fa74f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's All I Do Is Dream Of You.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman_Inspired",
+"url": "/music/WWII_Big_Band/Benny_Goodman_Inspired/All%20I%20Do%20Is%20Dream%20Of%20You.mp3"
+},
+"351228a8f41706e6fce94ffb": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Benny Goodman Inspired. Coming right up.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Benny_Goodman_Inspired"
+},
+"bb1878f247614777cd41bcbe": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Stompin' At The Savoy. Let the day slip away.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman_Inspired",
+"url": "/music/WWII_Big_Band/Benny_Goodman_Inspired/Stompin'%20At%20The%20Savoy.mp3"
+},
+"6aa64971ed5cea2680e473af": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was At Sundown. Here's Music Maestro Please.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman_Inspired",
+"url": "/music/WWII_Big_Band/Benny_Goodman_Inspired/Music%20Maestro%20Please.mp3"
 }
 }
