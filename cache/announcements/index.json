@@ -1747,5 +1747,21 @@
 "model": "eleven_v4",
 "text": "So, where to next? I have Victory Swing, or Savoy Swing, and plenty more on the screen. Or say the word, and I'll stay right here.",
 "kind": "ask"
+},
+"72bf9429a61f6b0115e55a23": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The Blue Room Shuffle, just now, on The Midnight Jazz Room. Here's The River Market Stomp. Nothing but easy listening from here.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20River%20Market%20Stomp%20(1).mp3"
+},
+"eb929b8cf6b47929b4e006f7": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to A Little Riff on Main. Here's Boulevard Blues.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Boulevard%20Blues%20(1).mp3"
 }
 }

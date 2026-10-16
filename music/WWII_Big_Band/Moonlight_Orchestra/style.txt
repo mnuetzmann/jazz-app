@@ -1,1 +1,79 @@
-Authentic early-1940s American ballroom big band instrumental, 112 BPM, smooth medium-tempo swing. Prominent lead clarinet floating above tightly voiced saxophone harmonies, warm trombones, restrained trumpets, acoustic piano, upright bass, rhythm guitar, and gently swinging drums. Elegant melodic phrasing, lush orchestral harmonies, refined brass responses, and a memorable romantic melody. Sophisticated wartime ballroom atmosphere, precise period-style ensemble arrangements, natural dynamics, clean high-fidelity acoustic recording. No vocals, no synthesizers, no modern pop or electronic elements.
+THE MIDNIGHT JAZZ ROOM | WWII BIG BAND
+MOONLIGHT ORCHESTRA — REVISED AUTHENTIC BIG BAND PROMPTS
+Folder: Moonlight_Orchestra
+
+Ten complete, title-specific Mureka V9.5 prompts.
+All feature full brass, reed and acoustic rhythm sections, with varied featured instruments, openings and grooves.
+No numeric BPM settings; each prompt is under 1,000 characters.
+
+==============================================================================
+
+01. Moonlight Over Manhattan
+Arrangement focus: Open trumpet / sweeping reed melody
+PROMPT (712 characters):
+Authentic early-1940s romantic ballroom BIG BAND instrumental, smooth medium swing for couples dancing. Full orchestra: five harmonized saxophones, four trumpets, four trombones, and acoustic piano, upright bass, rhythm guitar and drums. Begin with soft piano chords and a gently rising full-reed melody; a clear open trumpet then states an original, broad skyline theme. Answer each trumpet phrase with close saxophone voicings and warm trombone swells. Add a contrasting reed-section bridge and finish with a glowing, restrained full-band chorus. Sophisticated moonlit Manhattan atmosphere. Make the layered brass-and-reed ensemble unmistakable, not a trumpet jazz quartet. No vocals or electronic instruments.
+
+------------------------------------------------------------------------------
+
+02. The Last Dance at Midnight
+Arrangement focus: Solo trombone / slow dance orchestra
+PROMPT (657 characters):
+1940s sweet-swing BIG BAND instrumental for the final dance of the evening. A slow, steady ballroom foxtrot pulse, with a complete saxophone section, muted trumpet section, trombone section and acoustic piano-bass-guitar-drums rhythm section. Begin with four bars of softly harmonized saxophones; a mellow lead trombone introduces a tender, descending melody. Keep the dance pulse consistent while trumpets answer in velvet-soft chords and the saxophones take a lush contrasting middle chorus. Bring the trombone back above the full orchestra for a warm final cadence. Wistful but still clearly a ballroom dance band, not sparse small-combo jazz. No vocals.
+
+------------------------------------------------------------------------------
+
+03. Silver Clouds and Satin
+Arrangement focus: Saxophone choir / silky orchestral textures
+PROMPT (696 characters):
+Elegant early-1940s SWEET BIG BAND instrumental with a floating, lightly bouncing foxtrot rhythm. The signature sound is a five-piece saxophone section playing close, silky harmonies, supported by four soft trumpets, four mellow trombones, acoustic piano, upright bass, guitar and brushed drums. Open with a distinctive cascading saxophone-section motif; muted brass adds shimmering answers. Introduce a lyrical trumpet-section middle melody while the reeds sustain satin-smooth chords. A short rhythmic piano break leads to a radiant full-band reprise. Dreamy, polished, romantic and danceable. Keep the full reed-and-brass orchestra present; no string-orchestra or small-combo sound. No vocals.
+
+------------------------------------------------------------------------------
+
+04. When the Streetlights Glow
+Arrangement focus: Muted trumpet / low brass noir swing
+PROMPT (668 characters):
+1940s nocturnal ballroom BIG BAND instrumental with a medium, gently syncopated four-beat swing groove. Full five-saxophone reed section, four trumpets, four trombones and acoustic piano, upright bass, rhythm guitar and brushed drums. Open with a low, harmonized trombone figure over a walking bass; a cup-muted trumpet introduces a sly minor-to-major melody. The saxophone section answers in hushed block chords, then carries a brighter contrasting bridge. Add one crisp full-brass ensemble accent before returning to the muted trumpet theme with rich orchestral backing. Amber streetlights, urban elegance, quiet mystery. Not a trumpet-and-guitar quartet. No vocals.
+
+------------------------------------------------------------------------------
+
+05. A Serenade for Evelyn
+Arrangement focus: Piano feature / lyrical full-band serenade
+PROMPT (697 characters):
+Romantic 1940s ballroom BIG BAND serenade, a gently lilting foxtrot with an unmistakable full orchestra: five harmonized saxophones, four trumpets, four trombones, acoustic piano, upright bass, rhythm guitar and light drums. Begin with a short solo grand-piano dedication built around an original arching melody. The full saxophone section then repeats the theme in warm close harmony; restrained trumpets add delicate answering phrases. Let the piano take a melodic middle chorus while trombones sustain soft background chords. End with a graceful, richly harmonized full-band statement. Affectionate and elegant, like a musical dedication to Evelyn; not a piano trio or string ballad. No vocals.
+
+------------------------------------------------------------------------------
+
+06. Starlight on Fifth Avenue
+Arrangement focus: Vibraphone sparkle / bright brass responses
+PROMPT (678 characters):
+Sparkling early-1940s Manhattan ballroom BIG BAND instrumental with a buoyant medium-up swing pulse. Full orchestra of five saxophones, four trumpets, four trombones and acoustic piano-bass-guitar-drums rhythm section. Open with a crisp vibraphone motif, then let the saxophone SECTION take up its rising melody in tight harmony. Bright trumpet-section responses and clipped trombone accents give the arrangement an unmistakable big-band scale. Feature a brief vibraphone break, a playful stop-time passage, and a cheerful full-ensemble shout chorus. Chic Fifth Avenue nighttime glamour; vibraphone is a featured color, not the whole band. No extended clarinet solos, no vocals.
+
+------------------------------------------------------------------------------
+
+07. The Blue Moon Ballroom
+Arrangement focus: Trombone choir / full-band ballroom waltz
+PROMPT (674 characters):
+Dreamy 1940s ballroom BIG BAND WALTZ in an unmistakable flowing ONE-two-three meter, not standard four-beat swing. A full dance orchestra with five harmonized saxophones, four trumpets, four trombones, acoustic piano, upright bass, guitar and delicate drums. Open with a warm four-trombone chorale over a lilting three-beat accompaniment. The saxophone SECTION introduces a broad, original waltz melody; trumpets answer with soft, sustained harmonies. Develop a contrasting low-brass passage before returning to the reeds and then a sweeping full-orchestra finale. Romantic blue-lit ballroom elegance with clear big-band section writing. No solo-jazz-combo sound, no vocals.
+
+------------------------------------------------------------------------------
+
+08. Dancing Until Dawn
+Arrangement focus: Driving brass riffs / energetic full-band swing
+PROMPT (672 characters):
+Exhilarating early-1940s ballroom BIG BAND instrumental with a brisk, propulsive four-beat swing groove. Full five-saxophone section, four bright trumpets, four trombones and driving acoustic piano, walking upright bass, rhythm guitar and snare-and-cymbal drums. Start with a two-bar rhythm-section pickup; the trumpets enter with a sharp, syncopated hook, answered by punching trombones. A tightly voiced saxophone SECTION carries the contrasting melody, followed by a piano-led rhythmic break and an escalating brass-versus-reeds exchange. Finish with a joyous full-band shout chorus. Dancing through sunrise: energetic yet polished, no lengthy solo features, no vocals.
+
+------------------------------------------------------------------------------
+
+09. Whispers Beneath the Stars
+Arrangement focus: Low reed choir / quiet ensemble swing
+PROMPT (641 characters):
+Soft, intimate-sounding but unmistakably FULL 1940s SWEET BIG BAND instrumental. A very gentle, steady slow-dance foxtrot pulse from upright bass, acoustic guitar, piano and brushed drums. Open with low saxophone-section harmonies in a hushed, descending original motif; muted trombones answer with warm sustained chords. A single muted trumpet briefly sings the theme while the complete reed section provides close-harmony backing. Gradually build to a restrained full-orchestra swell, then resolve quietly with interwoven brass and reeds. No cello-led chamber music, no sparse jazz trio, no extended solos. No vocals or modern instruments.
+
+------------------------------------------------------------------------------
+
+10. One More Night in June
+Arrangement focus: Clarinet lead / bright reed-and-brass foxtrot
+PROMPT (662 characters):
+Warm, optimistic early-1940s romantic ballroom BIG BAND instrumental with a relaxed, bouncing two-beat foxtrot feel. Full dance orchestra: five saxophones, four trumpets, four trombones, acoustic piano, upright bass, rhythm guitar and drums. Begin with a cheerful harmonized saxophone-section pickup, then a solo clarinet introduces a memorable melody with a playful upward leap. Keep the clarinet in front only for the first theme; shift the next chorus to the full trumpet section with trombone replies and rich saxophone backing. Add a brief piano turnaround and finish with the complete band in bright close harmony. One last beautiful June dance. No vocals.
+
+------------------------------------------------------------------------------
