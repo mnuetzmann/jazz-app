@@ -2202,5 +2202,26 @@
 "kind": "intro",
 "category": "WWII_Big_Band/Glenn_Miller",
 "url": "/music/WWII_Big_Band/Glenn_Miller/My%20Blue%20Heaven.mp3"
+},
+"b03b9f82a5c0b86604aa2a8e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "We've had some beautiful music tonight. What are you in the mood for next? Perhaps Count Basie, Moonlight Orchestra, or Glenn Miller. Or just tell me what you see on the screen.",
+"kind": "ask"
+},
+"740f5b0bed3fbb6d76844921": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Count Basie. Coming right up.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Count_Basie"
+},
+"0fca8e5ce74bf38e27ec1c93": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Who, Me?.",
+"kind": "intro",
+"category": "WWII_Big_Band/Count_Basie",
+"url": "/music/WWII_Big_Band/Count_Basie/Who,%20Me_.mp3"
 }
 }
