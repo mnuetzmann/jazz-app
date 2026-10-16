@@ -1453,5 +1453,299 @@
 "model": "eleven_v4",
 "text": "The night is still ours. What shall we hear? Maybe Savoy Swing. Or something else entirely, just ask.",
 "kind": "ask"
+},
+"5a3a2e6c3941fb931c22ecfb": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "So, where to next? I have Kansas City Swing, or Savoy Swing, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
+},
+"1310d61db520adf719052764": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Kansas City After Hours.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Kansas%20City%20After%20Hours%20(1).mp3"
+},
+"5d00f382ad1d1dcb495a8b65": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Now that sounds like a fine idea. Kansas City Swing, coming your way.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Kansas_City_Swing"
+},
+"b3903c5548c36e8db69e9249": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The River Market Stomp.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20River%20Market%20Stomp%20(1).mp3"
+},
+"0eb9a0657ac060fde13ff19d": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to The Missouri Moonlight Blues. Here's Midnight on Twelfth Street.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Midnight%20on%20Twelfth%20Street.mp3"
+},
+"7c91c3b9d03831a1508d7992": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was The Last Train to Union Station. Here's A Little Riff on Main.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/A%20Little%20Riff%20on%20Main%20(1).mp3"
+},
+"7b39a37c7f6ea89953522afa": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Saturday Night on Broadway.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Saturday%20Night%20on%20Broadway.mp3"
+},
+"3d51b8242a69520ab4ea9a2b": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Victory Swing, or Savoy Swing, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"ac3d40c2f0d2e369795bd394": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've got it. Some Kansas City Swing, and not a moment too soon.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Kansas_City_Swing"
+},
+"7be8d36d961ae106942f2389": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Midnight on Twelfth Street. Nothing but easy listening from here.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Midnight%20on%20Twelfth%20Street%20(1).mp3"
+},
+"0db2e54eca2a7cfcd8cbfa90": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Blue Room Shuffle.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20Blue%20Room%20Shuffle%20(1).mp3"
+},
+"6bde16f3e2824bcd87ee7086": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Swingin  at Eighteenth and Vine.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Swingin_%20at%20Eighteenth%20and%20Vine%20(1).mp3"
+},
+"b90ddd06b2d8c6fb0e5e14f8": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to Saturday Night on Broadway. Here's A Little Riff on Main.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/A%20Little%20Riff%20on%20Main.mp3"
+},
+"44647e9cacc12a773782800e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Tell me, what would you like to hear next? I could do Victory Swing, or Savoy Swing. Your choice, friend.",
+"kind": "ask"
+},
+"d05ca241d0eabc3774500435": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The River Market Stomp. Pour yourself something nice.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20River%20Market%20Stomp.mp3"
+},
+"99642400d2de53567bd18bc4": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Last Train to Union Station.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20Last%20Train%20to%20Union%20Station%20(1).mp3"
+},
+"ed0074612ccc505922793d45": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was The Missouri Moonlight Blues. Here's A Little Riff on Main. No hurry at all this evening.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/A%20Little%20Riff%20on%20Main%20(1).mp3"
+},
+"fe88e5306326f58dad00597c": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Victory Swing, or Savoy Swing, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
+},
+"f1075bf8ccb6bb0d04473eeb": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Boulevard Blues.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Boulevard%20Blues%20(1).mp3"
+},
+"f9879c01eab5dd2c88d4b017": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Kansas City Swing it is. Let's go.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Kansas_City_Swing"
+},
+"b71f0c2a47b52751ea4b9e67": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Saturday Night on Broadway. Nothing but easy listening from here.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Saturday%20Night%20on%20Broadway.mp3"
+},
+"105dbd0a1ec83fa01e450417": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The Blue Room Shuffle, just now, on The Midnight Jazz Room. Here's The Missouri Moonlight Blues.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20Missouri%20Moonlight%20Blues%20(1).mp3"
+},
+"c10c3ea366d9aedc1247786d": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to A Little Riff on Main. Here's Midnight on Twelfth Street.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Midnight%20on%20Twelfth%20Street%20(1).mp3"
+},
+"f9ac155b93d6c67453064e54": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Uptown Jitterbug. Pour yourself something nice.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Uptown%20Jitterbug%20(1).mp3"
+},
+"c2bf63e4654d726ee5f00548": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was Swingin  Down Lenox Avenue. Here's Jumpin  at Half Past Nine.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Jumpin_%20at%20Half%20Past%20Nine.mp3"
+},
+"ea6296e87c347f6169a6eb0e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was The Ballroom Bounce, here on The Midnight Jazz Room. Here's The Harlem Hop.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Harlem%20Hop.mp3"
+},
+"9eee479377da8e98ed5738d7": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was The Lindy Hop Express. Here's Hot Feet  Cool Cats.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Hot%20Feet_%20Cool%20Cats%20(1).mp3"
+},
+"db1907116046c273a247ebc7": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Everybody s Swingin  Tonight. Sit back and let the room fill with music.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Everybody_s%20Swingin_%20Tonight%20(1).mp3"
+},
+"78eedddf85adc2ca05922dfc": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Kansas City Swing, or Victory Swing, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"af1164ac1b5de3c32ae94e42": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Kansas City Swing, friend. Let me set that up for you.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Kansas_City_Swing"
+},
+"c31a69092f0bb7af30de7c27": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was The Last Train to Union Station, here on The Midnight Jazz Room. Here's The Missouri Moonlight Blues.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20Missouri%20Moonlight%20Blues.mp3"
+},
+"f79f3ca86ba78e69b4b0463f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was A Little Riff on Main. Here's Kansas City After Hours.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Kansas%20City%20After%20Hours.mp3"
+},
+"997cb457f19bb139f9a83a0d": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The Blue Room Shuffle, just now, on The Midnight Jazz Room. Here's The Last Train to Union Station.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20Last%20Train%20to%20Union%20Station.mp3"
+},
+"560793073e3d5cc926b64766": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Missouri Moonlight Blues.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20Missouri%20Moonlight%20Blues.mp3"
+},
+"ffe14327d1084d93ebac7b62": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The night is still ours. What shall we hear? Maybe Savoy Swing, or Victory Swing. Or something else entirely, just ask.",
+"kind": "ask"
+},
+"7fa01975d565c326a7250b46": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Midnight on Twelfth Street.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Midnight%20on%20Twelfth%20Street%20(1).mp3"
+},
+"a3e35418a71dc99805f785c5": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to Saturday Night on Broadway. Here's Kansas City After Hours.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Kansas%20City%20After%20Hours.mp3"
+},
+"d4980efdf2d90c4ea880ad00": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's A Little Riff on Main. Pour yourself something nice.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/A%20Little%20Riff%20on%20Main.mp3"
+},
+"ca96a347ed02181bdae1d755": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "So, where to next? I have Victory Swing, or Savoy Swing, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
 }
 }
