@@ -233,3 +233,8 @@ body[data-phase="asking"] #panel { transition-duration: .35s; } /* the panel its
 .credit-pie.low { --pie: #e8924a; }
 .credit-pie.critical { --pie: #e0584a; }
 .credit-pie[data-state="unknown"] { background: none; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .35); } /* no balance to show */
+
+/* While the settings are open the style buttons move down to sit below them (--settings-bottom is set by player.js). */
+#panel { transition: opacity var(--fade) ease, top .25s ease; }
+body.settings-open #panel { top: calc(var(--settings-bottom, 0px) + 1.4vmin); max-height: calc(100vh - var(--settings-bottom, 0px) - 4.4vmin); }
+body.settings-open #choices { --h: min(11vmin, calc((100vh - var(--settings-bottom, 0px) - 12vmin) / var(--n, 10) - 1.1vmin)); }

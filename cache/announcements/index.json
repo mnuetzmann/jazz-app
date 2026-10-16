@@ -1973,5 +1973,25 @@
 "kind": "intro",
 "category": "WWII_Big_Band/Kansas_City_Swing",
 "url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20Missouri%20Moonlight%20Blues%20(1).mp3"
+},
+"494252ec5dfe2e2e66b9d83f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "So, where to next? I have Victory Swing, Savoy Swing, or Moonlight Orchestra, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
+},
+"dc7f6952f5ba638f46095aca": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Victory Garden Swing.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/The%20Victory%20Garden%20Swing.mp3"
+},
+"bc2192bc5b59fb03a97a620f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Tell me, what would you like to hear next? I could do Savoy Swing, Kansas City Swing, or Moonlight Orchestra. Your choice, friend.",
+"kind": "ask"
 }
 }

@@ -630,8 +630,14 @@ async function refreshCredits() {
   pick.title = `${c.used.toLocaleString()} of ${c.limit.toLocaleString()} credits used (${c.left.toLocaleString()} left)` + (c.reset ? ` · resets ${c.reset}` : '');
 }
 
+// The style buttons sit just below the settings while they are open, instead of underneath them.
+function placePanel() {
+  document.body.style.setProperty('--settings-bottom', `${Math.ceil(settings.getBoundingClientRect().bottom)}px`);
+}
+window.addEventListener('resize', () => { if (settingsOpen()) placePanel(); });
+
 function setSettings(open) {
-  if (open) refreshCredits();
+  if (open) { refreshCredits(); placePanel(); }
   gear.setAttribute('aria-expanded', String(open));
   settings.inert = !open; // not reachable (or focusable) while faded out
   document.body.classList.toggle('settings-open', open);
