@@ -1950,5 +1950,28 @@
 "model": "eleven_v4",
 "text": "Well now, that was a lovely stretch. Where shall we go from here? Kansas City Swing, Victory Swing, or Savoy Swing, or anything else on the screen. Or I can keep things just as they are.",
 "kind": "ask"
+},
+"45f7ed43bbdf2e5162b89974": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Kansas City After Hours. Pour yourself something nice.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/Kansas%20City%20After%20Hours%20(1).mp3"
+},
+"1684080d0056056438a04958": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Not a word? That's all right. I have just the thing, some Kansas City Swing.",
+"kind": "auto",
+"category": "WWII_Big_Band/Kansas_City_Swing"
+},
+"9e90c42798958163e5d118ab": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Swingin  at Eighteenth and Vine, just now, on The Midnight Jazz Room. Here's The Missouri Moonlight Blues.",
+"kind": "intro",
+"category": "WWII_Big_Band/Kansas_City_Swing",
+"url": "/music/WWII_Big_Band/Kansas_City_Swing/The%20Missouri%20Moonlight%20Blues%20(1).mp3"
 }
 }
