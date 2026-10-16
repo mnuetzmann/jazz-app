@@ -61,6 +61,21 @@ INTRO = [
     "{title}, coming your way. {Pace} {style}, with {lead}.",
 ]
 
+# Introductions for real recordings say only what the file itself says: the artist, and sometimes the album.
+# Nothing about instruments, mood or history that we cannot know.
+INTRO_REAL = [
+    "Here's {title}, from {artist}.",
+    "Up next, {title}, by {artist}.",
+    "{artist}, with {title}.",
+    "This is {title}, from {artist}.",
+    "Here's {artist} with {title}.",
+    "Next, {title}. That's {artist}.",
+]
+INTRO_REAL_ALBUM = [
+    "Here's {title}, from the album {album}, by {artist}.",
+    "{title}, from {album}. That's {artist}.",
+]
+
 # Said before an introduction, naming the song that just finished (same set only).
 BACK = [
     "That was {prev}.",
@@ -176,6 +191,13 @@ def _intro(track, style, previous=None):
     # Drop templates whose facts we do not have, instead of inventing something.
     need = {"{lead}": lead, "{Lead}": lead, "{a_mood}": moods, "{pace}": pace, "{Pace}": pace}
     usable = [t for t in INTRO if all(v for k, v in need.items() if k in t)]
+    # A real recording that names its artist: say that, and only that (AI-made songs never get this).
+    artist = (track.get("artist") or "").strip() if track.get("origin") == "real" else ""
+    album = (track.get("album") or "").strip()
+    if not album or len(album) > 45 or "disc" in album.lower() or album.lower() == artist.lower():
+        album = ""  # too long or awkward to say aloud
+    if artist:
+        usable += INTRO_REAL + (INTRO_REAL_ALBUM if album else [])
     if not usable:
         core = "Here's {title}.".format(title=track["title"])
     else:
@@ -183,6 +205,7 @@ def _intro(track, style, previous=None):
             title=track["title"], style=_style_text(style, lead), lead=lead,
             Lead=lead[:1].upper() + lead[1:],
             a_mood=_a(moods[0]) if moods else "", pace=pace, Pace=pace[:1].upper() + pace[1:],
+            artist=artist, album=album,
         )
     parts = []
     back = bool(previous) and random.random() < 0.45
@@ -234,6 +257,7 @@ def build_text(body, categories):
         track = cat and next((t for t in cat["tracks"] if t["url"] == body.get("url")), None)
         if not track:
             return None
-        previous = next((t for t in cat["tracks"] if t["url"] == body.get("previous")), None)
+        # the song that just finished may be from another style (Shuffle, Auto and playlists mix them)
+        previous = next((t for c in categories for t in c["tracks"] if t["url"] == body.get("previous")), None)
         return _intro(track, cat["label"], previous)
     return None

@@ -43,33 +43,53 @@ def _decode_text(raw):
     return raw[1:].decode(enc, errors="ignore").strip("\x00 ﻿").split("\x00")[0].strip()
 
 
-def read_title(file):
-    """Embedded song title (ID3v2 TIT2, then ID3v1), or None."""
+_tags = {}  # (path, mtime) -> what the file says about itself; read once
+
+
+def read_tags(file):
+    """What an MP3 says about itself: title, artist, album, and whether it looks AI-made or a real recording.
+    'ai' = made by Mureka (an ffmpeg 'Lavf' encoder tag plus an embedded cover); 'real' = it names an artist and
+    has no such marks; anything else is 'unknown' (the announcer then says only the title)."""
+    try:
+        key = (str(file), file.stat().st_mtime)
+    except OSError:
+        return {}
+    if key in _tags:
+        return _tags[key]
+    got = {"title": "", "artist": "", "album": ""}
+    encoder, has_cover = "", False
     try:
         with open(file, "rb") as f:
             head = f.read(10)
-            if head[:3] == b"ID3":
-                major = head[3]
-                size = int.from_bytes(head[6:10], "big")
-                size = ((size >> 24) & 0x7F) << 21 | ((size >> 16) & 0x7F) << 14 | ((size >> 8) & 0x7F) << 7 | (size & 0x7F)
-                tag = f.read(size)
+            if head[:3] == b"ID3" and head[3] in (3, 4):
+                tag = f.read(_synchsafe(head[6:10]))
                 pos = 0
                 while pos + 10 <= len(tag) and tag[pos] != 0:
-                    fid, fsize = tag[pos:pos + 4], int.from_bytes(tag[pos + 4:pos + 8], "big")
-                    if major == 4:
-                        fsize = ((fsize >> 24) & 0x7F) << 21 | ((fsize >> 16) & 0x7F) << 14 | ((fsize >> 8) & 0x7F) << 7 | (fsize & 0x7F)
+                    fid, raw = tag[pos:pos + 4], tag[pos + 4:pos + 8]
+                    size = _synchsafe(raw) if head[3] == 4 else int.from_bytes(raw, "big")
+                    body = tag[pos + 10:pos + 10 + size]
                     if fid == b"TIT2":
-                        title = _decode_text(tag[pos + 10:pos + 10 + fsize])
-                        if title:
-                            return title
-                    pos += 10 + fsize
-            f.seek(-128, 2)
-            v1 = f.read(128)
-            if v1[:3] == b"TAG":
-                return v1[3:33].split(b"\x00")[0].decode("latin-1").strip() or None
-    except (OSError, ValueError):
+                        got["title"] = _decode_text(body)
+                    elif fid == b"TPE1":
+                        got["artist"] = _decode_text(body)
+                    elif fid == b"TALB":
+                        got["album"] = _decode_text(body)
+                    elif fid == b"TSSE":
+                        encoder = _decode_text(body)
+                    elif fid == b"APIC":
+                        has_cover = True
+                    pos += 10 + size
+            if not got["title"]:  # an old-style ID3v1 tag at the end of the file
+                f.seek(-128, 2)
+                v1 = f.read(128)
+                if v1[:3] == b"TAG":
+                    got["title"] = v1[3:33].split(b"\x00")[0].decode("latin-1").strip()
+    except (OSError, ValueError, IndexError):
         pass
-    return None
+    mureka = encoder.startswith("Lavf") and has_cover
+    got["origin"] = "ai" if mureka else "real" if got["artist"] else "unknown"
+    _tags[key] = got
+    return got
 
 
 _covers = {}  # (path, mtime) -> (mime, bytes) or None; a few MB for a whole library
@@ -176,9 +196,14 @@ def track_info(folder, f, details):
     sid = tracks.style_id(folder)
     name_title, take = tracks.split_name(f.stem)
     row = details.get((sid, f.name), {})
-    title = row.get("title") or (read_title(f) if f.suffix.lower() == ".mp3" else None) or name_title
+    tags_ = read_tags(f) if f.suffix.lower() == ".mp3" else {}
+    title = row.get("title") or tags_.get("title") or name_title
     return {
         "title": title,
+        "artist": tags_.get("artist", ""),   # from the file's own tags, never guessed
+        "album": tags_.get("album", ""),
+        "origin": tags_.get("origin", "unknown"),  # 'ai', 'real' or 'unknown'
+
         "group": f"{sid}/{title.lower()}",  # takes of one song share a group
         "take": int(row.get("take") or take),
         "tempo": row.get("tempo", ""),

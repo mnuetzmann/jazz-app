@@ -30,7 +30,7 @@ let phase = 'idle'; // idle | playing | asking
 let recognition = null;
 let askTimer = null;
 let recentTitles = [];
-let recentGroups = []; // songs (not takes) heard lately, so a deck leads with ones not heard
+let recentGroups = []; // songs (not takes) played lately; a new shuffle pass does not open with the last one
 let askPrefetch = null;
 let plan = null; // the set being played: { cat, queue, intros }
 let trackSeq = 0;
@@ -239,16 +239,18 @@ function setupModes() {
    ...schedule.playlists.map((l) => ['list:' + l.name, l.name])].forEach(([v, t]) => sel.add(new Option(t, v)));
   if (!playlistNow() && mode.startsWith('list:')) mode = 'ask'; // that playlist is gone
   sel.value = mode;
+  reflectMode();
 }
 
-const DECK = 20; // songs dealt at a time, so a change of time slot is noticed within a few songs
-// Shuffle and Auto: random songs across the pool, songs not heard lately first.
+// Shuffle, Auto and playlists: every song from every style in the pool goes into one list, which is shuffled
+// and played through; when it runs out, the whole list is shuffled again. So each song plays once per pass,
+// and every style is heard, in proportion to how many songs it has. (Auto rebuilds it when the time slot changes.)
 function buildContinuousQueue() {
   queueSlot = mode === 'auto' ? (slotNow() || {}).name || '' : '';
-  const all = poolNow().flatMap(onePerSong);
-  const fresh = all.filter((t) => !recentGroups.includes(t.group));
-  const stale = all.filter((t) => recentGroups.includes(t.group));
-  return [...shuffle(fresh), ...shuffle(stale)].slice(0, DECK);
+  const list = shuffle(poolNow().flatMap(onePerSong));
+  // a new pass should not open with the song that has just played
+  if (list.length > 1 && list[0].group === recentGroups[recentGroups.length - 1]) [list[0], list[1]] = [list[1], list[0]];
+  return list;
 }
 
 // Build a set and start fetching its first introduction right away, so it can
@@ -260,10 +262,10 @@ function prepareSet(cat) {
 }
 
 function introFor(p, i) {
-  if (continuous() || quietNow() || i >= p.queue.length || i % INTRO_EVERY !== 0) return null;
+  if (quietNow() || i >= p.queue.length || i % INTRO_EVERY !== 0) return null;
   if (!p.intros[i]) {
     p.intros[i] = fetchAnnouncement({
-      kind: 'intro', category: p.cat.id, url: p.queue[i].url,
+      kind: 'intro', category: (p.queue[i].cat || p.cat).id, url: p.queue[i].url, // in Shuffle / Auto / playlists each song has its own style
       previous: i > 0 ? p.queue[i - 1].url : undefined, // the song that just finished
     });
     p.intros[i].catch(() => {});
@@ -312,7 +314,7 @@ async function nextTrack() {
   $('pause').textContent = 'Pause';
   const seq = ++trackSeq;
   if (continuous() && library.length && (playedInSet >= queue.length || (mode === 'auto' && queueSlot !== ((slotNow() || {}).name || '')))) {
-    queue = buildContinuousQueue(); // never runs out, and follows the clock in Auto
+    newList(); // never runs out, and follows the clock in Auto
     playedInSet = 0;
   }
   if (playedInSet >= queue.length) {
@@ -483,12 +485,18 @@ $('pause').onclick = togglePause;
 $('skip').onclick = () => { unanswered = 0; if (phase === 'playing') nextTrack(); };
 
 // Shuffle and Auto: songs keep coming, with no questions, until the mode is changed.
-function startContinuous() {
+// A fresh shuffled list for Shuffle / Auto / a playlist, with its first introduction already on its way.
+function newList() {
+  queue = buildContinuousQueue();
+  plan = { cat: null, queue, intros: {} };
+  introFor(plan, 0);
+}
+
+function startContinuous(prebuilt = false) {
   stopListening();
   clearTimeout(askTimer);
   askPrefetch = null;
-  plan = { cat: null, queue: [], intros: {} };
-  queue = buildContinuousQueue();
+  if (!prebuilt) newList();
   playedInSet = 0;
   $('choices').innerHTML = '';
   $('prompt').textContent = '';
@@ -497,9 +505,14 @@ function startContinuous() {
   nextTrack();
 }
 
+// Change Style and the collection picker only make sense when you choose the styles yourself ("Ask me"),
+// so the stylesheet hides them whenever a playlist, Shuffle or Auto is playing.
+function reflectMode() { document.body.classList.toggle('continuous-mode', continuous()); }
+
 function setMode(m) {
   const was = mode;
   mode = m;
+  reflectMode();
   $('mode').value = m;
   unanswered = 0;
   try { localStorage.setItem('mode', m); } catch { /* not saved */ }
@@ -601,8 +614,9 @@ async function begin({ resumed = false } = {}) {
   lastHour = `${n.toDateString()} ${n.getHours()}`; // no time check right at the start
   lastSpoke = Date.now();
   const first = continuous() ? null : prepareSet(shuffle(categories)[0]);
+  if (continuous()) newList(); // so the first introduction downloads while the welcome plays
   if (!resumed) await say({ kind: 'welcome' }); // a silent return after a reload or restart
-  if (continuous()) startContinuous(); else startSet(first);
+  if (continuous()) startContinuous(true); else startSet(first);
 }
 $('start').onclick = () => begin();
 // After a reload or a restart of the page, carry on by itself (Chrome may insist on one click first).

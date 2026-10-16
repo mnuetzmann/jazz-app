@@ -2428,5 +2428,457 @@
 "kind": "intro",
 "category": "Champagne_Ballroom/Champagne_Music",
 "url": "/music/Champagne_Ballroom/Champagne_Music/Rose%20Room.mp3"
+},
+"2b0391469661fcaa927b5101": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Let's slip into Autumn at the Blue Lantern, a relaxed one for the late hours, featuring jazz guitar and vibraphone.",
+"kind": "intro",
+"category": "Jazz/cool-jazz",
+"url": "/music/Jazz/cool-jazz/Autumn%20at%20the%20Blue%20Lantern%20(1).mp3"
+},
+"b27535e94a6c02d730852dbe": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Champagne Music, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
+},
+"e71841c434dfd6ff419b5f58": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Rose Room.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Rose%20Room.mp3"
+},
+"2fb761f05a3713ca2c59be0d": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "The night is still ours. What shall we hear? Maybe Moonbeam Lullabies, or Starlight Serenades. Or something else entirely, just ask.",
+"kind": "ask"
+},
+"7c80fd13ce4f18e494ccfa70": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's The Moonlit Lantern.",
+"kind": "intro",
+"category": "Bedtime Collection/Moonbeam_Lullabies",
+"url": "/music/Bedtime Collection/Moonbeam_Lullabies/The%20Moonlit%20Lantern%20(1).mp3"
+},
+"370fdcbfec8694cc55eda2cb": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Moonbeam Lullabies, friend. Let me set that up for you.",
+"kind": "chosen",
+"category": "Bedtime Collection/Moonbeam_Lullabies"
+},
+"6cb17dcae9bb35702c0af11e": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "So, where to next? I have Starlight Serenades, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
+},
+"af8690469caf0be6f839cbb0": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's The Quietest Waltz. Sit back and let the room fill with music.",
+"kind": "intro",
+"category": "Bedtime Collection/Starlight_Serenades",
+"url": "/music/Bedtime Collection/Starlight_Serenades/The%20Quietest%20Waltz%20(1).mp3"
+},
+"d814b1a31e116736a59c42ba": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Now that sounds like a fine idea. Starlight Serenades, coming your way.",
+"kind": "chosen",
+"category": "Bedtime Collection/Starlight_Serenades"
+},
+"bd86f9a9bf914cb68e4981e4": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Let The Sun Shine In.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Let%20The%20Sun%20Shine%20In.mp3"
+},
+"2cc485c238723e42fb1b71d1": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's The Little Blue Blanket.",
+"kind": "intro",
+"category": "Bedtime Collection/Moonbeam_Lullabies",
+"url": "/music/Bedtime Collection/Moonbeam_Lullabies/The%20Little%20Blue%20Blanket.mp3"
+},
+"407468abe2a96e6838aa6264": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's A Blanket of Starlight.",
+"kind": "intro",
+"category": "Bedtime Collection/Starlight_Serenades",
+"url": "/music/Bedtime Collection/Starlight_Serenades/A%20Blanket%20of%20Starlight%20(1).mp3"
+},
+"4f71d6b9460f44a136874cea": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "We've had some beautiful music tonight. What are you in the mood for next? Perhaps Victory Swing, Glenn Miller, or Kansas City Swing. Or just tell me what you see on the screen.",
+"kind": "ask"
+},
+"974d83c3fdb97f731b58aac0": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Well, I'll choose for us. Here's some Benny Goodman.",
+"kind": "auto",
+"category": "WWII_Big_Band/Benny_Goodman"
+},
+"8102bdd4972a78e438f918c3": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Love Is Just Around The Corner.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Love%20Is%20Just%20Around%20The%20Corner.mp3"
+},
+"6df4e2389cbc6c0fa9c113c2": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's One More Night in June.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/One%20More%20Night%20in%20June.mp3"
+},
+"7b79bd737ebc1697d88c171d": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's For Lena & Lennie.",
+"kind": "intro",
+"category": "WWII_Big_Band/Count_Basie",
+"url": "/music/WWII_Big_Band/Count_Basie/For%20Lena%20&%20Lennie.mp3"
+},
+"f08d74f049836dd3b5bda8a6": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Tommy Dorsey, Kansas City Swing, or Victory Swing, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
+},
+"0c65eeabddba805f326d1656": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Not a word? That's all right. I have just the thing, some Count Basie.",
+"kind": "auto",
+"category": "WWII_Big_Band/Count_Basie"
+},
+"6cb7de81d634f2e91d10dd12": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's The Comeback.",
+"kind": "intro",
+"category": "WWII_Big_Band/Count_Basie",
+"url": "/music/WWII_Big_Band/Count_Basie/The%20Comeback.mp3"
+},
+"afba7cc07b0b774525ae7f47": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Sunrise Serenade. Pour yourself something nice.",
+"kind": "intro",
+"category": "WWII_Big_Band/Glenn_Miller",
+"url": "/music/WWII_Big_Band/Glenn_Miller/Sunrise%20Serenade.mp3"
+},
+"cf3ef70583103fe20e1cc90d": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Happy Blues.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Happy%20Blues.mp3"
+},
+"e6e782fac99413afd5b953bf": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Champagne Music, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"c701a77066b0ac2d193cd178": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Goofus.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Goofus.mp3"
+},
+"fd2cc882d205e42ada25e24e": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Allow me. Here's some Champagne Music to carry us along.",
+"kind": "auto",
+"category": "Champagne_Ballroom/Champagne_Music"
+},
+"6ba73745934e61aa5afe0d1c": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's The Breeze And I.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/The%20Breeze%20And%20I.mp3"
+},
+"c40f8679c34af4c16fa752b5": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's I Feel A Song Comin' On.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/I%20Feel%20A%20Song%20Comin'%20On.mp3"
+},
+"475c3ba79f5d4a9585fcaa6b": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "I'll pick one for you. Let's try Champagne Music.",
+"kind": "auto",
+"category": "Champagne_Ballroom/Champagne_Music"
+},
+"92ec434594821be4085eedb6": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Better Use Your Head, from The Lawrence Welk Singers And Orchestra. That's The Lawrence Welk Singers.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Better%20Use%20Your%20Head.mp3"
+},
+"b61f85db82b322aafe2fea5b": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "This is Doll Dance, from Lawrence Welk. Take your time. The night is ours.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Doll%20Dance.mp3"
+},
+"f1d4905f7cc42f95d4abd95d": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Next, Hot Lips. That's Lawrence Welk.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Hot%20Lips.mp3"
+},
+"7a45b4cc17a30f39b2d28101": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Lawrence Welk, with Down Among The Sheltering Palms.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Down%20Among%20The%20Sheltering%20Palms.mp3"
+},
+"de2e3d5e7d89575136b8d6cd": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's The Lawrence Welk Singers with Our Kind Of Music. Nothing but easy listening from here.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Our%20Kind%20Of%20Music.mp3"
+},
+"ec64ffc0f6c9d42aea940603": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Contrasts, from All Star Alumni Orchestra; Bobby Byrne.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/Contrasts.mp3"
+},
+"83f8b7fbfa5e9aaf17ca26c2": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Benny Goodman, with I Know That You Know.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/I%20Know%20That%20You%20Know.mp3"
+},
+"e5caf9e49cf2be93e72d52d4": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "We've had some beautiful music tonight. What are you in the mood for next? Perhaps Champagne Music. Or just tell me what you see on the screen.",
+"kind": "ask"
+},
+"5831a62f435a277030eaed85": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Ah, Champagne Music. Good choice. Here we go.",
+"kind": "chosen",
+"category": "Champagne_Ballroom/Champagne_Music"
+},
+"de02adb3cba0a8c4839b2842": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Up next, Canadian Sunset, by The Lawrence Welk Singers.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Canadian%20Sunset.mp3"
+},
+"a57906567a0f7c355cd953bc": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "So, where to next? I have Moonlight Orchestra, Tommy Dorsey, or Kansas City Swing, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
+},
+"4d9eca40eb7e35d9256247bf": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Benny Goodman it is. Let's go.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Benny_Goodman"
+},
+"837ab9505a10a4f18779670f": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Next, Rock Rimmon. That's Benny Goodman. Pour yourself something nice.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Rock%20Rimmon.mp3"
+},
+"26f6c04e9d9d1e4a53cee9d8": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Dancing Through the Blackout.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Dancing%20Through%20the%20Blackout%20(1).mp3"
+},
+"606bb9474bd77e5024177069": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Savoy Swing, Count Basie, or Glenn Miller, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
+},
+"357cc3ac22328a52c27ccbe3": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "This is You Were Meant For Me, from Lawrence Welk.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/You%20Were%20Meant%20For%20Me.mp3"
+},
+"d81d09517218b1e34e577f13": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Well, I'll choose for us. Here's some Champagne Music.",
+"kind": "auto",
+"category": "Champagne_Ballroom/Champagne_Music"
+},
+"9b4e2bb4b329a3c35b660812": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "We've had some beautiful music tonight. What are you in the mood for next? Perhaps jazz waltz, bebop swing, or muted trumpet. Or just tell me what you see on the screen.",
+"kind": "ask"
+},
+"ec7511ef3036c47509ca7337": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Benny Goodman, friend. Let me set that up for you.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Benny_Goodman"
+},
+"008ab925aa05a68a3e161180": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Benny Goodman, with 'S Wonderful. Nothing but easy listening from here.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/'S%20Wonderful.mp3"
+},
+"2fddcd9e5b196cd6b874044f": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "So, where to next? I have Tommy Dorsey, Count Basie, or Savoy Swing, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
+},
+"7e9dbddc58cd02ab4bb330ea": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Ah, Glenn Miller. Good choice. Here we go.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Glenn_Miller"
+},
+"259f0bff94f8cad2cfc85e97": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Glenn Miller and His Orchestra with Glen Island Special.",
+"kind": "intro",
+"category": "WWII_Big_Band/Glenn_Miller",
+"url": "/music/WWII_Big_Band/Glenn_Miller/Glen%20Island%20Special.mp3"
+},
+"c3b9ca690535f0a869637a61": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "This is China Boy, from Benny Goodman.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/China%20Boy.mp3"
+},
+"e7652afafccd0ad6a3cb8335": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's One More Night in June. The hour is late, and the music is easy.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/One%20More%20Night%20in%20June%20(1).mp3"
+},
+"7b58ad11039bda90e1135c67": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Benny Goodman, with Nagasaki.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Nagasaki.mp3"
+},
+"c204062254d130c2139e2563": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That was Slides 'n Hides, here on The Midnight Jazz Room. Next, Can't Leave That Woman Alone. That's Count Basie & His Orchestra.",
+"kind": "intro",
+"category": "WWII_Big_Band/Count_Basie",
+"url": "/music/WWII_Big_Band/Count_Basie/Can't%20Leave%20That%20Woman%20Alone.mp3"
+},
+"6918fe0513107308f777409d": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Benny Goodman with Dinah. No hurry at all this evening.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Dinah.mp3"
+},
+"2ad0e823327a363422d06578": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "This is Seven Come Eleven, from Benny Goodman.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Seven%20Come%20Eleven.mp3"
+},
+"2daada1b2e13fee56c7c35bd": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Bing Crosby, Rod Stewart, or Frank Sinatra, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"7b0fdcdf61878fdd74f1bf4f": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Bing Crosby. Coming right up.",
+"kind": "chosen",
+"category": "Christmas/Bing Crosby"
+},
+"36833e97f71d6499ca456f03": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Next, Marshmallow World. That's Bing Crosby & Ella Fitzgerald.",
+"kind": "intro",
+"category": "Christmas/Bing Crosby",
+"url": "/music/Christmas/Bing%20Crosby/Marshmallow%20World.mp3"
+},
+"20c2f17690306992e1c0968a": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "This is The Night Before Christmas, from Bing Crosby. Let the day slip away.",
+"kind": "intro",
+"category": "Christmas/Bing Crosby",
+"url": "/music/Christmas/Bing%20Crosby/The%20Night%20Before%20Christmas.mp3"
 }
 }

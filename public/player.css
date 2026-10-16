@@ -238,3 +238,7 @@ body[data-phase="asking"] #panel { transition-duration: .35s; } /* the panel its
 #panel { transition: opacity var(--fade) ease, top .25s ease; }
 body.settings-open #panel { top: calc(var(--settings-bottom, 0px) + 1.4vmin); max-height: calc(100vh - var(--settings-bottom, 0px) - 4.4vmin); }
 body.settings-open #choices { --h: min(11vmin, calc((100vh - var(--settings-bottom, 0px) - 12vmin) / var(--n, 10) - 1.1vmin)); }
+
+/* ---- settings that only apply when you choose the styles yourself ("Ask me what to play") ---- */
+body.continuous-mode #change,
+body.continuous-mode .setting:has(.collection-pick) { display: none !important; }

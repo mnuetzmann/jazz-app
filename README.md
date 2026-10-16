@@ -31,6 +31,11 @@ music/Champagne_Ballroom/Easy_Foxtrot/...
 - After adding or moving songs, run `python3 tracks.py` (it adds rows for new songs, and rows follow a style
   folder that moved, edits intact) and restart the server. Saved announcer clips follow a moved folder on their own.
 
+**What the host says about a song.** Only what is known:
+- *AI-made songs* (Mureka: an ffmpeg "Lavf" encoder tag plus an embedded cover) use the details in `tracks.csv` (instruments, mood, tempo from the style's prompt) and are never given an artist.
+- *Real recordings* (an artist tag, and none of those Mureka marks) are introduced by what the file itself says: "Here's Tuxedo Junction, from Glenn Miller and His Orchestra", and now and then the album (skipped if it is long or a "disc" name). No instruments, moods, years or history are ever added.
+- Anything else is introduced by its title alone.
+
 ## Announcer voices
 
 List several in `.env` as `ELEVENLABS_VOICES=Name:voice_id, Name:voice_id` (find ids with
@@ -83,6 +88,8 @@ after a credits or key problem (a few seconds after a network blip).
 ## Radio mode
 
 Settings (the gear) has a **play mode**: *Ask me what to play* (the default), *Shuffle all music*, or *Auto (by time of day)*, plus a **Quiet** switch that turns every spoken announcement off.
+
+Shuffle, Auto and playlists work from one list: every song from every style in the pool (the whole library, the slot's styles, or the playlist's styles) is put in a list, shuffled, and played through; when it runs out it is shuffled again. Each song plays once per pass, so every style is heard, in proportion to how many songs it has. The two takes of one title count as one song (a random take plays each pass). Auto rebuilds the list when the time slot changes.
 
 - **Auto** follows `schedule.json`: each slot lists the styles (`Jazz/cool-jazz`) or whole collections (`Jazz`) to play between `from` and `to` (24-hour clock; a slot may run past midnight). Hours outside every slot, or slots whose styles have no songs, play everything. Edit the file any time; it is read when the page starts.
 - In the spoken modes the host also gives a time check soon after the top of each hour ("It's nine o'clock in the morning…") and a short station ID after 40 quiet minutes. There are only a few dozen of these lines, so they are voiced once and then replay for free.
