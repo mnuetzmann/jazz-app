@@ -4,18 +4,17 @@
   {
    "name": "Morning",
    "from": "06:00",
-   "to": "10:00",
+   "to": "12:00",
    "pick": [
     "Jazz/piano-trio",
     "Jazz/classic-swing",
     "Jazz/jazz-waltz",
-    "Champagne_Ballroom/Easy_Foxtrot",
-    "Champagne_Ballroom/Piano_Showcase"
+    "WWII_Big_Band/Moonlight_Orchestra"
    ]
   },
   {
    "name": "Daytime",
-   "from": "10:00",
+   "from": "12:00",
    "to": "17:00",
    "pick": [
     "WWII_Big_Band",
@@ -34,6 +33,7 @@
     "Jazz/romantic-ballads",
     "Jazz/jazz-blues",
     "Jazz/sax-ballads",
+    "WWII_Big_Band/Moonlight_Orchestra",
     "Champagne_Ballroom/Sweet_Orchestra"
    ]
   },

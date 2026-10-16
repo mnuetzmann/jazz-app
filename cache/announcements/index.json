@@ -1993,5 +1993,64 @@
 "model": "eleven_v4",
 "text": "Tell me, what would you like to hear next? I could do Savoy Swing, Kansas City Swing, or Moonlight Orchestra. Your choice, friend.",
 "kind": "ask"
+},
+"aeb7f7507229e8664c15706d": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "It's ten o'clock in the morning, here on The Midnight Jazz Room.",
+"kind": "hour",
+"hour": "10"
+},
+"fc843073ed5d38864714523a": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Glenn Miller Inspired. Coming right up.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Glenn_Miller_Inspired"
+},
+"09a6fd7542b3b0236827f22e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Savoy Swing, Glenn Miller Inspired, or Kansas City Swing, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"a01c87aea336674137fbecd5": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Rhapsody in Blue.",
+"kind": "intro",
+"category": "WWII_Big_Band/Glenn_Miller_Inspired",
+"url": "/music/WWII_Big_Band/Glenn_Miller_Inspired/Rhapsody%20in%20Blue.mp3"
+},
+"f732e328fb02bf601a4c6031": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was Moonlight Cocktail, here on The Midnight Jazz Room. Here's Begin The Beguine.",
+"kind": "intro",
+"category": "WWII_Big_Band/Glenn_Miller_Inspired",
+"url": "/music/WWII_Big_Band/Glenn_Miller_Inspired/Begin%20The%20Beguine.mp3"
+},
+"2475b55d1174fe541258dc2e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to Pennsylvania 6-5000. Here's American Patrol. Nothing but easy listening from here.",
+"kind": "intro",
+"category": "WWII_Big_Band/Glenn_Miller_Inspired",
+"url": "/music/WWII_Big_Band/Glenn_Miller_Inspired/American%20Patrol.mp3"
+},
+"fb1e612034dbce499b3a3f15": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Eleven o'clock in the morning. You're listening to The Midnight Jazz Room.",
+"kind": "hour",
+"hour": "11"
+},
+"1673276a47bdf82ce135d380": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was Bugle Call Rag. Here's We Can Live on Love.",
+"kind": "intro",
+"category": "WWII_Big_Band/Glenn_Miller_Inspired",
+"url": "/music/WWII_Big_Band/Glenn_Miller_Inspired/We%20Can%20Live%20on%20Love.mp3"
 }
 }
