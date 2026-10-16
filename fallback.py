@@ -37,6 +37,11 @@ def candidates(categories):
     """Every sentence the announcer can say, with what it is: yields (text, meta)."""
     for t in announcer.WELCOME:
         yield t, {"kind": "welcome"}
+    for t in announcer.STATION_IDS:
+        yield t, {"kind": "stationid"}
+    for h in range(24):
+        for t in announcer.hour_texts(h):
+            yield t, {"kind": "hour", "hour": str(h)}
     for kind, pool in (("chosen", announcer.CHOSEN), ("auto", announcer.AUTO)):
         for c in categories:
             for t in pool:
@@ -149,6 +154,10 @@ def pick(kind, body, voice, categories):
         return choose(lambda e: e.get("kind") == "welcome")
     if kind == "ask":
         return choose(lambda e: e.get("kind") == "ask")
+    if kind == "stationid":
+        return choose(lambda e: e.get("kind") == "stationid")
+    if kind == "hour":  # only the right hour is true; otherwise say nothing
+        return choose(lambda e: e.get("kind") == "hour" and e.get("hour") == str(body.get("hour")))
     if kind in ("chosen", "auto"):
         category = body.get("category")
         return (choose(lambda e: e.get("kind") == kind and e.get("category") == category)

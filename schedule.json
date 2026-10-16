@@ -1,0 +1,53 @@
+{
+ "_help": "Auto mode. Each slot plays only the listed styles between from and to (24-hour clock, may wrap past midnight). 'pick' entries are a collection folder (Jazz) or a style (Jazz/cool-jazz). Times outside every slot play everything.",
+ "slots": [
+  {
+   "name": "Morning",
+   "from": "06:00",
+   "to": "10:00",
+   "pick": [
+    "Jazz/piano-trio",
+    "Jazz/classic-swing",
+    "Jazz/jazz-waltz",
+    "Champagne_Ballroom/Easy_Foxtrot",
+    "Champagne_Ballroom/Piano_Showcase"
+   ]
+  },
+  {
+   "name": "Daytime",
+   "from": "10:00",
+   "to": "17:00",
+   "pick": [
+    "WWII_Big_Band",
+    "Jazz/bebop-swing",
+    "Jazz/classic-swing",
+    "Champagne_Ballroom"
+   ]
+  },
+  {
+   "name": "Evening",
+   "from": "17:00",
+   "to": "22:00",
+   "pick": [
+    "Jazz/cool-jazz",
+    "Jazz/muted-trumpet",
+    "Jazz/romantic-ballads",
+    "Jazz/jazz-blues",
+    "Jazz/sax-ballads",
+    "Champagne_Ballroom/Sweet_Orchestra"
+   ]
+  },
+  {
+   "name": "Late night",
+   "from": "22:00",
+   "to": "06:00",
+   "pick": [
+    "Jazz/jazz-noir",
+    "Jazz/piano-trio",
+    "Jazz/romantic-ballads",
+    "Jazz/sax-ballads",
+    "Jazz/cool-jazz"
+   ]
+  }
+ ]
+}

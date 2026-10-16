@@ -8,6 +8,21 @@ let library = [];      // every style with songs, whatever its collection
 let collections = [];  // [{ id, label }]; id '' is the main one (styles directly in music/)
 let collection = '';
 try { collection = localStorage.getItem('collection') || ''; } catch { /* storage blocked: the main collection */ }
+// Play mode (settings): 'ask' = pick a style and be asked what next; 'shuffle' = random songs from the whole
+// library; 'auto' = random songs from the styles scheduled for this time of day (schedule.json).
+let mode = 'ask';
+let quiet = false; // settings: no spoken announcements at all
+try {
+  mode = localStorage.getItem('mode') || (localStorage.getItem('shuffle') === '1' ? 'shuffle' : 'ask');
+  quiet = localStorage.getItem('quiet') === '1';
+} catch { /* storage blocked: defaults */ }
+const continuous = () => mode !== 'ask';
+let schedule = { slots: [] };
+let unanswered = 0; // questions in a row that nobody answered; after two the station stops asking
+const quietNow = () => quiet || unanswered >= 2;
+let lastSpoke = Date.now(); // for the station ID
+let lastHour = ''; // the hour already announced ('2026-10-16 14')
+let queueSlot = ''; // which schedule slot the current auto queue was built for
 let current = null;
 let queue = [];
 let playedInSet = 0;
@@ -15,6 +30,7 @@ let phase = 'idle'; // idle | playing | asking
 let recognition = null;
 let askTimer = null;
 let recentTitles = [];
+let recentGroups = []; // songs (not takes) heard lately, so a deck leads with ones not heard
 let askPrefetch = null;
 let plan = null; // the set being played: { cat, queue, intros }
 let trackSeq = 0;
@@ -81,6 +97,8 @@ async function fetchAnnouncement(body) {
 // Resolves when the announcement ends. Never rejects: if the voice is
 // unavailable the announcement is skipped and the station carries on.
 function say(body, prefetched) {
+  if (quietNow()) return Promise.resolve();
+  lastSpoke = Date.now();
   const token = ++voiceToken;
   return (prefetched || fetchAnnouncement(body)).then((url) => new Promise((resolve) => {
     if (token !== voiceToken) { URL.revokeObjectURL(url); return resolve(); }
@@ -181,14 +199,44 @@ function matchCategory(text) {
 }
 
 // ---- playback ------------------------------------------------------------
-// Every song in the style, one randomly chosen take of each (never both versions in a set).
-function buildQueue(cat) {
+// One randomly chosen take of each song in the style (never both versions in a set).
+function onePerSong(cat) {
   const byGroup = new Map();
   for (const t of cat.tracks) {
     if (!byGroup.has(t.group)) byGroup.set(t.group, []);
     byGroup.get(t.group).push(t);
   }
-  return shuffle([...byGroup.values()].map((takes) => takes[Math.floor(Math.random() * takes.length)]));
+  return [...byGroup.values()].map((takes) => ({ ...takes[Math.floor(Math.random() * takes.length)], cat }));
+}
+
+// Every song in the style, in random order.
+const buildQueue = (cat) => shuffle(onePerSong(cat));
+
+// ---- schedule (Auto mode) -------------------------------------------------
+const minutesOf = (hhmm) => { const [h, m] = String(hhmm).split(':').map(Number); return (h || 0) * 60 + (m || 0); };
+function slotNow() {
+  const d = new Date(), m = d.getHours() * 60 + d.getMinutes();
+  return schedule.slots.find((sl) => {
+    const f = minutesOf(sl.from), t = minutesOf(sl.to);
+    return f <= t ? m >= f && m < t : m >= f || m < t; // a slot may run past midnight
+  }) || null;
+}
+// The styles allowed now: those the slot lists (a collection folder or a style); all of them if none match.
+function poolNow() {
+  const sl = mode === 'auto' ? slotNow() : null;
+  if (!sl) return library;
+  const hit = library.filter((c) => (sl.pick || []).some((p) => c.id === p || c.id.startsWith(p + '/') || c.collection === p));
+  return hit.length ? hit : library;
+}
+
+const DECK = 20; // songs dealt at a time, so a change of time slot is noticed within a few songs
+// Shuffle and Auto: random songs across the pool, songs not heard lately first.
+function buildContinuousQueue() {
+  queueSlot = mode === 'auto' ? (slotNow() || {}).name || '' : '';
+  const all = poolNow().flatMap(onePerSong);
+  const fresh = all.filter((t) => !recentGroups.includes(t.group));
+  const stale = all.filter((t) => recentGroups.includes(t.group));
+  return [...shuffle(fresh), ...shuffle(stale)].slice(0, DECK);
 }
 
 // Build a set and start fetching its first introduction right away, so it can
@@ -200,7 +248,7 @@ function prepareSet(cat) {
 }
 
 function introFor(p, i) {
-  if (i >= p.queue.length || i % INTRO_EVERY !== 0) return null;
+  if (continuous() || quietNow() || i >= p.queue.length || i % INTRO_EVERY !== 0) return null;
   if (!p.intros[i]) {
     p.intros[i] = fetchAnnouncement({
       kind: 'intro', category: p.cat.id, url: p.queue[i].url,
@@ -211,7 +259,26 @@ function introFor(p, i) {
   return p.intros[i];
 }
 
+// The radio touches between songs: "It's nine o'clock..." soon after the top of the hour, and a short
+// station ID if the station has been silent for 40 minutes. Returns true if something was said.
+async function stationSpot(seq) {
+  if (quietNow()) return false;
+  const now = new Date(), key = `${now.toDateString()} ${now.getHours()}`;
+  let body = null;
+  if (key !== lastHour) {
+    lastHour = key;
+    if (now.getMinutes() < 20) body = { kind: 'hour', hour: now.getHours() }; // not a time check long after the hour
+  }
+  if (!body && Date.now() - lastSpoke > 40 * 60 * 1000) body = { kind: 'stationid' };
+  if (!body) return false;
+  introActive = true;
+  await say(body);
+  introActive = false;
+  return seq === trackSeq;
+}
+
 function startSet(next) {
+  if (continuous()) setMode('ask'); // picking a style ends Shuffle / Auto
   stopListening();
   clearTimeout(askTimer);
   plan = next;
@@ -232,18 +299,32 @@ async function nextTrack() {
   introActive = false;
   $('pause').textContent = 'Pause';
   const seq = ++trackSeq;
-  if (playedInSet >= queue.length) return askNext();
+  if (continuous() && library.length && (playedInSet >= queue.length || (mode === 'auto' && queueSlot !== ((slotNow() || {}).name || '')))) {
+    queue = buildContinuousQueue(); // never runs out, and follows the clock in Auto
+    playedInSet = 0;
+  }
+  if (playedInSet >= queue.length) {
+    if (quietNow() && current) return startSet(prepareSet(current)); // no questions: another set of the same style
+    return askNext();
+  }
   const i = playedInSet++;
   const t = queue[i];
   phase = 'playing';
-  setStatus(`${label(current)}`);
+  if (continuous() && (!current || t.cat.id !== current.id)) { // each song can come from a different style
+    current = t.cat;
+    stage.setCategory(current.id, current.tracks.map((x) => x.cover));
+  }
+  const slot = mode === 'auto' ? slotNow() : null;
+  setStatus(mode === 'shuffle' ? `Shuffle · ${label(current)}` : mode === 'auto' ? `Auto${slot ? ` · ${slot.name}` : ''} · ${label(current)}` : `${label(current)}`);
   $('now').textContent = t.title;
-  $('set').textContent = `Song ${playedInSet} of ${queue.length}`;
+  $('set').textContent = mode === 'shuffle' ? 'Shuffle' : mode === 'auto' ? 'Auto' : `Song ${playedInSet} of ${queue.length}`;
   $('pause').hidden = $('skip').hidden = $('change').hidden = false;
   stage.songStarted(t);
   publish();
 
-  const intro = introFor(plan, i);
+  const spoken = await stationSpot(seq); // top-of-the-hour time check or a station ID, if due
+  if (seq !== trackSeq) return;
+  const intro = spoken ? null : introFor(plan, i);
   if (intro) {
     introActive = true;
     await say({ kind: 'intro' }, intro);
@@ -253,6 +334,8 @@ async function nextTrack() {
 
   recentTitles.push(t.url);
   recentTitles = recentTitles.slice(-60);
+  recentGroups.push(t.group);
+  recentGroups = recentGroups.slice(-60);
   audio.src = t.url;
   stage.feature();
   audio.play().catch((e) => {
@@ -263,7 +346,7 @@ async function nextTrack() {
     if (e.name === 'NotAllowedError') giveUp('Chrome blocked audio.');
   });
   introFor(plan, i + 1); // fetch the next introduction while this song plays
-  if (playedInSet === queue.length) { askPrefetch = fetchAnnouncement({ kind: 'ask', current: current.id, collection }); askPrefetch.catch(() => {}); }
+  if (!continuous() && !quietNow() && playedInSet === queue.length) { askPrefetch = fetchAnnouncement({ kind: 'ask', current: current.id, collection }); askPrefetch.catch(() => {}); }
 }
 
 async function askNext() {
@@ -283,7 +366,7 @@ async function askNext() {
   if (phase !== 'asking') return;
   listen(handleReply);
   askTimer = setTimeout(() => {
-    if (phase === 'asking') choose(shuffle(categories.filter((c) => c !== current))[0] || current, true);
+    if (phase === 'asking') { unanswered++; choose(shuffle(categories.filter((c) => c !== current))[0] || current, true); }
   }, LISTEN_MS);
 }
 
@@ -315,6 +398,7 @@ function showChoices() {
 }
 
 async function choose(cat, auto = false) {
+  if (!auto) unanswered = 0;
   if (phase === 'asking') {
     stopListening();
     clearTimeout(askTimer);
@@ -336,9 +420,34 @@ audio.addEventListener('error', () => {
   if (phase !== 'playing') return;
   const err = audio.error;
   $('heard').textContent = `Could not play "${$('now').textContent}" (media error ${err ? err.code : '?'}${err && err.message ? `: ${err.message}` : ''}).`;
-  if (++failStreak >= 3) return giveUp('Playback keeps failing.');
+  if (++failStreak >= 3) return retryLater('Playback keeps failing.');
   setTimeout(nextTrack, 500);
 });
+
+// When songs will not play, do not skip through the whole library: wait, then try again, a little
+// longer each time (up to five minutes). The music comes back by itself.
+let retryDelay = 30000, retryTimer = null;
+function retryLater(reason) {
+  clearTimeout(retryTimer);
+  phase = 'idle';
+  stage.songEnded();
+  trackSeq++;
+  audio.pause();
+  failStreak = 0;
+  $('pause').hidden = $('skip').hidden = true;
+  setStatus(`${reason} Trying again in ${Math.round(retryDelay / 1000)} seconds.`);
+  publish();
+  retryTimer = setTimeout(() => { retryDelay = Math.min(retryDelay * 2, 300000); nextTrack(); }, retryDelay);
+}
+audio.addEventListener('playing', () => { retryDelay = 30000; });
+
+// A song that is "playing" but not moving (a stalled file or a network drive that went away) is skipped.
+let lastPos = -1, frozen = 0;
+setInterval(() => {
+  if (phase !== 'playing' || introActive || audio.paused || audio.ended) { frozen = 0; lastPos = -1; return; }
+  if (audio.currentTime === lastPos) { if (++frozen >= 3) { frozen = 0; failStreak++; failStreak >= 3 ? retryLater('Playback stalled.') : nextTrack(); } }
+  else { frozen = 0; lastPos = audio.currentTime; }
+}, 5000);
 
 // Stop instead of skipping through the whole library when songs will not play.
 function giveUp(reason) {
@@ -358,10 +467,49 @@ function togglePause() {
   if (el.paused) { el.play(); $('pause').textContent = 'Pause'; } else { el.pause(); $('pause').textContent = 'Resume'; }
 }
 $('pause').onclick = togglePause;
-$('skip').onclick = () => { if (phase === 'playing') nextTrack(); };
+$('skip').onclick = () => { unanswered = 0; if (phase === 'playing') nextTrack(); };
+
+// Shuffle and Auto: songs keep coming, with no questions, until the mode is changed.
+function startContinuous() {
+  stopListening();
+  clearTimeout(askTimer);
+  askPrefetch = null;
+  plan = { cat: null, queue: [], intros: {} };
+  queue = buildContinuousQueue();
+  playedInSet = 0;
+  $('choices').innerHTML = '';
+  $('prompt').textContent = '';
+  $('speak').hidden = true;
+  $('heard').textContent = '';
+  nextTrack();
+}
+
+function setMode(m) {
+  const was = mode;
+  mode = m;
+  $('mode').value = m;
+  unanswered = 0;
+  try { localStorage.setItem('mode', m); } catch { /* not saved */ }
+  if (!library.length || m === was) return; // not started yet: applied when it starts
+  if (continuous() && (phase === 'playing' || phase === 'asking')) {
+    stopVoice();
+    startContinuous();
+  } else if (!continuous() && phase === 'playing') {
+    queue = queue.slice(0, playedInSet); // let this song finish, then ask what next
+  }
+}
+$('mode').value = mode;
+$('mode').onchange = () => setMode($('mode').value);
+$('quiet').checked = quiet;
+$('quiet').onchange = () => {
+  quiet = $('quiet').checked;
+  try { localStorage.setItem('quiet', quiet ? '1' : '0'); } catch { /* not saved */ }
+  if (quiet) stopVoice();
+};
 
 // Ask what to play next right now, without waiting for the set to finish.
 function changeStyle() {
+  unanswered = 0;
   setSettings(false);
   if (phase !== 'playing') return;
   trackSeq++; // cancel a pending introduction
@@ -394,35 +542,63 @@ function setupCollections() {
   };
 }
 
-$('start').onclick = async () => {
+// Load the library and the schedule. Used at start and every half hour so new files are picked up.
+async function loadLibrary() {
+  const [res, sched] = await Promise.all([
+    fetch('/api/library').then((r) => r.json()),
+    fetch('/api/schedule').then((r) => r.json()).catch(() => ({ slots: [] })),
+  ]);
+  library = res.categories;
+  collections = res.collections || [];
+  schedule = { slots: Array.isArray(sched.slots) ? sched.slots : [] };
+  applyCollection();
+  if (current) current = library.find((c) => c.id === current.id) || current;
+}
+setInterval(() => { if (library.length) loadLibrary().then(() => { setupCollections(); }).catch(() => {}); }, 30 * 60 * 1000);
+
+let beginning = false;
+async function begin({ resumed = false } = {}) {
+  if (beginning) return;
+  beginning = true;
   $('start').hidden = true;
+  try { localStorage.setItem('running', '1'); } catch { /* not saved */ }
   if (window.isSecureContext && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({ audio: true })
       .then((stream) => stream.getTracks().forEach((t) => t.stop()))
       .catch((err) => { $('heard').textContent = `Microphone not available (${err.name}). You can still tap your choices.`; });
   }
-  const res = await fetch('/api/library').then((r) => r.json());
-  library = res.categories;
-  collections = res.collections || [];
-  applyCollection();
+  for (;;) { // the server may still be starting (or restarting): keep trying instead of giving up
+    try { await loadLibrary(); break; } catch {
+      setStatus('Waiting for the music server…');
+      await new Promise((r) => setTimeout(r, 10000));
+    }
+  }
+  beginning = false;
   setupCollections();
   if (!categories.length) {
     setStatus('No songs found. Put MP3 files in music/<Collection>/<style>/ folders and reload.');
     $('start').hidden = false;
     return;
   }
-  const first = prepareSet(shuffle(categories)[0]);
-  await say({ kind: 'welcome' });
-  startSet(first);
-};
+  const n = new Date();
+  lastHour = `${n.toDateString()} ${n.getHours()}`; // no time check right at the start
+  lastSpoke = Date.now();
+  const first = continuous() ? null : prepareSet(shuffle(categories)[0]);
+  if (!resumed) await say({ kind: 'welcome' }); // a silent return after a reload or restart
+  if (continuous()) startContinuous(); else startSet(first);
+}
+$('start').onclick = () => begin();
+// After a reload or a restart of the page, carry on by itself (Chrome may insist on one click first).
+try { if (localStorage.getItem('running') === '1') begin({ resumed: true }); } catch { /* not saved */ }
 
 const events = new EventSource('/events');
+events.onopen = () => { if (library.length) publish(); }; // the server came back: tell the phone remote where we are
 events.onmessage = (e) => {
   const m = JSON.parse(e.data);
   if (m.type !== 'state' && m.type !== 'hello') stage.wake();
   if (m.type === 'choose' && phase === 'asking') choose(categories.find((c) => c.id === m.category) || current);
   else if (m.type === 'choose' && phase === 'playing') { const c = categories.find((x) => x.id === m.category); if (c) startSet(prepareSet(c)); }
-  else if (m.type === 'skip' && phase === 'playing') nextTrack();
+  else if (m.type === 'skip' && phase === 'playing') { unanswered = 0; nextTrack(); }
   else if (m.type === 'change') changeStyle();
   else if (m.type === 'pause' && phase === 'playing') togglePause();
   else if (m.type === 'say' && phase === 'asking' && m.text) handleReply(String(m.text).toLowerCase());
@@ -431,6 +607,9 @@ events.onmessage = (e) => {
 
 // ---- settings (upper left): Change style and the announcer voice -----------------
 const gear = $('gear'), settings = $('settings');
+let menuGrace = false;
+// After a choice the menu is closed, so let go of it: otherwise it keeps the controls awake.
+settings.addEventListener('change', (e) => { if (e.target.tagName === 'SELECT') e.target.blur(); });
 const settingsOpen = () => document.body.classList.contains('settings-open');
 // The pie in the voice control: how much of the ElevenLabs credit is used (a full circle = all used).
 async function refreshCredits() {
@@ -464,7 +643,11 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setSetting
 // The panel goes when the other controls do: at the same idle moment, with the same fade.
 document.addEventListener('controlsfaded', () => {
   if (!settingsOpen()) return;
+  // A menu may be open (it cannot be seen from here): allow it one extra idle period, then fade regardless.
+  // A select that merely keeps focus after a choice must not hold the controls on screen forever.
   const el = document.activeElement;
-  if (el && settings.contains(el) && el.tagName === 'SELECT') return stage.wake(); // a voice menu is open: not idle
+  if (el && settings.contains(el) && el.tagName === 'SELECT' && !menuGrace) { menuGrace = true; return stage.wake(); }
+  menuGrace = false;
+  if (el && settings.contains(el)) el.blur();
   setSettings(false);
 });

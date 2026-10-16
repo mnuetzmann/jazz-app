@@ -201,6 +201,12 @@ body.settings-open #settings { opacity: 1; visibility: visible; pointer-events: 
   text-align: left; text-align-last: left; justify-content: flex-start;
 }
 .voice-pick[hidden], .collection-pick[hidden] { display: none; }
+#settings .check-row {
+  flex-direction: row; align-items: center; gap: .7em; cursor: pointer;
+  height: var(--ctl-h); padding: 0 1.2em; box-sizing: border-box; font-size: var(--ctl-font); color: var(--cream);
+  background: rgba(20, 14, 8, .72); border: 1px solid rgba(232, 184, 106, .55); border-radius: 999px; backdrop-filter: blur(6px);
+}
+#settings .check-row input { accent-color: #e8b86a; width: 1.1em; height: 1.1em; margin: 0; cursor: pointer; }
 
 /* ---- the style buttons slide down into place, one after another ----------------------------- */
 @keyframes slideDown {

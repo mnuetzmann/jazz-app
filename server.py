@@ -265,6 +265,11 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json({"voices": list(tts.voices())})
             except tts.TTSError:
                 return self.send_json({"voices": []})
+        if path == "/api/schedule":
+            try:
+                return self.send_json(json.loads((ROOT / "schedule.json").read_text()))
+            except (OSError, ValueError):
+                return self.send_json({"slots": []})  # no schedule: Auto plays everything
         if path == "/api/credits":
             return self.send_json(tts.credits_snapshot())
         if path == "/api/images":
@@ -320,6 +325,8 @@ class Handler(BaseHTTPRequestHandler):
         if not text:
             return self.send_json({"error": "unknown announcement"}, 400)
         meta = {"kind": body.get("kind"), "category": body.get("category"), "url": body.get("url")}
+        if body.get("kind") == "hour":
+            meta["hour"] = str(body.get("hour"))  # as text, so hour 0 (midnight) is not dropped as "empty"
         used = None
         try:
             clip = tts.speak(text, body.get("voice"), meta)

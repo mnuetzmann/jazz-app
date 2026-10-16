@@ -81,6 +81,35 @@ REMARKS = [
     "Nothing but easy listening from here.",
 ]
 
+# Radio touches that cost almost nothing: a fixed handful of station IDs, and one line per hour
+# (24 hours x a few wordings, so the saved clips fill in and stay free to replay).
+STATION_IDS = [
+    "You're listening to The Midnight Jazz Room.",
+    "This is The Midnight Jazz Room.",
+    "The Midnight Jazz Room, music for the long hours.",
+    "You're tuned to The Midnight Jazz Room.",
+    "The Midnight Jazz Room, still going strong.",
+    "Stay with us here on The Midnight Jazz Room.",
+]
+HOUR_LINES = [
+    "It's {time}{part}, here on The Midnight Jazz Room.",
+    "{Time}{part}. You're listening to The Midnight Jazz Room.",
+    "The time is {time}{part}. This is The Midnight Jazz Room.",
+]
+_NUMBERS = ["twelve", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"]
+
+
+def hour_texts(hour):
+    """Every wording of the top-of-the-hour line for an hour 0-23."""
+    if hour in (0, 12):
+        time, part = ("midnight" if hour == 0 else "noon"), ""
+    else:
+        time = f"{_NUMBERS[hour % 12]} o'clock"
+        part = (" in the morning" if 5 <= hour < 12 else " in the afternoon" if 12 < hour < 18
+                else " in the evening" if 18 <= hour < 22 else " at night")
+    return [t.format(time=time, Time=time[:1].upper() + time[1:], part=part) for t in HOUR_LINES]
+
+
 # Backup lines with no style, song or title in them, so they are true whatever is playing.
 # `python3 fallback.py prepare` voices them once; they stand in when the voice is unavailable.
 GENERIC = {
@@ -193,6 +222,13 @@ def build_text(body, categories):
         if not label:
             return None
         return _pick(kind, CHOSEN if kind == "chosen" else AUTO).format(label=label)
+    if kind == "stationid":
+        return _pick("stationid", STATION_IDS)
+    if kind == "hour":
+        hour = body.get("hour")
+        if not isinstance(hour, int) or isinstance(hour, bool) or not 0 <= hour <= 23:
+            return None
+        return _pick("hour", hour_texts(hour))
     if kind == "intro":
         cat = next((c for c in categories if c["id"] == body.get("category")), None)
         track = cat and next((t for t in cat["tracks"] if t["url"] == body.get("url")), None)

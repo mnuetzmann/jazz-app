@@ -58,6 +58,17 @@
   <div id="settings" role="dialog" aria-label="Settings">
     <button id="change" hidden>Change style</button>
     <div class="setting">
+      <select id="mode" aria-label="Play mode">
+        <option value="ask">Ask me what to play</option>
+        <option value="shuffle">Shuffle all music</option>
+        <option value="auto">Auto (by time of day)</option>
+      </select>
+    </div>
+    <label class="setting check-row">
+      <input type="checkbox" id="quiet">
+      <span>Quiet (no announcements)</span>
+    </label>
+    <div class="setting">
       <select class="collection-pick" aria-label="Collection" hidden></select>
     </div>
     <div class="setting">

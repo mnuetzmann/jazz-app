@@ -79,3 +79,12 @@ after a credits or key problem (a few seconds after a network blip).
 - `python3 fallback.py prepare` voices a few generic backup lines ("You've got it. Coming right
   up.") once, so a style with no saved clip still gets a reply. Run it when credits are available.
 - `python3 tts.py usage` also shows your real ElevenLabs balance and reset date, if the key may see it.
+
+## Radio mode
+
+Settings (the gear) has a **play mode**: *Ask me what to play* (the default), *Shuffle all music*, or *Auto (by time of day)*, plus a **Quiet** switch that turns every spoken announcement off.
+
+- **Auto** follows `schedule.json`: each slot lists the styles (`Jazz/cool-jazz`) or whole collections (`Jazz`) to play between `from` and `to` (24-hour clock; a slot may run past midnight). Hours outside every slot, or slots whose styles have no songs, play everything. Edit the file any time; it is read when the page starts.
+- In the spoken modes the host also gives a time check soon after the top of each hour ("It's nine o'clock in the morning…") and a short station ID after 40 quiet minutes. There are only a few dozen of these lines, so they are voiced once and then replay for free.
+- If nobody answers "what next?" twice in a row, the station stops asking and keeps playing the same style until someone picks something.
+- The page resumes by itself after a reload (Chrome may insist on one click the first time), keeps trying if the server is down, retries after playback errors with a growing wait, and skips a song that freezes. For a kiosk that never needs a click, start Chrome with `--autoplay-policy=no-user-gesture-required`.
