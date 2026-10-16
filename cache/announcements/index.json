@@ -2103,5 +2103,80 @@
 "kind": "intro",
 "category": "WWII_Big_Band/Benny_Goodman_Inspired",
 "url": "/music/WWII_Big_Band/Benny_Goodman_Inspired/Music%20Maestro%20Please.mp3"
+},
+"15aec9955c79f69e88ecb5de": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's I Cried For You.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/I%20Cried%20For%20You.mp3"
+},
+"5e9467a11b94a329eadb8fc2": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The night is still ours. What shall we hear? Maybe Glenn Miller, Tommy Dorsey, or Moonlight Orchestra. Or something else entirely, just ask.",
+"kind": "ask"
+},
+"328738af1a42c217146dd7e6": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Well Git It.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/Well%20Git%20It.mp3"
+},
+"f8898f2cc46497dd97d88182": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Tommy Dorsey it is. Let's go.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Tommy_Dorsey"
+},
+"336878ad879fdf1a0b9ff818": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was Song Of India, here on The Midnight Jazz Room. Here's The Breeze And I.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/The%20Breeze%20And%20I.mp3"
+},
+"8909a7783eb080975ec4054f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was Amapola. Here's Green Eyes.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/Green%20Eyes.mp3"
+},
+"3089f53e371c69d3d3beb868": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Boogie Woogie.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/Boogie%20Woogie.mp3"
+},
+"a04cc05c5e91bf26b86eb983": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's So Rare. Sit back and let the room fill with music.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/So%20Rare.mp3"
+},
+"a2d1ec59fae03dcf4275615e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to I'm Gettin' Sentimental Over You. Here's Marie.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/Marie.mp3"
+},
+"78668f846ebc108a05d6345f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Benny Goodman, Moonlight Orchestra, or Victory Swing, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
 }
 }
