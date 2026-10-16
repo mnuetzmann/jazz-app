@@ -1,4 +1,3 @@
-const SET_SIZE = 6;
 const LISTEN_MS = 20000;
 const INTRO_EVERY = 2; // host introduces songs 1, 3, 5 of each set (1 = every song)
 
@@ -182,16 +181,14 @@ function matchCategory(text) {
 }
 
 // ---- playback ------------------------------------------------------------
-// One take per song (never both versions in a set), preferring takes not heard recently.
+// Every song in the style, one randomly chosen take of each (never both versions in a set).
 function buildQueue(cat) {
   const byGroup = new Map();
-  for (const t of shuffle(cat.tracks)) {
+  for (const t of cat.tracks) {
     if (!byGroup.has(t.group)) byGroup.set(t.group, []);
     byGroup.get(t.group).push(t);
   }
-  const picks = [...byGroup.values()].map((takes) => takes.find((t) => !recentTitles.includes(t.url)) || takes[0]);
-  const fresh = picks.filter((t) => !recentTitles.includes(t.url));
-  return shuffle(fresh.length >= SET_SIZE ? fresh : picks).slice(0, SET_SIZE);
+  return shuffle([...byGroup.values()].map((takes) => takes[Math.floor(Math.random() * takes.length)]));
 }
 
 // Build a set and start fetching its first introduction right away, so it can

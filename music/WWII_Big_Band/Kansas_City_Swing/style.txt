@@ -1,1 +1,76 @@
-Authentic 1940s Kansas City-style big band instrumental, 132 BPM, relaxed but irresistibly swinging four-beat groove. Blues-based repeating saxophone riffs, conversational trumpet and trombone responses, sparse rhythmic acoustic piano, walking upright bass, acoustic rhythm guitar, and crisp ride cymbal with light snare accents. Strong rhythm section, loose but coordinated ensemble interplay, expressive tenor saxophone and muted trumpet solos, gradually building riff choruses. Warm, earthy, sophisticated swing-club atmosphere, historically inspired acoustic orchestration, clean high-fidelity sound. No vocals or modern electronic elements.
+THE MIDNIGHT JAZZ ROOM — WWII BIG BAND
+KANSAS CITY AFTER DARK — 10 DISTINCT MUREKA V9.5 PROMPTS
+Folder: Kansas_City_Swing
+
+Each prompt is under 1,000 characters. No numeric BPM settings.
+========================================================================
+
+01. Midnight on Twelfth Street
+Musical identity: Muted trombone blues shuffle
+Prompt (595 characters):
+Late-1930s Kansas City after-hours swing instrumental with a relaxed but insistent blues shuffle. Open with a lone muted trombone playing a sly descending three-note hook over plucked upright bass. Add brushed snare, lightly rolling piano chords and short trumpet-section answers. Develop a repeating twelve-bar blues theme through low-brass call-and-response; include a brief bass break before a tight final chorus. Shadowy Twelfth Street nightclub mood, gritty but welcoming and always danceable. Trombones carry the melody; no clarinet or saxophone solos, no vocals or electronic instruments.
+
+------------------------------------------------------------------------
+
+02. The Blue Room Shuffle
+Musical identity: Piano-led shuffle
+Prompt (545 characters):
+Authentic 1930s Kansas City dance-band instrumental built around rolling boogie piano and a medium-up blues shuffle. Begin with four bars of piano alone, then add acoustic rhythm guitar, upright bass and crisp snare. Muted trumpets enter with short harmonized blues riffs, answered by playful piano runs. Feature a stop-time middle break and a final riff chorus that gradually adds trombones. Smoky, cheerful club-room energy, rhythm-first rather than solo-driven. Piano stays in front; no clarinet or saxophone solos, no vocals or modern drums.
+
+------------------------------------------------------------------------
+
+03. Kansas City After Hours
+Musical identity: Two-tenor blues conversation
+Prompt (570 characters):
+Smoky late-night Kansas City swing instrumental rooted in twelve-bar blues. Start with walking upright bass and softly tapped cymbal; a warm tenor saxophone introduces a sparse, low-register melody. A second tenor answers in short phrases while piano and acoustic rhythm guitar maintain a gently rolling swing. Build toward a lively two-tenor conversation, pull back for a brief piano chorus, then close with the understated opening riff. Soulful, unhurried but danceable; intimate small-band sound, not a wall of horns. No clarinet solos, no screaming brass, no vocals.
+
+------------------------------------------------------------------------
+
+04. A Little Riff on Main
+Musical identity: Guitar riff with muted brass
+Prompt (613 characters):
+Playful 1930s Kansas City riff-swing instrumental with a springy two-beat groove. Begin with a dry acoustic rhythm-guitar riff repeated twice, joined by plucked upright bass and crisp snare. Muted trumpets answer the guitar with a compact syncopated melody; trombones join only for the refrain. Build the song from several short, memorable riffs instead of extended improvisation. Add a full-band stop, a brief guitar-led breakdown and a bright final brass riff. Lively Main Street strolling atmosphere, blues-inflected and danceable. Guitar and rhythmic hooks dominate; no clarinet or saxophone solos, no vocals.
+
+------------------------------------------------------------------------
+
+05. The Missouri Moonlight Blues
+Musical identity: Mellow trumpet and guitar
+Prompt (631 characters):
+Warm, moonlit Kansas City blues-swing instrumental with an easy swaying dance pulse. Open with fingerpicked acoustic guitar outlining a distinctive blues turnaround. A mellow open trumpet takes the lyrical melody over upright bass, understated piano, soft brushed drums and occasional low trombone harmonies. Favor long expressive trumpet notes and blues bends over rapid runs. Introduce a contrasting guitar melody midway, then unite trumpet and guitar for a gently uplifting closing chorus. Evoke moonlight over the Missouri River: reflective and soulful without becoming a slow ballad. No clarinet or saxophone leads, no vocals.
+
+------------------------------------------------------------------------
+
+06. Swingin' at Eighteenth and Vine
+Musical identity: Trombone and trumpet riff battle
+Prompt (595 characters):
+High-spirited late-1930s Kansas City riff-band instrumental inspired by crowded dance floors around Eighteenth and Vine. Launch with a punchy three-trombone riff over relentless walking bass, rhythmic acoustic guitar, bright piano chords and snappy snare. Trumpets counter with a rising four-note figure; brass sections trade short repeated riffs that grow more syncopated. Include a drum-and-bass break followed by a roaring ensemble shout chorus. Fast, earthy, blues-based swing with propulsive four-beat momentum. Brass-section riffs carry the tune; no clarinet or saxophone solos, no vocals.
+
+------------------------------------------------------------------------
+
+07. The Last Train to Union Station
+Musical identity: Boogie piano with train-like pulse
+Prompt (631 characters):
+Exciting 1940s Kansas City boogie-swing instrumental shaped by the rhythm of a departing train. Start with a repetitive eight-to-the-bar piano figure and a low upright-bass pulse suggesting wheels beginning to turn. Add sharp snare accents and short muted-trumpet phrases; gradually intensify the groove. A trombone plays a long whistle-like melodic phrase using real instrument tones, not sound effects. Build to a churning full-band refrain, insert a dramatic stop-time station-platform break and finish decisively. Driving, playful, bluesy and danceable. Piano and percussion dominate; no clarinet or saxophone solos, no vocals.
+
+------------------------------------------------------------------------
+
+08. Boulevard Blues
+Musical identity: Acoustic jazz guitar small combo
+Prompt (618 characters):
+Bluesy Kansas City boulevard instrumental with a loping syncopated swing groove. Center a warm hollow-body acoustic jazz guitar playing a bent-note blues melody and crisp chord punches over upright bass, understated piano and acoustic drums. A single cup-muted trumpet supplies brief responses without taking over. Open with an unaccompanied guitar pickup, develop the theme through a guitar-and-piano exchange and end on a tight ensemble turnaround. Relaxed but rhythmic, with a small roadside-club personality rather than a full big band. No clarinet, saxophone or trombone solos, no vocals or electronic production.
+
+------------------------------------------------------------------------
+
+09. Saturday Night on Broadway
+Musical identity: Trumpet stomp and brass shout
+Prompt (636 characters):
+Raucous late-1930s Kansas City Saturday-night dance instrumental. Open with a syncopated trumpet fanfare, then launch a stomping shuffle driven by acoustic drums, walking upright bass, pounding piano chords and offbeat rhythm guitar. Trumpets play a bright repeated main riff while low trombones punch the backbeat; saxophones appear only for short harmonized responses. Build through escalating dance choruses, a brief percussion-only break and a jubilant brass shout finale. Noisy Broadway nightlife energy, strong blues phrasing and a memorable rhythmic hook. Brass and rhythm section lead; no clarinet or saxophone solos, no vocals.
+
+------------------------------------------------------------------------
+
+10. The River Market Stomp
+Musical identity: Tuba and barrelhouse piano
+Prompt (625 characters):
+Earthy, exuberant Kansas City market-day stomp instrumental with an old-fashioned two-beat bounce. Start with a chunky tuba bass line and rattling snare, then introduce a barrelhouse piano melody full of playful blues turns. A raspy trombone and cornet trade short comic call-and-response figures while acoustic guitar keeps steady offbeats. Shift briefly into a faster-feeling four-beat swing chorus before returning to the stomping refrain. Rough-edged, rhythmic and festive, like street musicians drawing a crowd at the River Market. Feature tuba, barrelhouse piano and trombone; no clarinet or saxophone solos, no vocals.
+
+------------------------------------------------------------------------

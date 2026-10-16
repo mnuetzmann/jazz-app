@@ -1,1 +1,80 @@
-High-energy late-1930s and early-1940s swing orchestra instrumental, 156 BPM, authentic four-beat dance swing. Virtuosic lead clarinet, powerful brass section, punchy saxophone riffs, walking upright bass, acoustic rhythm guitar, stride-influenced piano, and lively acoustic drums. Driving syncopated arrangements, exciting call-and-response between brass and reeds, swinging ensemble breaks, spirited clarinet improvisation, and a thrilling full-band final chorus. Authentic Savoy Ballroom dance atmosphere, tight ensemble precision, clean high-fidelity recording. No vocals, no synthesizers, no modern instruments.
+THE MIDNIGHT JAZZ ROOM — WWII BIG BAND COLLECTION
+THE SAVOY SWING — 10 DISTINCT MUREKA V9.5 SONG PROMPTS
+Folder: Savoy_Swing
+
+Each song has its own title-aligned musical identity, instrumental lead, groove, introduction and structure.
+All tracks are upbeat, instrumental and appropriate for a late-1930s/early-1940s swing dance floor.
+No numeric BPM: tempo and feel are described musically.
+Every complete prompt is fewer than 1,000 characters.
+
+===========================================================================
+
+01. Saturday Night at the Savoy
+Musical identity: Full-ensemble brass-and-reeds opening; exuberant ballroom swing
+Prompt (655 characters):
+A packed Harlem ballroom on a Saturday night: exuberant late-1930s big-band dance instrumental with a brisk, buoyant four-beat swing. Open immediately with a punchy full-ensemble brass-and-reeds riff, then hand a catchy, syncopated main tune to bright trumpets supported by short trombone replies. Walking upright bass, acoustic rhythm guitar, piano chords and crisp ride-and-snare drumming keep the dancers moving. Include an eight-bar stop-time passage, a contrasting softer piano bridge, and a jubilant final shout chorus. Prioritize tightly arranged ensemble hooks over long solos. No clarinet lead, no slow passages, no vocals, no modern instruments.
+
+---------------------------------------------------------------------------
+
+02. The Harlem Hop
+Musical identity: Stride-piano-led small band; bouncing two-beat hop
+Prompt (620 characters):
+Joyful late-1930s Harlem dance instrumental built on a bouncy two-beat hop, not a standard fast four-beat big-band riff. Start with nimble solo stride piano: alternating low bass notes and sharp left-hand chords under a playful right-hand melody. Add upright bass, acoustic guitar, light snare and handclap-like rhythmic accents, with short plunger-muted trombone responses. Keep the arrangement compact, cheeky and spring-loaded; feature piano breaks, sudden rhythmic stops and a final unison ensemble tag. The piano remains the star. No clarinet or saxophone solos, no sweeping strings, no vocals or electronic sounds.
+
+---------------------------------------------------------------------------
+
+03. Jumpin' at Half Past Nine
+Musical identity: Tenor sax riff section and drums; fast jump swing
+Prompt (646 characters):
+Wild, fast late-1930s Harlem jump-swing dance instrumental. Begin with a cracking snare-drum pickup and a repeated, low tenor-saxophone section riff; then add driving upright bass and relentless acoustic rhythm guitar. Bright trumpets answer the sax riffs in short explosive bursts. Compose a memorable offbeat hook with sharp accents, rising rhythmic tension, a brief bass-and-drums break, and a roaring ensemble climax. The sound should be rough-edged and exuberant, like a crowded dance floor suddenly erupting. Saxophones function mainly as a tight riffing section, not extended solos. No clarinet feature, no slow romantic bridge, no vocals.
+
+---------------------------------------------------------------------------
+
+04. Clarinet on Fire
+Musical identity: Virtuosic clarinet feature; agile fast swing
+Prompt (655 characters):
+Blazing late-1930s swing instrumental built as a true virtuoso clarinet showcase. Begin with a short, unaccompanied clarinet flourish that leaps upward, then launch into very fast, light-footed swing propelled by upright bass, acoustic guitar, piano and tight snare-and-cymbal accents. Let the clarinet play quick articulated runs, daring high-register leaps and a distinctive descending refrain, answered only occasionally by compact trumpet chords. Include a playful half-chorus piano exchange and a dramatic clarinet-led finish. Agile, witty, electrifying, and always danceable. Keep saxophones out of the spotlight; no lush ballad textures, no vocals.
+
+---------------------------------------------------------------------------
+
+05. The Uptown Jitterbug
+Musical identity: Trumpet lead with stomping drums; frantic jitterbug
+Prompt (613 characters):
+Frantic uptown jitterbug instrumental from the late 1930s, built around a commanding open trumpet lead rather than clarinet or saxophone. Open with a two-bar trumpet call over sharp snare accents, followed by a fast, driving swing rhythm with walking upright bass, choppy rhythm guitar and percussive piano. Give the trumpets a catchy repeated three-note motif, let trombones bark rhythmic replies, and insert sudden stop-time breaks that dancers can hit. Finish with a climbing trumpet section and a sharp final chord. Exuberant, brassy and athletic. No reed solos, no relaxed foxtrot, no vocals or modern drums.
+
+---------------------------------------------------------------------------
+
+06. Swingin' Down Lenox Avenue
+Musical identity: Trombone-led riff swing; laid-back streetwise strut
+Prompt (622 characters):
+Confident late-1930s Harlem street-strut instrumental with a medium-up, loose-limbed four-beat swing groove. Lead with a warm, growling plunger-muted trombone playing a bluesy, descending hook. Support it with a walking upright bass, clipped piano chords, acoustic rhythm guitar and relaxed brushed-to-stick snare work. Add soft harmonized brass responses and a brief guitar feature, then build toward a fuller trombone-section chorus. Keep the rhythm loping and infectious rather than frantic; imagine strolling past bustling Lenox Avenue clubs at night. No clarinet or saxophone leads, no sentimental strings, no vocals.
+
+---------------------------------------------------------------------------
+
+07. The Lindy Hop Express
+Musical identity: Boogie piano, baritone sax and brass; locomotive drive
+Prompt (626 characters):
+Relentless late-1930s Lindy Hop dance instrumental with a rushing locomotive feel. Start with rolling boogie-woogie piano and a deep baritone-sax pulse, then bring in pounding upright bass, driving rhythm guitar and brisk acoustic drums. The main hook belongs to punchy trombones and trumpets, trading short syncopated phrases while the piano keeps a rolling eight-to-the-bar foundation. Use a dramatic two-bar rhythmic dropout followed by a full-band reentry and an accelerating-feeling final chorus without changing tempo. High-energy, tightly rhythmic, celebratory. No lyrical clarinet solo, no ballad interlude, no vocals.
+
+---------------------------------------------------------------------------
+
+08. Hot Feet, Cool Cats
+Musical identity: Vibraphone and muted trumpet; sly syncopated swing
+Prompt (620 characters):
+Playful, sophisticated late-1930s Harlem swing instrumental with a nimble medium-fast pulse and sly offbeat accents. Open with a crisp vibraphone melody over lightly brushed snare, plucked upright bass and soft piano comping. A cup-muted trumpet answers with short humorous phrases; rhythm guitar adds a springy four-beat texture. Build around a quirky, memorable syncopated motif, a brief vibraphone-and-trumpet conversation, a quiet stop-time passage and a bright ensemble ending. Cool, stylish and danceable rather than loud or frantic. No clarinet or saxophone solos, no strings, no vocals or electronic instruments.
+
+---------------------------------------------------------------------------
+
+09. The Ballroom Bounce
+Musical identity: Trombone section and piano; buoyant foxtrot-swing
+Prompt (629 characters):
+Buoyant late-1930s ballroom swing instrumental with a comfortable, springy dance pulse and a polished foxtrot-like bounce. Start with a four-bar piano-and-upright-bass groove before a tightly harmonized trombone section introduces an upbeat, rounded melody. Add light trumpet punctuations, acoustic rhythm guitar and precise soft snare accents; let the piano take a short melodic middle section before the trombones return in brighter harmony. Emphasize elegant rhythmic lift, clear melodic phrasing and cheerful ensemble interplay, not speed or solo virtuosity. No clarinet or saxophone lead, no slow ballad passages, no vocals.
+
+---------------------------------------------------------------------------
+
+10. Everybody's Swingin' Tonight
+Musical identity: Full-band call-and-response; communal finale
+Prompt (716 characters):
+Big, joyful late-1930s Harlem dance-hall finale instrumental with a driving, upbeat swing rhythm and a festive crowd-pleasing character. Begin with a brief bass-and-drum pickup, then unleash a bold trumpet-section hook answered by tightly voiced saxophone-section chords and rhythmic trombone punches. Walking upright bass, acoustic rhythm guitar, stride-flavored piano and lively snare maintain a relentless dance pulse. Build the tune through contrasting brass-versus-reeds call-and-response, a short percussion break, rising ensemble harmonies and a triumphant full-band final chorus. Keep the melody in arranged sections rather than extended individual solos. No vocals, no modern instruments, no slow interlude.
+
+---------------------------------------------------------------------------

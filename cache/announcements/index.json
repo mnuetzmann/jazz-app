@@ -1045,5 +1045,413 @@
 "kind": "intro",
 "category": "Jazz/sax-ballads",
 "url": "/music/Jazz/sax-ballads/The%20Way%20the%20Moon%20Remembers.mp3"
+},
+"fa4d77ddc806b630ffd7e0f5": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Homefront Hop.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/The%20Homefront%20Hop%20(1).mp3"
+},
+"16fec0a69df0ff37a1713cf8": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Liberty Ballroom Bounce.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/The%20Liberty%20Ballroom%20Bounce.mp3"
+},
+"095cf7fbebd3ba40808aded3": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Allow me. Here's some Victory Swing to carry us along.",
+"kind": "auto",
+"category": "WWII_Big_Band/Victory_Swing"
+},
+"3798da00e968b70d3e05a540": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Dancing Through the Blackout.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Dancing%20Through%20the%20Blackout.mp3"
+},
+"3701370114798a71c4325957": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "So, where to next? I have Savoy Swing, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
+},
+"d25ee6b006f1587ba6e836a7": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Dancing Through the Blackout. Take your time. The night is ours.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Dancing%20Through%20the%20Blackout.mp3"
+},
+"d16a5e6e4e7fdf13607c1e5b": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Savoy Swing, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"30061b13c820adc452ec3750": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Harlem Hop.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Harlem%20Hop.mp3"
+},
+"75c455d3e1fcc1f234087bc6": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Savoy Swing it is. Let's go.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Savoy_Swing"
+},
+"5bb089b8bca3dc06c52db48a": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Swingin  for Victory.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Swingin_%20for%20Victory.mp3"
+},
+"489cce4ac6564b9d30efbebf": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was Stars  Stripes  and Swing. Here's Dancing Through the Blackout.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Dancing%20Through%20the%20Blackout.mp3"
+},
+"09e436771035acfeca381e75": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Homecoming Jitterbug.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/The%20Homecoming%20Jitterbug.mp3"
+},
+"22a1b2c0878c6b7e3ba6d7f4": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was The Victory Garden Swing. Here's When the Boys Come Marching Home.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/When%20the%20Boys%20Come%20Marching%20Home%20(1).mp3"
+},
+"15200ce859a3003e088a4703": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's A Kiss Before the Train.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/A%20Kiss%20Before%20the%20Train%20(1).mp3"
+},
+"7f1083719e312f3b602565c5": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Savoy Swing. Coming right up.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Savoy_Swing"
+},
+"c41e29033594efe499e7d2c4": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Ballroom Bounce. Sit back and let the room fill with music.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Ballroom%20Bounce%20(1).mp3"
+},
+"aab9a77a7f60dc0b5cc4abf5": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The Harlem Hop, just now, on The Midnight Jazz Room. Here's Hot Feet  Cool Cats.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Hot%20Feet_%20Cool%20Cats%20(1).mp3"
+},
+"532beaa1dc315b0148ac173f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Victory Swing, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
+},
+"5a86ac99d3e4dcba74bc8c8e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Clarinet on Fire.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Clarinet%20on%20Fire.mp3"
+},
+"d573573e14d15bc6e491b705": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Savoy Swing, friend. Let me set that up for you.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Savoy_Swing"
+},
+"33c29350756bd2a9e0b688be": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Homefront Hop. No hurry at all this evening.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/The%20Homefront%20Hop%20(1).mp3"
+},
+"d04cb34efeae2aef98e6d49e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Hot Feet  Cool Cats.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Hot%20Feet_%20Cool%20Cats%20(1).mp3"
+},
+"15b26f9e49babd342d29d47c": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Now that sounds like a fine idea. Savoy Swing, coming your way.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Savoy_Swing"
+},
+"ee6932b6034581ee65b4d791": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Tell me, what would you like to hear next? I could do Victory Swing. Your choice, friend.",
+"kind": "ask"
+},
+"283bfddee6fbdb1e07a61cf6": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Jumpin  at Half Past Nine.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Jumpin_%20at%20Half%20Past%20Nine%20(1).mp3"
+},
+"d3387dc9cc4d468ac6de329a": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was Hot Feet  Cool Cats, here on The Midnight Jazz Room. Here's The Lindy Hop Express.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Lindy%20Hop%20Express%20(1).mp3"
+},
+"feba63a6abb6d00130d6fa6a": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was The Uptown Jitterbug. Here's Clarinet on Fire.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Clarinet%20on%20Fire%20(1).mp3"
+},
+"8150c4e1da8a4923ad86ded6": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Everybody s Swingin  Tonight.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Everybody_s%20Swingin_%20Tonight.mp3"
+},
+"6784d6eb7ec9c934d88c9af3": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was The Harlem Hop. Here's Saturday Night at the Savoy.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Saturday%20Night%20at%20the%20Savoy.mp3"
+},
+"1567fc3955a45da3bc4843dd": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Ah, Savoy Swing. Good choice. Here we go.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Savoy_Swing"
+},
+"9cd91a4c795e0fe350eacc8a": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Lindy Hop Express. Take your time. The night is ours.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Lindy%20Hop%20Express%20(1).mp3"
+},
+"f2b3f06c777c5ceedbd22667": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Ballroom Bounce.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Ballroom%20Bounce%20(1).mp3"
+},
+"95a565f8ac9ca6fcc52a2abe": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to Clarinet on Fire. Here's The Uptown Jitterbug.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Uptown%20Jitterbug.mp3"
+},
+"c397d40af0072e331eebfaee": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The Harlem Hop, just now, on The Midnight Jazz Room. Here's Jumpin  at Half Past Nine.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Jumpin_%20at%20Half%20Past%20Nine.mp3"
+},
+"72a3b5bf09b69f12c3ab8fff": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The night is still ours. What shall we hear? Maybe Victory Swing. Or something else entirely, just ask.",
+"kind": "ask"
+},
+"edb40823fce2c3c8a2d66a19": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Clarinet on Fire. Nothing but easy listening from here.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Clarinet%20on%20Fire%20(1).mp3"
+},
+"9f7824e24557716b687a0b2f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was The Lindy Hop Express. Here's Jumpin  at Half Past Nine.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Jumpin_%20at%20Half%20Past%20Nine%20(1).mp3"
+},
+"0ebe379247dd7b9cf8e325fb": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to Everybody s Swingin  Tonight. Here's The Ballroom Bounce.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Ballroom%20Bounce%20(1).mp3"
+},
+"aabaef68a1752b895f46f5ee": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was The Uptown Jitterbug. Here's Swingin  Down Lenox Avenue.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Swingin_%20Down%20Lenox%20Avenue.mp3"
+},
+"b479c3fe66e069548ba9f5ce": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "So, where to next? I have Victory Swing, and plenty more on the screen. Or say the word, and I'll stay right here.",
+"kind": "ask"
+},
+"ae576527593a0078d1d43173": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Lindy Hop Express.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Lindy%20Hop%20Express.mp3"
+},
+"12fa272d0b35f4565e347744": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Swingin  Down Lenox Avenue, just now, on The Midnight Jazz Room. Here's The Ballroom Bounce.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Ballroom%20Bounce%20(1).mp3"
+},
+"69ee037b4347919db034e507": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Everybody s Swingin  Tonight. Pour yourself something nice.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Everybody_s%20Swingin_%20Tonight%20(1).mp3"
+},
+"8eb441e2c33c6c26dd12807e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Now that sounds like a fine idea. Victory Swing, coming your way.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Victory_Swing"
+},
+"ff9278416be09d6d1a15469c": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's When the Boys Come Marching Home.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/When%20the%20Boys%20Come%20Marching%20Home.mp3"
+},
+"aae35fc680cdc6b7afc10094": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Stars  Stripes  and Swing.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Stars_%20Stripes_%20and%20Swing.mp3"
+},
+"de2c668187ec44c7ec698262": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Victory Garden Swing. Let the day slip away.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/The%20Victory%20Garden%20Swing%20(1).mp3"
+},
+"8d2f14ff3994ce95417f07cc": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Savoy Swing, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
+},
+"f34b6d5b8db434d3a4bb7abc": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Victory Swing, friend. Let me set that up for you.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Victory_Swing"
+},
+"862fc62bfe491ece96acf4e9": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was The Liberty Ballroom Bounce, here on The Midnight Jazz Room. Here's Stars  Stripes  and Swing.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Stars_%20Stripes_%20and%20Swing.mp3"
+},
+"b080c2e2a671029565c934fd": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to A Kiss Before the Train. Here's Swingin  for Victory.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Swingin_%20for%20Victory.mp3"
+},
+"23757874eb871df2e41ecd2b": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was When the Boys Come Marching Home. Here's The Victory Garden Swing.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/The%20Victory%20Garden%20Swing%20(1).mp3"
+},
+"67c23e972acd699a4f3d37a7": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Saturday Night at the USO.",
+"kind": "intro",
+"category": "WWII_Big_Band/Victory_Swing",
+"url": "/music/WWII_Big_Band/Victory_Swing/Saturday%20Night%20at%20the%20USO%20(1).mp3"
+},
+"4565bc22d04318e765a597e8": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "The night is still ours. What shall we hear? Maybe Savoy Swing. Or something else entirely, just ask.",
+"kind": "ask"
 }
 }

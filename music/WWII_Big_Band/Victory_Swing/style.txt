@@ -1,1 +1,80 @@
-Upbeat American WWII-era dance orchestra instrumental, 144 BPM, lively joyful four-beat swing. Full acoustic big band with bright trumpets, rich trombones, coordinated saxophone-section riffs, occasional lead clarinet, rhythmic acoustic piano, upright bass, acoustic guitar, and energetic swing drums. Memorable catchy melodies, optimistic brass fanfares, tightly arranged ensemble responses, playful instrumental breaks, and a triumphant swinging final chorus. Cheerful 1940s USO dance-hall atmosphere, authentic period-style orchestration, natural dynamics, clean high-fidelity studio sound. No vocals, no military marches, no synthesizers, no modern electronic elements.
+THE MIDNIGHT JAZZ ROOM — WWII BIG BAND
+VICTORY DANCE HALL — 10 DISTINCT MUREKA V9.5 STYLE PROMPTS
+Folder: Victory_Swing
+
+All tracks: instrumental, upbeat and danceable.
+Tempo is described in musical language rather than numeric BPM.
+Each complete prompt is under 1,000 characters.
+Track 9 preserves the successful fast-jitterbug test prompt.
+
+========================================================================
+
+01. Swingin' for Victory
+Musical identity: Brass-led victory swing
+Prompt (683 characters):
+Explosive 1940s wartime victory dance instrumental. Fast, buoyant four-beat swing with a punchy trumpet section carrying a bold ascending main theme, tightly harmonized trombone replies, driving upright bass, rhythmic piano chords and crisp acoustic drums. Begin with a short unison trumpet fanfare, then launch straight into an infectious syncopated brass riff. Alternate full-brass shout choruses with brief stop-time breaks and rhythmic drum fills. Jubilant, brassy, athletic, and unmistakably danceable. Trumpets remain the melodic focus; saxophones may provide quiet background harmony only. No clarinet or saxophone solos, no slow passages, no vocals or electronic instruments.
+
+------------------------------------------------------------------------
+
+02. The Homefront Hop
+Musical identity: Stride piano and small dance band
+Prompt (699 characters):
+Cheerful 1940s American two-beat dance-band instrumental. Moderate, bouncing rhythm with a pronounced alternating bass-and-chord pulse. Playful stride piano carries the tune with jaunty right-hand phrases, supported by acoustic rhythm guitar, plucked upright bass, light snare and occasional bright trumpet punctuations. Begin with a solo stride-piano pickup, then let the bass and guitar establish the hop. Use short, catchy piano motifs, syncopated breaks and a spirited piano-led final chorus. Small, intimate neighborhood dance-band sound rather than a full brass orchestra. Keep the rhythm buoyant and the piano clearly dominant. No clarinet or saxophone leads, no vocals or modern instruments.
+
+------------------------------------------------------------------------
+
+03. Saturday Night at the USO
+Musical identity: Tenor sax and brass jitterbug
+Prompt (708 characters):
+High-energy WWII-era USO dance-floor instrumental built for fast jitterbug dancing. Start with an urgent two-bar drum pickup and a tightly synchronized riff from three tenor saxophones; sharp trumpet blasts answer each phrase. Driving walking bass, brisk rhythm guitar and lively acoustic snare keep the dancers moving. The melody uses clipped, repeating rhythmic hooks, unexpected ensemble stops, and a soaring trumpet bridge before the saxophone section returns for a roaring final chorus. Rowdy, youthful, crowded Saturday-night dance-hall atmosphere. Feature the saxophone SECTION rather than long solo improvisation; keep the trumpet responses prominent. No clarinet solo, no ballad sections, no vocals.
+
+------------------------------------------------------------------------
+
+04. Stars, Stripes, and Swing
+Musical identity: Trombone choir and parade accents
+Prompt (679 characters):
+Bold celebratory 1940s dance-orchestra instrumental combining a buoyant swing beat with brief military-parade accents. A deep, harmonized trombone choir states the main melody over bouncing tuba-style bass figures, bright piano chords and precise snare-drum rolls. Open with a short ceremonial snare flourish and low-brass call, then shift decisively into a lively syncopated ballroom groove. Use sliding trombone answers, compact trumpet fanfares and rhythmic breaks that feel like a parade turning into a dance party. Strong low-brass personality, triumphant major-key phrases and a punchy ensemble finish. No clarinet or saxophone solos, no solemn march throughout, no vocals.
+
+------------------------------------------------------------------------
+
+05. The Liberty Ballroom Bounce
+Musical identity: Vibraphone and muted trumpet
+Prompt (710 characters):
+Lighthearted 1940s ballroom swing instrumental with a springy, relaxed dance pulse. Sparkling vibraphone plays the primary melody, answered by a playful muted trumpet over lightly bouncing piano, upright bass, rhythm guitar and brushed snare. Begin with a four-bar vibraphone motif, then add the rhythm section before the trumpet enters with a contrasting syncopated theme. Use crisp mallet runs, soft brass punctuation, a brief piano interlude and a cheerful ensemble reprise. Refined, airy and playful, like a bright ballroom full of couples dancing. Keep vibraphone and muted trumpet in front; reeds should remain background texture only. No clarinet or saxophone solos, no vocals or electronic instruments.
+
+------------------------------------------------------------------------
+
+06. Dancing Through the Blackout
+Musical identity: Muted trumpet and rhythm guitar
+Prompt (698 characters):
+Intriguing yet danceable WWII-era nighttime swing instrumental. Medium-fast, stealthy four-beat rhythm with syncopated acoustic jazz guitar chords, plucked upright bass, crisp rim-click snare and a close-miked muted trumpet playing a sly minor-key melody. Begin with guitar and bass alone, then bring in the muted trumpet after a few bars. Create tension with short offbeat trumpet phrases, sudden rhythmic pauses, chromatic turns and a brighter major-key middle section before returning to the mysterious opening hook. Evoke couples dancing under dim lights during a wartime blackout: playful and secretive, never slow or mournful. No clarinet or saxophone solos, no lush string ballad, no vocals.
+
+------------------------------------------------------------------------
+
+07. The Victory Garden Swing
+Musical identity: Boogie piano and acoustic guitar shuffle
+Prompt (696 characters):
+Earthy, cheerful 1940s homefront dance instrumental with a rolling blues shuffle rather than conventional ballroom swing. A strong boogie-woogie piano left hand and chugging acoustic rhythm guitar drive the groove, joined by walking upright bass, tambourine accents and light shuffle drums. Open with a catchy repeated piano bass figure, then add a twangy guitar melody and short piano answers. Use bluesy call-and-response between guitar and piano, hand-clap-style accents, a brief bass break and an exuberant final turnaround. Friendly backyard victory-garden celebration, rustic and irresistibly bouncy. No horn solos, no clarinet or saxophone lead, no vocals or electric rock instrumentation.
+
+------------------------------------------------------------------------
+
+08. A Kiss Before the Train
+Musical identity: Accordion-led romantic foxtrot
+Prompt (737 characters):
+Playful upbeat 1940s wartime railway-platform foxtrot instrumental, brisk enough for couples to dance. A bright acoustic accordion carries a charming, slightly flirtatious melody, supported by bouncing piano, acoustic guitar, upright bass and a soft two-beat drum pattern. Open with a quick train-whistle-like melodic flourish played on accordion, not a sound effect. Add short pizzicato-string responses and an occasional muted trumpet accent; keep the melody light, hopeful and affectionate rather than sad. Include a brief rhythmic break suggesting the train's rolling motion, then return to the catchy accordion refrain. Joyful last-minute goodbye with a promise of reunion. No clarinet or saxophone solos, no slow ballad, no vocals.
+
+------------------------------------------------------------------------
+
+09. The Homecoming Jitterbug
+Musical identity: Very fast jump swing — successful test prompt
+Prompt (527 characters):
+Explosive late-1940s jump-swing instrumental for frantic jitterbug dancing. Very fast, relentless double-time energy with driving boogie-woogie piano, pounding upright bass, sharp snare accents, and shouting tenor saxophone riffs. Short explosive brass punches and exciting saxophone call-and-response. Strong rhythmic momentum, rapid melodic figures, dramatic stop-time breaks, and an exuberant final ensemble shout chorus. Wild celebration of soldiers returning home. No slow passages, no romantic ballad sections, no vocals.
+
+------------------------------------------------------------------------
+
+10. When the Boys Come Marching Home
+Musical identity: Trumpets, tuba and snare victory celebration
+Prompt (712 characters):
+Exuberant 1940s homecoming dance instrumental with a joyful parade-to-swing transformation. Open with a short snare-drum roll, a proud tuba bass line and bright harmonized trumpets playing a memorable homecoming fanfare. After the opening, shift into a bouncy, syncopated swing groove with lively piano chords, walking tuba or upright bass and tightly punched trumpet-and-trombone phrases. Build through repeated celebratory brass refrains, playful drum breaks and a rousing final full-ensemble cadence. Sound like a victory parade spilling into a crowded dance hall: festive, propulsive and uplifting. Brass and percussion lead throughout; no clarinet or saxophone solos, no sentimental slow section, no vocals.
+
+------------------------------------------------------------------------
