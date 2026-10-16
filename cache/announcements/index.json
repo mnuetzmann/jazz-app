@@ -1763,5 +1763,192 @@
 "kind": "intro",
 "category": "WWII_Big_Band/Kansas_City_Swing",
 "url": "/music/WWII_Big_Band/Kansas_City_Swing/Boulevard%20Blues%20(1).mp3"
+},
+"fad1a8cfe4898d1151f24312": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Uptown Jitterbug.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Uptown%20Jitterbug.mp3"
+},
+"97e8f66d8effb6ab0455b442": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Tell me, what would you like to hear next? I could do Victory Swing, Moonlight Orchestra, or Kansas City Swing. Your choice, friend.",
+"kind": "ask"
+},
+"ca390ff2251970e89a17f49b": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Ah, Moonlight Orchestra. Good choice. Here we go.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Moonlight_Orchestra"
+},
+"b09c0ed897c744ad4834aab4": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's One More Night in June. No hurry at all this evening.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/One%20More%20Night%20in%20June.mp3"
+},
+"09392c9cedccc741d8e9d62b": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Whispers Beneath the Stars.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/Whispers%20Beneath%20the%20Stars%20(1).mp3"
+},
+"fb59c11095bbdc2a3489d0b4": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was Starlight on Fifth Avenue. Here's A Serenade for Evelyn.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/A%20Serenade%20for%20Evelyn.mp3"
+},
+"9532819f69d94023e0c480b3": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Dancing Until Dawn.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/Dancing%20Until%20Dawn%20(1).mp3"
+},
+"b75553c485b21934d7b22126": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's When the Streetlights Glow.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/When%20the%20Streetlights%20Glow.mp3"
+},
+"0b370d20cc0dca1538d901ec": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Savoy Swing, Victory Swing, or Kansas City Swing, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"c52e046d01d1bf98557f8525": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Moonlight Orchestra, friend. Let me set that up for you.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Moonlight_Orchestra"
+},
+"84717d426235283030a99cc7": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to Dancing Until Dawn. Here's Silver Clouds and Satin.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/Silver%20Clouds%20and%20Satin.mp3"
+},
+"b83bb67d17a4dc4b5826743e": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Moonlight Over Manhattan.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/Moonlight%20Over%20Manhattan.mp3"
+},
+"b02e5d59f42ce30f2efa5371": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Starlight on Fifth Avenue.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/Starlight%20on%20Fifth%20Avenue.mp3"
+},
+"9c7cded65f0cbda761d2cdbd": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was The Last Dance at Midnight. Here's The Blue Moon Ballroom.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/The%20Blue%20Moon%20Ballroom%20(1).mp3"
+},
+"2c63f7d9db1d0ec6b43afe9d": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "We've had some beautiful music tonight. What are you in the mood for next? Perhaps Kansas City Swing, Victory Swing, or Savoy Swing. Or just tell me what you see on the screen.",
+"kind": "ask"
+},
+"9e35d30d45ed72f22696b870": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Moonlight Orchestra. Coming right up.",
+"kind": "chosen",
+"category": "WWII_Big_Band/Moonlight_Orchestra"
+},
+"26a96706e6d08d52e5de855d": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Silver Clouds and Satin.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/Silver%20Clouds%20and%20Satin.mp3"
+},
+"3784477b03316ea8137319f9": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to Whispers Beneath the Stars. Here's The Blue Moon Ballroom.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/The%20Blue%20Moon%20Ballroom%20(1).mp3"
+},
+"c8c7fb10fa75e91716e028a0": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That one was Starlight on Fifth Avenue. Here's A Serenade for Evelyn.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/A%20Serenade%20for%20Evelyn.mp3"
+},
+"8391a821bf789b1e8d1de681": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Victory Swing, Savoy Swing, or Kansas City Swing, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"663f07da098421242268f070": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Blue Moon Ballroom.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/The%20Blue%20Moon%20Ballroom%20(1).mp3"
+},
+"9a10dcb77f014727a9d39566": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "You've been listening to A Serenade for Evelyn. Here's When the Streetlights Glow.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/When%20the%20Streetlights%20Glow%20(1).mp3"
+},
+"f3c3995b4b656c1cfb3375cc": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's One More Night in June. Sit back and let the room fill with music.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/One%20More%20Night%20in%20June%20(1).mp3"
+},
+"164bcd977cd1d51199738a5b": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was Whispers Beneath the Stars, here on The Midnight Jazz Room. Here's Starlight on Fifth Avenue.",
+"kind": "intro",
+"category": "WWII_Big_Band/Moonlight_Orchestra",
+"url": "/music/WWII_Big_Band/Moonlight_Orchestra/Starlight%20on%20Fifth%20Avenue%20(1).mp3"
+},
+"eeebf601a5a2d9fe027df71f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Kansas City Swing, Victory Swing, or Savoy Swing, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
 }
 }
