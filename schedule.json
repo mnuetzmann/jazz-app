@@ -1,5 +1,5 @@
 {
- "_help": "Auto mode. Each slot plays only the listed styles between from and to (24-hour clock, may wrap past midnight). 'pick' entries are a collection folder (Jazz) or a style (Jazz/cool-jazz). Times outside every slot play everything.",
+ "_help": "Auto mode. Each slot plays only the listed styles between from and to (24-hour clock, may wrap past midnight). 'pick' entries are a collection folder (Jazz) or a style (Jazz/cool-jazz). Times outside every slot play everything. 'playlists' add items to the Play mode menu that shuffle only the listed styles.",
  "slots": [
   {
    "name": "Morning",
@@ -47,6 +47,16 @@
     "Jazz/romantic-ballads",
     "Jazz/sax-ballads",
     "Jazz/cool-jazz"
+   ]
+  }
+ ],
+ "playlists": [
+  {
+   "name": "Band Leaders",
+   "pick": [
+    "WWII_Big_Band/Benny_Goodman",
+    "WWII_Big_Band/Glenn_Miller",
+    "WWII_Big_Band/Tommy_Dorsey"
    ]
   }
  ]

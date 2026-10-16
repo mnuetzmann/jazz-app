@@ -17,7 +17,7 @@ try {
   quiet = localStorage.getItem('quiet') === '1';
 } catch { /* storage blocked: defaults */ }
 const continuous = () => mode !== 'ask';
-let schedule = { slots: [] };
+let schedule = { slots: [], playlists: [] };
 let unanswered = 0; // questions in a row that nobody answered; after two the station stops asking
 const quietNow = () => quiet || unanswered >= 2;
 let lastSpoke = Date.now(); // for the station ID
@@ -222,11 +222,23 @@ function slotNow() {
   }) || null;
 }
 // The styles allowed now: those the slot lists (a collection folder or a style); all of them if none match.
+const matching = (picks) => library.filter((c) => (picks || []).some((p) => c.id === p || c.id.startsWith(p + '/') || c.collection === p));
+const playlistNow = () => (mode.startsWith('list:') ? schedule.playlists.find((l) => 'list:' + l.name === mode) : null);
 function poolNow() {
   const sl = mode === 'auto' ? slotNow() : null;
-  if (!sl) return library;
-  const hit = library.filter((c) => (sl.pick || []).some((p) => c.id === p || c.id.startsWith(p + '/') || c.collection === p));
+  const list = playlistNow();
+  const hit = sl ? matching(sl.pick) : list ? matching(list.pick) : library;
   return hit.length ? hit : library;
+}
+
+// The Play mode menu: the built-in modes, then each playlist from schedule.json (e.g. "Band Leaders").
+function setupModes() {
+  const sel = $('mode');
+  sel.innerHTML = '';
+  [['ask', 'Ask me what to play'], ['shuffle', 'Shuffle all music'], ['auto', 'Auto (by time of day)'],
+   ...schedule.playlists.map((l) => ['list:' + l.name, l.name])].forEach(([v, t]) => sel.add(new Option(t, v)));
+  if (!playlistNow() && mode.startsWith('list:')) mode = 'ask'; // that playlist is gone
+  sel.value = mode;
 }
 
 const DECK = 20; // songs dealt at a time, so a change of time slot is noticed within a few songs
@@ -315,9 +327,10 @@ async function nextTrack() {
     stage.setCategory(current.id, current.tracks.map((x) => x.cover));
   }
   const slot = mode === 'auto' ? slotNow() : null;
-  setStatus(mode === 'shuffle' ? `Shuffle · ${label(current)}` : mode === 'auto' ? `Auto${slot ? ` · ${slot.name}` : ''} · ${label(current)}` : `${label(current)}`);
+  const list = playlistNow();
+  setStatus(list ? `${list.name} · ${label(current)}` : mode === 'shuffle' ? `Shuffle · ${label(current)}` : mode === 'auto' ? `Auto${slot ? ` · ${slot.name}` : ''} · ${label(current)}` : `${label(current)}`);
   $('now').textContent = t.title;
-  $('set').textContent = mode === 'shuffle' ? 'Shuffle' : mode === 'auto' ? 'Auto' : `Song ${playedInSet} of ${queue.length}`;
+  $('set').textContent = list ? list.name : mode === 'shuffle' ? 'Shuffle' : mode === 'auto' ? 'Auto' : `Song ${playedInSet} of ${queue.length}`;
   $('pause').hidden = $('skip').hidden = $('change').hidden = false;
   stage.songStarted(t);
   publish();
@@ -550,7 +563,11 @@ async function loadLibrary() {
   ]);
   library = res.categories;
   collections = res.collections || [];
-  schedule = { slots: Array.isArray(sched.slots) ? sched.slots : [] };
+  schedule = {
+    slots: Array.isArray(sched.slots) ? sched.slots : [],
+    playlists: (Array.isArray(sched.playlists) ? sched.playlists : []).filter((l) => l && l.name && Array.isArray(l.pick)),
+  };
+  setupModes();
   applyCollection();
   if (current) current = library.find((c) => c.id === current.id) || current;
 }

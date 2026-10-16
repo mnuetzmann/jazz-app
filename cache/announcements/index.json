@@ -2178,5 +2178,29 @@
 "model": "eleven_v4",
 "text": "Well now, that was a lovely stretch. Where shall we go from here? Benny Goodman, Moonlight Orchestra, or Victory Swing, or anything else on the screen. Or I can keep things just as they are.",
 "kind": "ask"
+},
+"a5a3b18611ba809e5672c862": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Sweet Lorraine.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Sweet%20Lorraine.mp3"
+},
+"ef03b1707d6cf802c26b7d0d": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was Ida! Sweet As Apple Cider, here on The Midnight Jazz Room. Here's Get Happy.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Get%20Happy.mp3"
+},
+"1576b943de9b0b827760300f": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's My Blue Heaven.",
+"kind": "intro",
+"category": "WWII_Big_Band/Glenn_Miller",
+"url": "/music/WWII_Big_Band/Glenn_Miller/My%20Blue%20Heaven.mp3"
 }
 }
