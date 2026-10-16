@@ -2223,5 +2223,126 @@
 "kind": "intro",
 "category": "WWII_Big_Band/Count_Basie",
 "url": "/music/WWII_Big_Band/Count_Basie/Who,%20Me_.mp3"
+},
+"4f1a9482438274fb3de8d9ac": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's Lazy River.",
+"kind": "intro",
+"category": "WWII_Big_Band/Benny_Goodman",
+"url": "/music/WWII_Big_Band/Benny_Goodman/Lazy%20River.mp3"
+},
+"fb700c9729afb4ae21b6b431": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Well now, that was a lovely stretch. Where shall we go from here? Victory Swing, Glenn Miller, or Count Basie, or anything else on the screen. Or I can keep things just as they are.",
+"kind": "ask"
+},
+"bf908b253ed302b88413c271": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Well, I'll choose for us. Here's some Savoy Swing.",
+"kind": "auto",
+"category": "WWII_Big_Band/Savoy_Swing"
+},
+"3710650c54b9b84266ef8619": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "Here's The Ballroom Bounce. Pour yourself something nice.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/The%20Ballroom%20Bounce%20(1).mp3"
+},
+"c07fd54618d173a04319dae4": {
+"voice": "KNujgOxpr0Y4KhrYpOe1",
+"model": "eleven_v4",
+"text": "That was The Lindy Hop Express, here on The Midnight Jazz Room. Here's Clarinet on Fire.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Clarinet%20on%20Fire%20(1).mp3"
+},
+"72459825674e5df12569b5b6": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That one was Swingin  Down Lenox Avenue. Here's Everybody s Swingin  Tonight.",
+"kind": "intro",
+"category": "WWII_Big_Band/Savoy_Swing",
+"url": "/music/WWII_Big_Band/Savoy_Swing/Everybody_s%20Swingin_%20Tonight%20(1).mp3"
+},
+"75f1826cb1eaaaac7c5fa5dd": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Marie.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/Marie.mp3"
+},
+"70351f4ab94150e7c20d77f5": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's The Breeze And I. Sit back and let the room fill with music.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/The%20Breeze%20And%20I.mp3"
+},
+"255b067181c8182ff2e642f4": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "One o'clock in the afternoon. You're listening to The Midnight Jazz Room.",
+"kind": "hour",
+"hour": "13"
+},
+"5d285f251413cd4ef03803c8": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That was I Understand. Here's Boogie Woogie.",
+"kind": "intro",
+"category": "WWII_Big_Band/Tommy_Dorsey",
+"url": "/music/WWII_Big_Band/Tommy_Dorsey/Boogie%20Woogie.mp3"
+},
+"58f365a5efc4183459ebbba0": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Lanterns in the Window.",
+"kind": "intro",
+"category": "Bedtime Collection/Starlight_Serenades",
+"url": "/music/Bedtime Collection/Starlight_Serenades/Lanterns%20in%20the%20Window.mp3"
+},
+"f98da5d4f8ab1719a275a7c3": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's One Last Story. Let the day slip away.",
+"kind": "intro",
+"category": "Bedtime Collection/Starlight_Serenades",
+"url": "/music/Bedtime Collection/Starlight_Serenades/One%20Last%20Story.mp3"
+},
+"7310594fd213773506791346": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Teddy Bear Goodnight.",
+"kind": "intro",
+"category": "Bedtime Collection/Moonbeam_Lullabies",
+"url": "/music/Bedtime%20Collection/Moonbeam_Lullabies/Teddy%20Bear%20Goodnight%20(1).mp3"
+},
+"37e5bde037a02dd484cfe271": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That's a fine set behind us. Now, what suits your mood? Starlight Serenades, or anything on the screen. Take your time.",
+"kind": "ask"
+},
+"3d40515e8d82cc0928edee47": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Goodnight  Garden Moon.",
+"kind": "intro",
+"category": "Bedtime Collection/Moonbeam_Lullabies",
+"url": "/music/Bedtime%20Collection/Moonbeam_Lullabies/Goodnight_%20Garden%20Moon.mp3"
+},
+"b1d6f9cd2c994e3999eaf829": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Now that sounds like a fine idea. Moonbeam Lullabies, coming your way.",
+"kind": "chosen",
+"category": "Bedtime Collection/Moonbeam_Lullabies"
 }
 }
