@@ -12,7 +12,7 @@ import sys
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import quote, unquote, urlparse
+from urllib.parse import quote, unquote, urlsplit
 
 import announcer
 import fallback
@@ -256,7 +256,8 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
-        path = unquote(urlparse(self.path).path)
+        # urlsplit, not urlparse: urlparse treats ";" in a file name as the start of path parameters and drops it
+        path = unquote(urlsplit(self.path).path)
         if path == "/api/library":
             categories = scan_library()
             return self.send_json({"categories": categories, "collections": collections_of(categories)})
@@ -309,7 +310,7 @@ class Handler(BaseHTTPRequestHandler):
         self.serve_file(safe_join(PUBLIC, path.lstrip("/")))
 
     def do_POST(self):
-        route = urlparse(self.path).path
+        route = urlsplit(self.path).path
         if route not in ("/api/send", "/api/announce"):
             return self.send_json({"error": "not found"}, 404)
         length = int(self.headers.get("Content-Length", 0))

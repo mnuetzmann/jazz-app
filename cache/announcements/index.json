@@ -2322,7 +2322,7 @@
 "text": "Here's Teddy Bear Goodnight.",
 "kind": "intro",
 "category": "Bedtime Collection/Moonbeam_Lullabies",
-"url": "/music/Bedtime%20Collection/Moonbeam_Lullabies/Teddy%20Bear%20Goodnight%20(1).mp3"
+"url": "/music/Bedtime Collection/Moonbeam_Lullabies/Teddy%20Bear%20Goodnight%20(1).mp3"
 },
 "37e5bde037a02dd484cfe271": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -2336,7 +2336,7 @@
 "text": "Here's Goodnight  Garden Moon.",
 "kind": "intro",
 "category": "Bedtime Collection/Moonbeam_Lullabies",
-"url": "/music/Bedtime%20Collection/Moonbeam_Lullabies/Goodnight_%20Garden%20Moon.mp3"
+"url": "/music/Bedtime Collection/Moonbeam_Lullabies/Goodnight_%20Garden%20Moon.mp3"
 },
 "b1d6f9cd2c994e3999eaf829": {
 "voice": "wDsL4jrWvw6jY8gyV5Fi",
@@ -2344,5 +2344,89 @@
 "text": "Now that sounds like a fine idea. Moonbeam Lullabies, coming your way.",
 "kind": "chosen",
 "category": "Bedtime Collection/Moonbeam_Lullabies"
+},
+"01fdc64e34c25ba8526e0a97": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "The night is still ours. What shall we hear? Maybe Champagne Music. Or something else entirely, just ask.",
+"kind": "ask"
+},
+"116a43159d0ec3c748a4c34e": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Chee Chee Kookaroo.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Chee%20Chee%20Kookaroo.mp3"
+},
+"f1247c5195070b79f61f2810": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "You've got it. Some Champagne Music, and not a moment too soon.",
+"kind": "chosen",
+"category": "Champagne_Ballroom/Champagne_Music"
+},
+"69f84eaa1c6fb02794a1b64f": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That one was Ja Da; I'm A Ding Dong Daddy From Dumas; Goofus. Here's Canadian Sunset.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Canadian%20Sunset.mp3"
+},
+"a816d71d005592996c1f5732": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "It's two o'clock in the afternoon, here on The Midnight Jazz Room.",
+"kind": "hour",
+"hour": "14"
+},
+"b3259bc6f4a33356657620c0": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Stumbling; I'm Nobody's Baby; Hot Lips.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Stumbling;%20I'm%20Nobody's%20Baby;%20Hot%20Lips.mp3"
+},
+"a6329fd8aca9953bf9cdf0f2": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That one was Wedding Of The Painted Doll; Broadway Melody; Doll Dance. Here's Land Of Dreams.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Land%20Of%20Dreams.mp3"
+},
+"f6b99ec20269d432c451f5e1": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Together.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Together.mp3"
+},
+"149bb340eebd34e3bc950695": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's Gonna Get Along Without You Now.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Gonna%20Get%20Along%20Without%20You%20Now.mp3"
+},
+"d1fa54d1f2b6d31bd9e41c2e": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "Here's I Miss My Swiss.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/I%20Miss%20My%20Swiss.mp3"
+},
+"6db6245785f5db6f1248fd94": {
+"voice": "wDsL4jrWvw6jY8gyV5Fi",
+"model": "eleven_v4",
+"text": "That was Let The Sun Shine In. Here's Rose Room.",
+"kind": "intro",
+"category": "Champagne_Ballroom/Champagne_Music",
+"url": "/music/Champagne_Ballroom/Champagne_Music/Rose%20Room.mp3"
 }
 }
